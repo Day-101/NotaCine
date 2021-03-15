@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_15_151657) do
+ActiveRecord::Schema.define(version: 2021_03_15_152702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "genres", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "movie_genres", force: :cascade do |t|
+    t.bigint "movie_id"
+    t.bigint "genre_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["genre_id"], name: "index_movie_genres_on_genre_id"
+    t.index ["movie_id"], name: "index_movie_genres_on_movie_id"
+  end
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
@@ -24,6 +39,21 @@ ActiveRecord::Schema.define(version: 2021_03_15_151657) do
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "notations", force: :cascade do |t|
+    t.bigint "movie_id"
+    t.bigint "user_id"
+    t.integer "scenario"
+    t.integer "image"
+    t.integer "editing"
+    t.integer "sound"
+    t.integer "makeup"
+    t.integer "directing"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_notations_on_movie_id"
+    t.index ["user_id"], name: "index_notations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,4 +73,8 @@ ActiveRecord::Schema.define(version: 2021_03_15_151657) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "movie_genres", "genres"
+  add_foreign_key "movie_genres", "movies"
+  add_foreign_key "notations", "movies"
+  add_foreign_key "notations", "users"
 end
