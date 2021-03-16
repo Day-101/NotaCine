@@ -4,6 +4,6 @@ class MovieController < ApplicationController
 	end
 
 	def create
-		Movie.add_from_name(params["title"])
+		ImdbApi.add_from_name(params["title"])
 	end
 end

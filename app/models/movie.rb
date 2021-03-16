@@ -1,34 +1,20 @@
 class Movie < ApplicationRecord
   validates :title, presence: true
-  attribute :description, default: "Pas de description"
+  attribute :description, default: "No description"
   attribute :year, default: "0"
-  attribute :director, default: "Inconnu"
-  attribute :actors, default: "Inconnu"
+  attribute :director, default: "Unknown"
+  attribute :actors, default: "Unknown"
   attribute :image_url, default: "https://m.media-amazon.com/images/M/MV5BODA4NTk3MTQwN15BMl5BanBnXkFtZTcwNjUwMTMxNA@@._V1_Ratio0.6791_AL_.jpg"
 
   has_many :notations
   has_many :movie_genres
   has_many :genres, through: :movie_genres
 
- 	def self.add_from_name(movie_name)
-		movie_name = movie_name.gsub(/ /, "%20")
-		api_key = ENV["IMDBAPI"]
-		url = "https://imdb-api.com/en/API/SearchMovie/#{api_key}/#{movie_name}"
-		buffer = URI.open(url).read
-		result = JSON.parse(buffer)
-		movie_id =  result["results"][0]["id"]
-		return add_from_id(movie_id)
-	end
 
-	def self.add_from_id(movie_id)
-		api_key = ENV["IMDBAPI"]
-		url = "https://imdb-api.com/fr/API/Title/#{api_key}/#{movie_id}"
-		buffer = URI.open(url).read
-		result = JSON.parse(buffer)
-		
+	def self.save_movie(result)		
 		new_movie = Movie.new
 		new_movie.title = result["title"] if result["title"]
-		new_movie.description = result["plotLocal"] if result["plotLocal"]
+		new_movie.description = result["plot"] if result["plot"]
 		new_movie.year = result["year"] if result["year"]
 		new_movie.actors = result["stars"] if result["stars"]
 		new_movie.director = result["directors"] if result["directors"]
