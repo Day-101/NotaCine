@@ -6,7 +6,7 @@ body{
 nav li a{
 	font-size: 1.2em;
 }
-hr{
+#hr-gradient{
   background: linear-gradient(to right, #e84335, #fff);
   height: 1px;
 }
