@@ -21,10 +21,13 @@
           <% end %>
           <hr>
           <div class="actions">
-            <%= f.submit "Log in", :class => 'btn btn-primary'%>
-          </div>
+            <%= f.submit "Log in", :class => 'btn btn-primary btn-block'%>
+          </div><br />
           <% end %>
-          <%= render "devise/shared/signup" %>
+          <div class="text-center">
+            <hr class="text-muted" id="hr-new">
+            <%= render "devise/shared/signup" %>
+          </div>
       </div>
     </div>
   </div>

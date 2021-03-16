@@ -8,3 +8,20 @@
   margin-top: 50px;
   padding:25px 20px 40px 20px;
 }
+
+#hr-new {
+    border: none;
+    border-top: 1px solid #333;
+    color: #333;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+}
+
+#hr-new:after {
+    background: #fff;
+    content: 'New to NotaCine ?';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+}
