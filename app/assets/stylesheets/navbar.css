@@ -1,0 +1,19 @@
+.login-dd{ order: 1; }
+
+.navbar-nav{margin-right: auto; }
+.navbar-nav li { text-align: center; }
+
+.website-search{ border: none; border-radius: 1rem; width: 200px; height: 25px; padding:0; padding-left: 8px; transition: 0.2s; }
+/*.website-search:hover{ border: none; border-radius: 1rem; width: 260px; padding: 0; }*/
+.website-search:focus{ border: none; border-radius: 1rem; width: 260px; padding: 0; }
+
+@media (max-width: 768px) {
+.login-dd {
+	order: 0;
+	justify-content: flex-end;
+	flex-grow: 1;
+	display: flex;
+}
+.collapse, .collapsing{ display: flex; flex-direction: column-reverse; align-items: center; }
+.navbar-nav{ margin-right: 0px; }
+}
