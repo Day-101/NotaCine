@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :movie
 
-  get "/team", to: "statics#team"
-  get "/contact", to: "statics#contact"
-  get "/rgpd", to: "statics#rgpd"
+  get 'statics/team'
+  get 'statics/contact'
+  get 'statics/privacy'
 
 
 
