@@ -25,3 +25,9 @@
     position: relative;
     top: -13px;
 }
+
+#forgotpass-card {
+  margin-top: 80px;
+  padding:25px 20px 40px 20px;
+  width: 420px;
+}
