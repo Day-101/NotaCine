@@ -1,9 +1,9 @@
 class Movie < ApplicationRecord
   validates :title, presence: true
-  attribute :description, default: "No description"
+  attribute :description, default: "Pas de description"
   attribute :year, default: "0"
-  attribute :director, default: "Unknown"
-  attribute :actors, default: "Unknown"
+  attribute :director, default: "Inconnu"
+  attribute :actors, default: "Inconnu"
   attribute :image_url, default: "https://m.media-amazon.com/images/M/MV5BODA4NTk3MTQwN15BMl5BanBnXkFtZTcwNjUwMTMxNA@@._V1_Ratio0.6791_AL_.jpg"
 
   has_many :notations
@@ -28,7 +28,7 @@ class Movie < ApplicationRecord
 		
 		new_movie = Movie.new
 		new_movie.title = result["title"] if result["title"]
-		new_movie.description = result["localPlot"] if result["localPlot"]
+		new_movie.description = result["plotLocal"] if result["plotLocal"]
 		new_movie.year = result["year"] if result["year"]
 		new_movie.actors = result["stars"] if result["stars"]
 		new_movie.director = result["directors"] if result["directors"]

@@ -4,6 +4,6 @@ class MovieController < ApplicationController
 	end
 
 	def create
-		puts Movie.add_from_name(params["title"])
+		Movie.add_from_name(params["title"])
 	end
 end
