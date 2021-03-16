@@ -1,0 +1,16 @@
+body{
+	font-family: 'Sen',
+	sans-serif;
+	padding-top: 56px;
+}
+nav li a{
+	font-size: 1.2em;
+}
+hr{
+  background: linear-gradient(to right, #e84335, #fff);
+  height: 1px;
+}
+.rounded-nota {
+  border-radius: 1rem!important;
+}
+.bg-dark{ background-color:#202327 !important; }
