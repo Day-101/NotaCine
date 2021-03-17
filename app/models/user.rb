@@ -12,8 +12,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
 
   def default_avatar
-    self.avatar.attach(io: File.open(ActionController::Base.helpers.image_path("avatar-default.png")),filename:"default_profile_picture")
+    file = URI.open("https://notacine-dvpt.herokuapp.com/" + ActionController::Base.helpers.image_path("avatar-default.png").to_s)
+    self.avatar.attach(io: file,filename:"default_profile_picture")
   end
-
+  
 
 end
