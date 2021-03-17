@@ -5,7 +5,6 @@
         <h3 class="card-title"><strong>Sign up</strong></h3>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
-
           <div class="field">
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -30,7 +29,7 @@
           </div>
           <hr>
           <div class="actions">
-            <%= f.submit "Sign up", :class => 'btn btn-primary' %>
+            <%= f.submit "Sign up", :class => 'btn btn-primary btn-block' %>
           </div>
           <div class="text-muted">
             By creating an account, you agree to NotaCine's <br>
