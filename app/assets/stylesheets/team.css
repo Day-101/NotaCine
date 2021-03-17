@@ -136,3 +136,12 @@
 	opacity: 1;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
+
+#not-hovered{
+    text-align: center;
+    position: relative;
+    padding: -15px;
+    color: #fff;
+	opacity: 1;
+
+}
