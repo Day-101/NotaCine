@@ -6,7 +6,7 @@
   
       <% if user_signed_in? %>
         <div class="btn-group dropdown-login dropdown-signed d-flex align-items-center">
-          <%= link_to root_path, class:"" do %>
+          <%= link_to user_path(current_user), class:"" do %>
 
             <!-- Changer image_path par avatar user -->
             <%= image_tag image_path("avatar-default.png"), class:"", style:"width:30px; height:30px" %>
@@ -16,7 +16,7 @@
             <span class="sr-only">Toggle Dropdown</span>
           </button>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuReference">
-            <%= link_to "Profile", root_path, class:"dropdown-item" %>
+            <%= link_to "Profile", user_path(current_user), class:"dropdown-item" %>
             <div class="dropdown-divider"></div>
             <%= link_to "Log out", destroy_user_session_path, class:"dropdown-item", method: :delete %>
           </div>
