@@ -28,3 +28,11 @@
     position: relative;
     top: -13px;
 }
+
+#edit-profil {
+  border: solid 1px;
+  border-radius: 20px;
+  border-color: #292c32;
+  margin: 10px;
+  padding: 20px;
+}
