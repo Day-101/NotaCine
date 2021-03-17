@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   resources :movie
   resources :users, only: [:show]
   root to: 'movie#index'
-  get "/team", to: "static#team"
-  get "/contact", to: "static#contact"
-  get "/rgpd", to: "static#rgpd"
+  get 'statics/team'
+  get 'statics/contact'
+  get 'statics/privacy'
 
 
 
