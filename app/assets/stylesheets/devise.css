@@ -1,12 +1,14 @@
-#login-card {
+.card-d {
   margin-top: 80px;
-  padding:25px 20px 40px 20px;
+  padding:25px 20px 20px 20px;
+}
+
+#login-card {
   width: 370px;
 }
 
-#signup-card {
-  margin-top: 80px;
-  padding:25px 20px 40px 20px;
+#forgotpass-card {
+  width: 420px;
 }
 
 #hr-new {
@@ -24,10 +26,4 @@
     padding: 0 4px;
     position: relative;
     top: -13px;
-}
-
-#forgotpass-card {
-  margin-top: 80px;
-  padding:25px 20px 40px 20px;
-  width: 420px;
 }
