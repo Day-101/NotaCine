@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  after_create :default_avatar
+  after_create :default_avatar 
+  after_create :welcome_send
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   validates :rank, presence: true
@@ -16,5 +17,8 @@ class User < ApplicationRecord
     self.avatar.attach(io: file,filename:"default_profile_picture")
   end
   
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
 
 end
