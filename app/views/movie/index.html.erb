@@ -1,1 +1,21 @@
-<h1>index</h1>
+<div class="container">
+	<div class="row">
+	<% @movies.each do |movies| %>
+		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="card">
+				<img class="card-img-top" src="<%= movies.image_url %>" alt="Card image cap">
+				<div class="card-title">
+					<h4><%= movies.title %></h4>
+				</div>
+				<div class="card-body">
+					<span><%= movies.description %></span>
+				</div>
+				<a href="#">Learn More</a>      
+			</div>
+		</div>
+	<% end %>
+	</div>		
+</div>
+
+
+
