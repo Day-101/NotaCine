@@ -5,8 +5,12 @@ body{
 	display: flex;
 	height: 100%;
 	flex-direction: column;
-	background: #343a40!important;
+	background: #202327 !important;
 }
+
+a{color:#212529!important;}
+a:hover{color:#e84335!important;}
+
 nav li a{
 	font-size: 1.2em;
 }
@@ -17,4 +21,22 @@ nav li a{
 .rounded-nota {
   border-radius: 1rem!important;
 }
+
+
+
+.btn-primary {
+	color: #fff;
+  background-color: #e84335 !important;
+  border-color: #e84335 !important;
+}
+
+.btn-primary:hover {
+	color: #fff;
+  background-color: #cc3b2f !important;
+  border-color: #cc3b2f !important;
+}
+
 .bg-dark{ background-color:#202327 !important; }
+
+.dropdown-menu{background-color: #353a40 !important;}
+.dropdown-item{ color: #fff !important;}
