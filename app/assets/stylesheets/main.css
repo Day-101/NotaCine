@@ -1,7 +1,11 @@
 body{
 	font-family: 'Sen',
 	sans-serif;
-	padding-top: 56px;
+	padding-top: 61px;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	background: #343a40!important;
 }
 nav li a{
 	font-size: 1.2em;
