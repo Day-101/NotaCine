@@ -120,4 +120,14 @@ Rails.application.configure do
   
   config.action_mailer.default_url_options = { :host => 'https://notacine-dvpt.herokuapp.com/' }
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+  address:              'ssl0.ovh.net ',
+  port:                 587,
+  domain:               'notacine.com',
+  user_name:            ENV['EMAIL_LOGIN'],
+  password:             ENV['EMAIL_PWD'],
+  authentication:       'plain',
+  enable_starttls_auto: true }
+
 end
