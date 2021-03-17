@@ -122,7 +122,7 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  address:              'ssl0.ovh.net ',
+  address:              'ssl0.ovh.net',
   port:                 587,
   domain:               'notacine.com',
   user_name:            ENV['EMAIL_LOGIN'],
