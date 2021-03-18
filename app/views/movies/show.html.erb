@@ -27,7 +27,8 @@
           <p class="h4">NotaCine</p><br>
           <%= form_for @movie do |f| %>
             <%= f.label :some_size, "Scenario" %>
-            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true  %><br>
+            # value:@movie.notacine_reviews[:scenario]
             <%= f.label :some_size, "Image" %>
             <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
             <%= f.label :some_size, "Editing" %>

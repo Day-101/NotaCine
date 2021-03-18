@@ -37,4 +37,9 @@ class Movie < ApplicationRecord
     Notation.find_by(user: user,movie: self).present?
   end
 
+	def notacine_reviews
+		reviews = Notation.where(movie:self) 
+		reviews = reviews.select{|review| review.user.rank == 0}
+	end
+
 end
