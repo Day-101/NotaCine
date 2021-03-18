@@ -1,0 +1,10 @@
+<%= form_with model: @movie do |f| %>
+  <%= f.text_field :title, class:"", placeholder:"Movie title"%>
+  <%= f.text_area :description, class:"", placeholder:"Synopsis" %>
+  <%= f.number_field :year, class:"", placeholder:"Year" %>
+  <%= f.text_field :director, class:"", placeholder:"Director" %>
+  <%= f.text_field :actors, class:"", placeholder:"Actors" %>
+  <%= f.text_field :image_url, class:"", placeholder:"URL" %>
+  <%= f.submit class:"btn btn-success" %>
+<% end %>
+<%= button_to "Delete", movie_path(@movie), class: "btn btn-danger", method: :delete %>
