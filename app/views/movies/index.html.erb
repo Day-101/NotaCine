@@ -1,7 +1,7 @@
 <div class="container" id="search-bar-index">
-	<h4 class="text-center text-white">Check the relative scale notation of a movie.</h4>
+	<h1 class="text-center text-white">Check the relative scale notation of a movie</h1>
 	<%= link_to "How it works ?" %>
-  <div id="searchbar-index">
+  <div id="search-bar-border">
 		<%= form_tag(movies_path, :method => "get") do %>
 			<%= text_field_tag :title, params[:title], placeholder: "Search Movies" %>
 			<%= button_tag(type: "submit", class: "btn btn-transparent-pading text-white") do %>
