@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <%= link_to root_path, class:"navbar-brand brand" do %>
-      <%= image_tag image_path("notacine-logo-dark.svg"), class:"d-inline-block align-top d-block", style:"width:95px; height:22px" %>
+      <%= image_tag image_path("notacine-logo-dark.svg"), class:"d-inline-block align-top d-block brand-img" %>
     <% end %>
   
       <% if user_signed_in? %>
@@ -9,7 +9,7 @@
           <%= link_to user_path(current_user), class:"" do %>
 
             <!-- Changer image_path par avatar user -->
-            <%= image_tag image_path("avatar-default.png"), class:"", style:"width:30px; height:30px" %>
+            <%= image_tag image_path("avatar-default.png"), class:"nav-avatar" %>
           
           <% end %>
           <button type="button" class="btn btn-transparent text-white dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
