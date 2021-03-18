@@ -71,4 +71,11 @@ class Movie < ApplicationRecord
 		end
 		return notation/count
 	end
+
+	def reviewed_by_admin
+		reviewed = false
+		User.where(rank: 0).each {|user| reviewed = true if Notation.find_by(movie: self, user: user)}
+		return reviewed
+	end
+
 end

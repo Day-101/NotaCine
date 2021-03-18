@@ -33,7 +33,8 @@
       <div class="row">
         <div class="col-6">
           <p class="h4">NotaCine</p><br>
-          <% unless Notation.find_by(movie:@movie).nil? %>
+          <% if @movie.reviewed_by_admin %>
+
             <%= form_for @movie do |f| %>
               <%= f.label :some_size, "Scenario" %>
               <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.notacine_reviews("scenario"), :disabled => true  %><br>
