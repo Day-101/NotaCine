@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <%= link_to root_path, class:"navbar-brand brand" do %>
-      <%= image_tag image_path("notacine-logo-dark.svg"), class:"d-inline-block align-top d-block brand-img" %>
+      <%= image_tag image_path("notacine-logo-dark.svg"), class:"d-inline-block align-top d-block brand-img", alt:"NotaCine" %>
     <% end %>
   
       <% if user_signed_in? %>
@@ -43,7 +43,8 @@
             Categories
           </div>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "All categies", root_path, class:"dropdown-item" %>
+            <%= link_to "All categories", root_path, class:"dropdown-item" %>
+            <div class="dropdown-divider"></div>
             <%= link_to "Action", root_path, class:"dropdown-item" %>
             <%= link_to "...", root_path, class:"dropdown-item" %>
           </div>
