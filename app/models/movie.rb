@@ -33,4 +33,8 @@ class Movie < ApplicationRecord
 		end
 	end
 
+	def already_reviewed(user)
+    Notation.find_by(user: user,movie: self).present?
+  end
+
 end

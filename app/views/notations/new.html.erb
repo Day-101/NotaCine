@@ -1,0 +1,15 @@
+<%= form_with model: [@movie, @notation]  do |f| %>
+  <%= f.label :scenario, "Scenario :" %>
+  <%= f.range_field :scenario, in:0..100, value:50, class:""%>
+  <%= f.label :image, "Image :" %>
+  <%= f.range_field :image, in:0..100, value:50, class:""%>
+  <%= f.label :editing, "editing :" %>
+  <%= f.range_field :editing, in:0..100, value:50, class:""%>
+  <%= f.label :sound, "sound :" %>
+  <%= f.range_field :sound, in:0..100, value:50, class:""%>
+  <%= f.label :makeup, "makeup :" %>
+  <%= f.range_field :makeup, in:0..100, value:50, class:""%>
+  <%= f.label :directing, "directing :" %>
+  <%= f.range_field :directing, in:0..100, value:50, class:""%>
+  <%= f.submit class:"btn btn-success" %>
+<% end %>
