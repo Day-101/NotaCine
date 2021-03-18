@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
-	before_action :authenticate_user!, only:[:edit, :update, :delete]
-	before_action :redirect_if_not_admin, only:[:edit, :update, :delete]
+	before_action :authenticate_user!, only:[:edit, :update, :delete, :new, :create]
+	before_action :redirect_if_not_admin, only:[:edit, :update, :delete, :new, :create]
 
 	def index
 		@movies = Movie.all
@@ -11,11 +11,12 @@ class MoviesController < ApplicationController
 	end
 
 	def new
-
+		@movie= Movie.new
 	end
 
 	def create
-		ImdbApi.add_from_name(params["title"])
+		ImdbApi.add_from_name(params["movie"]["title"])
+		redirect_to root_path
 	end
 
 	def edit
