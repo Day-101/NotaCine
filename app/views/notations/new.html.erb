@@ -1,15 +1,37 @@
-<%= form_with model: [@movie, @notation]  do |f| %>
-  <%= f.label :scenario, "Scenario :" %>
-  <%= f.range_field :scenario, in:0..100, value:50, class:""%>
-  <%= f.label :image, "Image :" %>
-  <%= f.range_field :image, in:0..100, value:50, class:""%>
-  <%= f.label :editing, "editing :" %>
-  <%= f.range_field :editing, in:0..100, value:50, class:""%>
-  <%= f.label :sound, "sound :" %>
-  <%= f.range_field :sound, in:0..100, value:50, class:""%>
-  <%= f.label :makeup, "makeup :" %>
-  <%= f.range_field :makeup, in:0..100, value:50, class:""%>
-  <%= f.label :directing, "directing :" %>
-  <%= f.range_field :directing, in:0..100, value:50, class:""%>
-  <%= f.submit class:"btn btn-success" %>
-<% end %>
+<div class="container text-white">
+  <div class="row">
+    <div class="col-10">
+      <p class="display-4"><%= @movie.title %></p>
+      <hr>
+      <%= @movie.year %> ― Directed by <%= @movie.director %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <%=image_tag @movie.image_url, :class => 'movie-poster' %>
+    </div>
+    <div class="col-4 text-muted">
+      <%= @movie.description %>
+    </div>
+    <div class="col-4 notation-card text-center">
+      <p class="h4">Slide your opinion</p><br>
+      <hr>
+      <%= form_with model: [@movie, @notation]  do |f| %>
+        <%= f.label :scenario, "Scenario :" %>
+        <%= f.range_field :scenario, in:0..100, value:50 %><br>
+        <%= f.label :image, "Image :" %>
+        <%= f.range_field :image, in:0..100, value:50 %><br>
+        <%= f.label :editing, "Editing :" %>
+        <%= f.range_field :editing, in:0..100, value:50 %><br>
+        <%= f.label :sound, "Sound :" %>
+        <%= f.range_field :sound, in:0..100, value:50 %><br>
+        <%= f.label :makeup, "Makeup :" %>
+        <%= f.range_field :makeup, in:0..100, value:50 %><br>
+        <%= f.label :directing, "Directing :" %>
+        <%= f.range_field :directing, in:0..100, value:50 %><br>
+        <i><small>(If you don't have an opinion for a category, don't touch the concerned slide.)</small></i><br>
+        <%= f.submit class:"btn btn-success text-center" %>
+      <% end %>
+    </div>
+  </div>
+</div>

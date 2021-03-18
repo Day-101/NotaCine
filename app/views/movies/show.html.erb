@@ -4,7 +4,7 @@
 
       <div class="row">
         <div class="col-4">
-          <img style="width: 300px;" src="<%= @movie.image_url %>">
+          <%=image_tag @movie.image_url, :class => 'movie-poster' %>
         </div>
         <div class="col-8">
           <p class="display-4"><%= @movie.title %></p>
@@ -12,11 +12,11 @@
           <hr>
           <p class="text-muted"><%= @movie.description %></p>
           <br>
-          <% unless @movie.already_reviewed(current_user) %> 
+          <% unless @movie.already_reviewed(current_user) %>
             <%= link_to new_movie_notation_path(@movie),class: "btn btn-primary" do %>
               Leave a review
               <i class="fas fa-sliders-h"></i>
-            <% end %> 
+            <% end %>
           <% end %>
           <%= link_to "Edit", edit_movie_path(@movie), class:"btn btn-warning" if current_user.rank == 0 %>
 
