@@ -117,3 +117,21 @@ section .section-title {
     font-size: 1.5;
     line-height: 1;
 }
+
+#search-bar-index {
+    text-align: center;
+    margin-top: 10px;
+    color: #e84335!important;
+}
+
+#search-bar-index a {
+    color: #e84335!important;
+}
+
+.btn-transparent-pading {
+    padding-top: 1px !important;
+}
+
+#searchbar-index {
+    border-radius: 0.6rem;
+}
