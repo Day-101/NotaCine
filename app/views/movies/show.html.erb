@@ -18,6 +18,11 @@
                 Leave a review
                 <i class="fas fa-sliders-h"></i>
               <% end %>
+            <% else %>
+              <%= link_to edit_movie_notation_path(@movie,Notation.find_by(movie:@movie, user:current_user)),class: "btn btn-primary" do %>
+                Edit your review
+                <i class="fas fa-sliders-h"></i>
+              <% end %>
             <% end %>
           
             <%= link_to "Edit", edit_movie_path(@movie), class:"btn btn-warning" if current_user.rank == 0 %>
