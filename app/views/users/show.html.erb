@@ -1,6 +1,6 @@
 <div class="container text-white my-4">
   <div class="row">
-    <div class="col mx-auto profile-container">
+    <div class="col mx-auto">
       <div class="row">
         <div class="col-2">
           <% if @user.avatar.attached? %>
@@ -11,33 +11,42 @@
             <%= submit_tag "Update your photo", class:"btn btn-secondary btn-sm" %>
           <% end %>
         </div>
-        <div class="col-10 userinfo-section">
+        <div class="col-10">
           <p class="h2"><strong><%= @user.username %></strong></p>
           <p> <%= button_to "Edit profile", edit_user_registration_path, :method => "get", class: "btn btn-secondary btn-sm" %></p>
         </div>
       </div>
-      <hr>
-      <div class="row">
+      <div class="row movies-reviewed">
         <div class="col-8 mx-auto text-center">
-          <p>Movies viewed : X | Movies reviewed : X</p>
+          <p class="my-4"> Movies reviewed : <%= Notation.where(user_id: @user).count %></p>
         </div>
       </div>
-      <hr>
       <div class="row">
-        <div class="col review-section"><br>
-          <p>Last review (date)</p>
+        <div class="col"><br>
+          <p class="h4" >Last review:</p>
           <div class="row">
             <div class="col-4">
-              <ul>
-                <li>PICTURE</li>
-              </ul>
+              <%=image_tag @lastmovie.image_url, :class => 'movie-poster' %>
             </div>
             <div class="col-4">
-              <p>TITLE</p>
-              <p>DESCRIPTION</p>
+              <p><%= @lastmovie.title %></p>
+              <p><%= @lastmovie.description %></p>
             </div>
-            <div class="col-4">
-              <p>RANGES x6</p>
+            <div class="col-4 text-right pt-5">
+              <%= form_for @lastmovie do |f| %>
+                <%= f.label :title, "Scenario : " %>
+                <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+                <%= f.label :title, "Image : " %>
+                <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+                <%= f.label :title, "Editing : " %>
+                <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+                <%= f.label :title, "Sound : " %>
+                <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+                <%= f.label :title, "Makeup : " %>
+                <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+                <%= f.label :title, "Directing : " %>
+                <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+              <% end %>
             </div>
           </div>
         </div>
