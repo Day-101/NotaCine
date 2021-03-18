@@ -4,7 +4,7 @@ nav .fa-search{font-size: 1.2em;}
 .navbar-nav{margin-right: auto; }
 .navbar-nav li { text-align: center; }
 
-.website-search{
+.navbar input:first-child{
 	border: none;
 	border-radius: 0.6rem;
 	width: 200px;
@@ -13,7 +13,7 @@ nav .fa-search{font-size: 1.2em;}
 	transition: 0.2s;
 }
 /*.website-search:hover{ border: none; border-radius: 1rem; width: 260px; padding: 0; }*/
-.website-search:focus{
+.navbar input:first-child:focus{
 	border: none;
 	border-radius: 0.6rem !important;
 	width: 260px;

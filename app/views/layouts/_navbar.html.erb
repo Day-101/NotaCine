@@ -32,9 +32,9 @@
       <% end %>
       </div>
 
-    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <%= button_tag type: 'button', class: 'navbar-toggler collapsed', data:{toggle: 'collapse', target: '#navbarCollapse'}, aria: {controls: 'navbarCollapse', expanded: 'false', label: 'Toggle navigation'} do %>
       <span class="navbar-toggler-icon"></span>
-    </button>
+    <% end %>
 
     <div class="navbar-collapse collapse" id="navbarCollapse">
       <ul class="navbar-nav">
@@ -56,8 +56,12 @@
       </ul>
 
       <div id="searchbar" class="d-flex align-items-center">
-        <input type="search" class="website-search" placeholder="Find a movie">
-        <button class="btn btn-transparent text-white" type="submit"><i class="fas fa-search"></i></button>
+      <%= form_tag(movies_path, :method => "get") do %>
+        <%= text_field_tag :title, params[:title], placeholder: "Search Movies" %>
+        <%= button_tag(type: "submit", class: "btn btn-transparent text-white") do %>
+            <i class="fas fa-search"></i>
+        <% end %>
+      <% end %>
       </div>
       
     </div>
