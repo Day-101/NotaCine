@@ -3,7 +3,13 @@
     <div class="col mx-auto profile-container">
       <div class="row">
         <div class="col-2">
-          <img src="https://i.goopics.net/ed4gK.png" alt="avatar" style="width:150px;">
+          <% if @user.avatar.attached? %>
+            <%= image_tag @user.avatar, style:"width:150px;", alt: "user avatar" %>
+          <% end %>
+          <%= form_tag user_avatars_path(@user), multipart: true do %>
+            <%= file_field_tag :avatar %>
+            <%= submit_tag "Envoyer", class:"btn btn-secondary" %>
+          <% end %>
         </div>
         <div class="col-10 userinfo-section">
           <p class="h2"><strong><%= @user.username %></strong></p>
