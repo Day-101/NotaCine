@@ -32,3 +32,13 @@ nav .fa-search{font-size: 1.2em;}
 .navbar-brand{flex-grow: 1;}
 .dropdown-signed{flex-grow: 0;}
 }
+
+.brand-img{
+	width: 95px;
+	height: 22px;
+}
+
+.nav-avatar{
+	width:30px;
+	height:30px;
+}
