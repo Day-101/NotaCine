@@ -41,4 +41,5 @@ nav .fa-search{font-size: 1.2em;}
 .nav-avatar{
 	width:30px;
 	height:30px;
+	border-radius: 50%;
 }
