@@ -12,13 +12,16 @@
           <hr>
           <p class="text-muted"><%= @movie.description %></p>
           <br>
-          <% unless @movie.already_reviewed(current_user) %>
-            <%= link_to new_movie_notation_path(@movie),class: "btn btn-primary" do %>
-              Leave a review
-              <i class="fas fa-sliders-h"></i>
+          <% if user_signed_in? %>
+            <% unless @movie.already_reviewed(current_user) %>
+              <%= link_to new_movie_notation_path(@movie),class: "btn btn-primary" do %>
+                Leave a review
+                <i class="fas fa-sliders-h"></i>
+              <% end %>
             <% end %>
+          
+            <%= link_to "Edit", edit_movie_path(@movie), class:"btn btn-warning" if current_user.rank == 0 %>
           <% end %>
-          <%= link_to "Edit", edit_movie_path(@movie), class:"btn btn-warning" if current_user.rank == 0 %>
 
         </div>
       </div><br>
