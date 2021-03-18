@@ -64,7 +64,6 @@
               <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.all_reviews("editing"), :disabled => true %><br>
               <%= f.label :some_size, "Sound" %>
               <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.all_reviews("sound"), :disabled => true %><br>
-              <p class= "text-white"><%= @movie.all_reviews("sound")  %></p>
               <%= f.label :some_size, "Makeup" %>
               <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.all_reviews("makeup"), :disabled => true %><br>
               <%= f.label :some_size, "Directing" %>
