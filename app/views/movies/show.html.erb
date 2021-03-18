@@ -25,38 +25,45 @@
       <div class="row">
         <div class="col-6">
           <p class="h4">NotaCine</p><br>
-          <%= form_for @movie do |f| %>
-            <%= f.label :some_size, "Scenario" %>
-            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
-            <%= f.label :some_size, "Image" %>
-            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
-            <%= f.label :some_size, "Editing" %>
-            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
-            <%= f.label :some_size, "Sound" %>
-            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
-            <%= f.label :some_size, "Makeup" %>
-            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
-            <%= f.label :some_size, "Directing" %>
-            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+          <% unless Notation.find_by(movie:@movie).nil? %>
+            <%= form_for @movie do |f| %>
+              <%= f.label :some_size, "Scenario" %>
+              <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.notacine_reviews("scenario"), :disabled => true  %><br>
+              <%= f.label :some_size, "Image" %>
+              <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.notacine_reviews("image"), :disabled => true %><br>
+              <%= f.label :some_size, "Editing" %>
+              <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.notacine_reviews("editing"), :disabled => true %><br>
+              <%= f.label :some_size, "Sound" %>
+              <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.notacine_reviews("sound"), :disabled => true %><br>
+              <%= f.label :some_size, "Makeup" %>
+              <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.notacine_reviews("makeup"), :disabled => true %><br>
+              <%= f.label :some_size, "Directing" %>
+              <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.notacine_reviews("directing"), :disabled => true %><br>
+            <% end %>
+          <% else %>
+            <p>This movie is not yet reviewed</p>
           <% end %>
         </div>
         <div class="col-6">
           <p class="h4">All watchers</p><br>
-          <%= form_for @movie do |f| %>
-            <%= f.label :some_size, "Scenario" %>
-            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
-            <%= f.label :some_size, "Image" %>
-            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
-            <%= f.label :some_size, "Editing" %>
-            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
-            <%= f.label :some_size, "Sound" %>
-            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
-            <%= f.label :some_size, "Makeup" %>
-            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
-            <%= f.label :some_size, "Directing" %>
-            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+          <% unless Notation.find_by(movie:@movie).nil? %>
+            <%= form_for @movie do |f| %>
+              <%= f.label :some_size, "Scenario" %>
+              <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.all_reviews("scenario"), :disabled => true  %><br>
+              <%= f.label :some_size, "Image" %>
+              <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.all_reviews("image"), :disabled => true %><br>
+              <%= f.label :some_size, "Editing" %>
+              <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.all_reviews("editing"), :disabled => true %><br>
+              <%= f.label :some_size, "Sound" %>
+              <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.all_reviews("sound"), :disabled => true %><br>
+              <%= f.label :some_size, "Makeup" %>
+              <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.all_reviews("makeup"), :disabled => true %><br>
+              <%= f.label :some_size, "Directing" %>
+              <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.all_reviews("directing"), :disabled => true %><br>
+            <% end %>
+          <% else %>
+            <p>This movie is not yet reviewed</p>
           <% end %>
-
         </div>
       </div>
       <hr>

@@ -37,4 +37,38 @@ class Movie < ApplicationRecord
     Notation.find_by(user: user,movie: self).present?
   end
 
+	def notacine_reviews(criteria)
+		reviews = Notation.where(movie:self) 
+		reviews = reviews.select{|review| review.user.rank == 0}
+		criteria_review(reviews, criteria)
+	end
+
+	def all_reviews(criteria)
+		reviews = Notation.where(movie:self) 
+		criteria_review(reviews, criteria)
+	end
+
+	def criteria_review(reviews, criteria)
+		count = 0
+		notation = 0
+		reviews.each do |review|
+
+			case criteria
+				when "scenario"
+					notation += review.scenario
+				when "image"
+					notation += review.image
+				when "editing"
+					notation += review.editing
+				when "sound"
+					notation += review.sound
+				when "makeup"
+					notation += review.makeup
+				when "directing"
+					notation += review.directing
+			end
+			count +=1
+		end
+		return notation/count
+	end
 end
