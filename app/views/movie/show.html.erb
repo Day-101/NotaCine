@@ -13,6 +13,8 @@
           <p class="text-muted"><%= @movie.description %></p>
           <br>
           <button class="btn btn-primary" type="button" name="button">Leave your review <i class="fas fa-sliders-h"></i></button>
+          <%= link_to "Edit", edit_movie_path(@movie), class:"btn btn-warning" if current_user.rank == 0 %>
+          
         </div>
       </div><br>
 
