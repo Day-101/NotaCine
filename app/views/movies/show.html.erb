@@ -14,40 +14,44 @@
           <br>
           <button class="btn btn-primary" type="button" name="button">Leave your review <i class="fas fa-sliders-h"></i></button>
           <%= link_to "Edit", edit_movie_path(@movie), class:"btn btn-warning" if current_user.rank == 0 %>
-          
+
         </div>
       </div><br>
-
       <div class="row">
         <div class="col-6">
           <p class="h4">NotaCine</p><br>
-          <label for="customRange1" class="form-label">Scenario</label>
-          <input type="range" class="form-range" id="customRange1" disabled><br>
-          <label for="customRange1" class="form-label">Image</label>
-          <input type="range" class="form-range" id="customRange1" disabled><br>
-          <label for="customRange1" class="form-label">Editing</label>
-          <input type="range" class="form-range" id="customRange1" disabled><br>
-          <label for="customRange1" class="form-label">Sound</label>
-          <input type="range" class="form-range" id="customRange1" disabled><br>
-          <label for="customRange1" class="form-label">Makeup</label>
-          <input type="range" class="form-range" id="customRange1" disabled><br>
-          <label for="customRange1" class="form-label">Directing</label>
-          <input type="range" class="form-range" id="customRange1" disabled><br>
+          <%= form_for @movie do |f| %>
+            <%= f.label :some_size, "Scenario" %>
+            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+            <%= f.label :some_size, "Image" %>
+            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+            <%= f.label :some_size, "Editing" %>
+            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+            <%= f.label :some_size, "Sound" %>
+            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+            <%= f.label :some_size, "Makeup" %>
+            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+            <%= f.label :some_size, "Directing" %>
+            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+          <% end %>
         </div>
         <div class="col-6">
           <p class="h4">All watchers</p><br>
-          <label for="customRange1" class="form-label">Scenario</label>
-          <input type="range" class="form-range" id="customRange1" disabled><br>
-          <label for="customRange1" class="form-label">Image</label>
-          <input type="range" class="form-range" id="customRange1" disabled><br>
-          <label for="customRange1" class="form-label">Editing</label>
-          <input type="range" class="form-range" id="customRange1" disabled><br>
-          <label for="customRange1" class="form-label">Sound</label>
-          <input type="range" class="form-range" id="customRange1" disabled><br>
-          <label for="customRange1" class="form-label">Makeup</label>
-          <input type="range" class="form-range" id="customRange1" disabled><br>
-          <label for="customRange1" class="form-label">Directing</label>
-          <input type="range" class="form-range" id="customRange1" disabled><br>
+          <%= form_for @movie do |f| %>
+            <%= f.label :some_size, "Scenario" %>
+            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+            <%= f.label :some_size, "Image" %>
+            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+            <%= f.label :some_size, "Editing" %>
+            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+            <%= f.label :some_size, "Sound" %>
+            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+            <%= f.label :some_size, "Makeup" %>
+            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+            <%= f.label :some_size, "Directing" %>
+            <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+          <% end %>
+
         </div>
       </div>
       <hr>
