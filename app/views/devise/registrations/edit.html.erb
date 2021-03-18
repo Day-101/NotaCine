@@ -1,4 +1,4 @@
-<div class="container text-white">
+<div class="container">
   <div class="row">
     <div class="col-6 mx-auto" id="edit-profil">
       <h2>Edit your profile</h2>
@@ -34,12 +34,12 @@
           <small><i class="fas fa-check-circle"></i><i> we need your current password to confirm your changes</i></small>
         </div><br>
         <div class="actions">
-          <%= f.submit "Update", :class => 'btn btn-primary'  %>
+          <%= f.submit "Update", :class => 'btn btn-info'  %>
         </div>
       <% end %><br>
       <hr>
       <h3>Cancel my account</h3>
-      <p>Are you absolutely sure you want to delete your account? Please note that there is <strong>no option to restore the account</strong> or its data once it is deleted.<%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure ? :(" }, method: :delete, :class => 'btn btn-danger' %></p>
+      <p>Are you absolutely sure you want to delete your account? Please note that there is <strong>no option to restore the account</strong> or its data once it is deleted.<%= button_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure ? :(" }, method: :delete, :class => 'btn btn-primary btn-sm' %></p>
       <i class="fas fa-chevron-left"></i><%= link_to " Back", :back %>
     </div>
   </div>
