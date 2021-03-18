@@ -132,6 +132,13 @@ section .section-title {
     padding-top: 1px !important;
 }
 
-#searchbar-index {
-    border-radius: 0.6rem;
+#search-bar-border input {
+    border-radius: 0.6rem !important;
+    border: none;
+    padding-left: 16px;
+    width: 300px;
+}
+
+#search-bar-border {
+    padding-top: 10px;
 }
