@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'statics/team'
   get 'statics/contact'
   get 'statics/privacy'
+  get 'statics/how'
 
 
 
