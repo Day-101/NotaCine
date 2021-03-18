@@ -2,6 +2,8 @@
   margin-top: 50px;
   margin-bottom: 50px;
   padding:25px 20px 20px 20px;
+  background-color: #F3F3F3;
+  border-radius: 0.3em;
 }
 
 #login-card {
@@ -31,8 +33,9 @@
 
 #edit-profil {
   border: solid 1px;
-  border-radius: 20px;
+  border-radius: 0.3em;
   border-color: #292c32;
   margin: 10px;
   padding: 20px;
+  background-color: #F3F3F3;
 }
