@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :movie
-  resources :users, only: [:show]
-  root to: 'movie#index'
+  resources :movies
+  resources :users, only: [:show] do
+  	resources :avatars, only: [:create]
+  end
+  root to: 'movies#index'
   get 'statics/team'
   get 'statics/contact'
   get 'statics/privacy'

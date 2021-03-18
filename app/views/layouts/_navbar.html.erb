@@ -8,8 +8,7 @@
         <div class="btn-group dropdown-login dropdown-signed d-flex align-items-center">
           <%= link_to user_path(current_user), class:"" do %>
 
-            <!-- Changer image_path par avatar user -->
-            <%= image_tag image_path("avatar-default.png"), class:"nav-avatar" %>
+            <%= image_tag current_user.avatar, class:"nav-avatar", alt: "user avatar"%>
           
           <% end %>
           <button type="button" class="btn btn-transparent text-white dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
