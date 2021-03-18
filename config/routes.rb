@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :movies
+  resources :movies do
+    resources :notations, only: [:new, :create]
+  end
   resources :users, only: [:show] do
   	resources :avatars, only: [:create]
   end
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   get 'statics/team'
   get 'statics/contact'
   get 'statics/privacy'
+  get 'statics/how'
 
 
 

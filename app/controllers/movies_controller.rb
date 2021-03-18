@@ -20,6 +20,7 @@ class MoviesController < ApplicationController
 
 	def edit
 		@movie = Movie.find(params[:id])
+
 	end
 
 	def update
@@ -31,6 +32,7 @@ class MoviesController < ApplicationController
 		else
 			render :edit
 		end
+
 	end
 
 	def destroy
@@ -38,6 +40,8 @@ class MoviesController < ApplicationController
 		@movie.destroy
 		flash.notice = "Movie successfully deleted"
 		redirect_to root_path
+	
+
 	end
 
 #=======================================================================================================================

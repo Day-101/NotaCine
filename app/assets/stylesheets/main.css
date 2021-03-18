@@ -1,3 +1,6 @@
+html {
+	height: 100%;
+}
 body{
 	font-family: 'Sen',
 	sans-serif;
@@ -22,8 +25,6 @@ nav li a{
   border-radius: 1rem!important;
 }
 
-
-
 .btn-primary {
 	color: #fff;
   background-color: #e84335 !important;
@@ -35,7 +36,6 @@ nav li a{
   background-color: #cc3b2f !important;
   border-color: #cc3b2f !important;
 }
-
 .bg-dark{ background-color:#202327 !important; }
 
 .dropdown-menu{background-color: #353a40 !important;}
