@@ -7,27 +7,34 @@
 					<div class="mainflip">
 						<div class="frontside">
 							<div class="card">
-								<div class="card-body text-center" id="remove-padding-boostrap">
-									<img src="<%= movies.image_url %>">
+								<div class="card-body" id="poster">
+									<%= image_tag movies.image_url, alt: movies.title %>
 								</div>
 							</div>
 						</div>
+						<%= link_to movie_path(movies.id) do %>
 						<div class="backside">
 							<div class="card">
-								<div class="card-body text-center mt-4">
-									<h4 class="card-title"><%= movies.title %></h4>
-									<ul class="p-0">
-										<li>range bar scenario</li>
-										<li>range bar image</li>
-										<li>range bar editing</li>
-										<li>range bar sound</li>
-										<li>range bar makeup</li>
-										<li>range bar directing</li>
-									</ul>
-									<%= link_to "show", movie_path(movies.id) %>
+								<h4 class="card-title text-center"><%= movies.title %></h4>
+								<div class="card-body text-center" id="returned-card">
+									<%= form_for movies do |f| %>
+										<%= f.label :some_size, "Scenario" %>
+										<%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %>
+										<%= f.label :some_size, "Image" %>
+										<%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %>
+										<%= f.label :some_size, "Editing" %>
+										<%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %>
+										<%= f.label :some_size, "Sound" %>
+										<%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %>
+										<%= f.label :some_size, "Makeup" %>
+										<%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %>
+										<%= f.label :some_size, "Directing" %>
+										<%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %>
+									<% end %>
                 </div>
             	</div>
             </div>
+						<% end %>
           </div>
         </div>
       </div>
