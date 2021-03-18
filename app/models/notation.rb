@@ -5,7 +5,7 @@ class Notation < ApplicationRecord
   validates :sound, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 100}, presence: true
   validates :makeup, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 100}, presence: true
   validates :directing, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 100}, presence: true
-  validate :error_if_already_reviewed
+  validate :error_if_already_reviewed, on: :create
   
   belongs_to :user
   belongs_to :movie

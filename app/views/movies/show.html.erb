@@ -18,6 +18,11 @@
                 Leave a review
                 <i class="fas fa-sliders-h"></i>
               <% end %>
+            <% else %>
+              <%= link_to edit_movie_notation_path(@movie,Notation.find_by(movie:@movie, user:current_user)),class: "btn btn-primary" do %>
+                Edit your review
+                <i class="fas fa-sliders-h"></i>
+              <% end %>
             <% end %>
           
             <%= link_to "Edit", edit_movie_path(@movie), class:"btn btn-warning" if current_user.rank == 0 %>
@@ -59,6 +64,7 @@
               <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.all_reviews("editing"), :disabled => true %><br>
               <%= f.label :some_size, "Sound" %>
               <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.all_reviews("sound"), :disabled => true %><br>
+              <p class= "text-white"><%= @movie.all_reviews("sound")  %></p>
               <%= f.label :some_size, "Makeup" %>
               <%= f.range_field :title, :in => 0..100, :step => 1, value:@movie.all_reviews("makeup"), :disabled => true %><br>
               <%= f.label :some_size, "Directing" %>
