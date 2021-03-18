@@ -40,6 +40,15 @@ class Movie < ApplicationRecord
 	def notacine_reviews(criteria)
 		reviews = Notation.where(movie:self) 
 		reviews = reviews.select{|review| review.user.rank == 0}
+		criteria_review(reviews, criteria)
+	end
+
+	def all_reviews(criteria)
+		reviews = Notation.where(movie:self) 
+		criteria_review(reviews, criteria)
+	end
+
+	def criteria_review(reviews, criteria)
 		count = 0
 		notation = 0
 		reviews.each do |review|
@@ -62,5 +71,4 @@ class Movie < ApplicationRecord
 		end
 		return notation/count
 	end
-
 end
