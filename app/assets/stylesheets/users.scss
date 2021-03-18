@@ -11,13 +11,14 @@
   padding: 50px;
 }
 
-.review-secion {
+.review-section {
   border: solid 2px;
   border-color: rgb(28, 251, 233);
 }
 
-.comments-section {
-  border: solid 2px;
-  border-color: rgb(124, 37, 150);
-  padding: 50px;
+.image-shape {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }

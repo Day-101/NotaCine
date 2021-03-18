@@ -4,11 +4,11 @@
       <div class="row">
         <div class="col-2">
           <% if @user.avatar.attached? %>
-            <%= image_tag @user.avatar, style:"width:150px;", alt: "user avatar" %>
+            <%= image_tag @user.avatar, alt: "user avatar", class: "image-shape" %>
           <% end %>
           <%= form_tag user_avatars_path(@user), multipart: true do %>
             <%= file_field_tag :avatar %>
-            <%= submit_tag "Envoyer", class:"btn btn-secondary" %>
+            <%= submit_tag "Update your photo", class:"btn btn-secondary btn-sm" %>
           <% end %>
         </div>
         <div class="col-10 userinfo-section">
@@ -18,24 +18,28 @@
       </div>
       <hr>
       <div class="row">
-        <div class="col review-secion">
-          <p>Last reviews</p>
+        <div class="col-8 mx-auto text-center">
+          <p>Movies viewed : X | Movies reviewed : X</p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col review-section"><br>
+          <p>Last review (date)</p>
           <div class="row">
             <div class="col-4">
               <ul>
-                <li><a href="#">TITLE</a></li>
+                <li>PICTURE</li>
               </ul>
             </div>
-            <div class="col-8">
+            <div class="col-4">
               <p>TITLE</p>
-              <p>PICTURE</p>
+              <p>DESCRIPTION</p>
+            </div>
+            <div class="col-4">
+              <p>RANGES x6</p>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col comments-section">
-          <p>Last comments</p>
         </div>
       </div>
     </div>
