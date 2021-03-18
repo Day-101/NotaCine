@@ -16,7 +16,7 @@
           <p> <%= button_to "Edit profile", edit_user_registration_path, :method => "get", class: "btn btn-secondary btn-sm" %></p>
         </div>
       </div>
-      <div class="row movies-reviewed">
+      <div class="row movies-review">
         <div class="col-8 mx-auto text-center">
           <p class="my-4"> Movies reviewed : <%= Notation.where(user_id: @user).count %></p>
         </div>
