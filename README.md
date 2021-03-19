@@ -19,10 +19,15 @@
 ***
 ### The review system
 -The review system might look weird at first, but it has been made this way to suit you better. You will soon be able to understand and use it to find your next favorite movie. 
+
 -On a movie page, you will see a lot of cursors which will give you the average rating on the website for each one of them.
+
 -Each slider will indincate, on this criteria, if the movie you're looking at is ahead (or behind) of the industry’s standards.
+
 -A bad review on one criteria doesn't means that you will not like that movie.
+
 -A great review however doesn't means that you will like it either.
+
 ***
 ### A few more things to say
 
