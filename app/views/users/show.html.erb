@@ -6,14 +6,19 @@
           <% if @user.avatar.attached? %>
             <%= image_tag @user.avatar, alt: "user avatar", class: "image-shape" %>
           <% end %>
-          <%= form_tag user_avatars_path(@user), multipart: true do %>
-            <%= file_field_tag :avatar %>
-            <%= submit_tag "Update your photo", class:"btn btn-secondary btn-sm" %>
+          <% if current_user == @user %>
+            <%= form_tag user_avatars_path(@user), multipart: true do %>
+              <%= file_field_tag :avatar %>
+              <%= submit_tag "Update your photo", class:"btn btn-secondary btn-sm" %>
+            <% end %>
           <% end %>
+
         </div>
         <div class="col-10">
           <p class="h2"><strong><%= @user.username %></strong></p>
-          <p> <%= button_to "Edit profile", edit_user_registration_path, :method => "get", class: "btn btn-secondary btn-sm" %></p>
+          <% if current_user == @user %>
+            <p> <%= button_to "Edit profile", edit_user_registration_path, :method => "get", class: "btn btn-secondary btn-sm" %></p>
+          <% end %>
         </div>
       </div>
       <div class="row movies-review">

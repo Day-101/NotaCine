@@ -73,3 +73,5 @@ gem "open-uri"
 
 gem "json"
 
+gem "mini_magick"
+

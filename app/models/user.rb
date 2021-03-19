@@ -16,6 +16,16 @@ class User < ApplicationRecord
     file = URI.open("https://notacine-dvpt.herokuapp.com" + ActionController::Base.helpers.image_path("avatar-default.png").to_s)
     self.avatar.attach(io: file,filename:"default_profile_picture")
   end
+
+  def scale_avatar
+    resized_image = MiniMagick::Image.read(avatar.download)
+    resized_image.resize("300x300")
+
+    avatar.attach(
+      io: File.open(resized_image.path),
+      filename: avatar.filename,
+      content_type: avatar.content_type)
+  end
   
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
