@@ -6,9 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @notation = Notation.where(user_id: @user).last
-    @movie = Notation.where(user_id: @user).last.movie_id
-    @lastmovie = Movie.find(@movie)
+    @notations = Notation.where(user_id: @user)
   end
 
   private

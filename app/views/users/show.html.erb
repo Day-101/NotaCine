@@ -18,37 +18,39 @@
       </div>
       <div class="row movies-review">
         <div class="col-8 mx-auto text-center">
-          <p class="my-4"> Movies reviewed : <%= Notation.where(user_id: @user).count %></p>
+          <p class="my-4"> Movies reviewed : <%= @notations.count %></p>
         </div>
       </div>
       <div class="row">
         <div class="col"><br>
-          <p class="h4" >Last review:</p>
+          <p class="h4" >Last reviews:</p>
+          <% @notations.each do |notation| %>
           <div class="row">
             <div class="col-4">
-              <%=image_tag @lastmovie.image_url, :class => 'movie-poster' %>
+              <%=image_tag notation.movie.image_url, :class => 'movie-poster' %>
             </div>
             <div class="col-4">
-              <p><%= @lastmovie.title %></p>
-              <p><%= @lastmovie.description %></p>
+              <p><%= notation.movie.title %></p>
+              <p><%= notation.movie.description %></p>
             </div>
             <div class="col-4 text-right pt-5">
-              <%= form_for @lastmovie do |f| %>
-                <%= f.label :title, "Scenario : " %>
-                <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
-                <%= f.label :title, "Image : " %>
-                <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
-                <%= f.label :title, "Editing : " %>
-                <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
-                <%= f.label :title, "Sound : " %>
-                <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
-                <%= f.label :title, "Makeup : " %>
-                <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
-                <%= f.label :title, "Directing : " %>
-                <%= f.range_field :title, :in => 0..100, :step => 1, :disabled => true %><br>
+              <%= form_with do |f| %>
+                <%= f.label :scenario, "Scenario" %>
+                <%= f.range_field :scenario, :in => 0..100, :step => 1, value:notation.criteria_review("scenario"), :disabled => true  %><br>
+                <%= f.label :image, "Image" %>
+                <%= f.range_field :image, :in => 0..100, :step => 1, value:notation.criteria_review("image"), :disabled => true %><br>
+                <%= f.label :editing, "Editing" %>
+                <%= f.range_field :editing, :in => 0..100, :step => 1, value:notation.criteria_review("editing"), :disabled => true %><br>
+                <%= f.label :sound, "Sound" %>
+                <%= f.range_field :sound, :in => 0..100, :step => 1, value:notation.criteria_review("sound"), :disabled => true %><br>
+                <%= f.label :makeup, "Makeup" %>
+                <%= f.range_field :makeup, :in => 0..100, :step => 1, value:notation.criteria_review("makeup"), :disabled => true %><br>
+                <%= f.label :directing, "Directing" %>
+                <%= f.range_field :directing, :in => 0..100, :step => 1, value:notation.criteria_review("directing"), :disabled => true %><br>
               <% end %>
             </div>
-          </div>
+          </div><br>
+          <% end %>
         </div>
       </div>
     </div>
