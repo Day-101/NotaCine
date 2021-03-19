@@ -16,7 +16,7 @@
   <div class="container" id="text-coloring">
 	<h3>Last added</h3>
     <div class="row">
-		<% Movie.all[1..0].each do |movies| %>
+		<% Movie.last_four do |movies| %>
 			<div class="col-xs-12 col-sm-6 col-md-3">
 				<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
 					<div class="mainflip">
@@ -32,7 +32,7 @@
 							<div class="card">
 								<h4 class="card-title text-center"><%= movies.title %></h4>
 								<div class="card-body text-center" id="returned-card">
-									<% unless Notation.find_by(movie:@movies).nil? %>
+									<% if movies.reviewed_by_admin %>
 										<%= form_for movies do |f| %>
 											<%= f.label :scenario, "Scenario" %>
 											<%= f.range_field :scenario, :in => 0..100, :step => 1, value:movies.all_reviews("scenario"), :disabled => true  %>
