@@ -12,7 +12,6 @@
               <%= submit_tag "Update your photo", class:"btn btn-secondary btn-sm" %>
             <% end %>
           <% end %>
-
         </div>
         <div class="col-10">
           <p class="h2"><strong><%= @user.username %></strong></p>
@@ -38,7 +37,7 @@
               <p><%= notation.movie.title %></p>
               <p><%= notation.movie.description %></p>
             </div>
-            <div class="col-4 text-right pt-5">
+            <div class="col-4 text-right pt-5 user-rate text-center">
               <%= form_with do |f| %>
                 <%= f.label :scenario, "Scenario" %>
                 <%= f.range_field :scenario, :in => 0..100, :step => 1, value:notation.criteria_review("scenario"), :disabled => true  %><br>
