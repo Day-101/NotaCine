@@ -8,6 +8,8 @@
  >When reviewing movies, ratings are something that you should take pretty seriously. However, we think that the regular way of using a *number* to rate a movie is bisased. That is why we came up with **NotaCine**, a website unlike the hundreds of 
  other services reviewing movies. 
  ***
+ ### > The Idea
+ 
  The idea is simple: Rather than giving arbitrary notations, the reviewer will compare 6 points with the industry standards:
  * **The Scenario:** the quality of the story.
  * **Image:** the visuals, including special effects.
@@ -17,7 +19,7 @@
  * **Directing:** how the actors have been directed in that movie
 
 ***
-### The review system
+### > The review system
 -The review system might look weird at first, but it has been made this way to suit you better. You will soon be able to understand and use it to find your next favorite movie. 
 
 -On a movie page, you will see a lot of cursors which will give you the average rating on the website for each one of them.
@@ -29,7 +31,7 @@
 -A great review however doesn't means that you will like it either.
 
 ***
-### A few more things to say
+### > A few more things to say
 
 * Find the one (or the few) criterias that matters the most to you, and filter the website to your taste through the search functionnality.
 * You can access your own profile to change your informations or profile picture, and you can also visit other's to see their past reviews. (Maybe you'll find some nice reviewers !)
