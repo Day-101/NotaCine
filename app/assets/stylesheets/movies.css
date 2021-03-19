@@ -10,7 +10,7 @@ section .section-title {
     text-transform: uppercase;
 }
 
-#last-added, #last-notati, #movies .card p {
+#last-added .card p, #last-notati .card p, #movies .card p {
     border: none;
     padding-left: 0px;
     padding-top: 100px;
@@ -88,8 +88,6 @@ section .section-title {
 
 .frontside .card,
 .backside .card {
-    width: 265px !important;
-    height: 369px !important;
     text-align: center;
     border: none;
 }
@@ -97,6 +95,8 @@ section .section-title {
 .backside .card {
     font-size: 18px;
     color: #e84335 !important;
+    width: 265px !important;
+    height: 415px !important;
 }
 
 .frontside .card .card-title,
@@ -118,8 +118,8 @@ section .section-title {
 #returned-card {
     font-size: 1.5;
     line-height: 1;
-    padding-top: 1px;
-    padding-bottom: 1px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #search-bar-index {

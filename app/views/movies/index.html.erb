@@ -16,7 +16,7 @@
   <div class="container" id="text-coloring">
 	<h3>Last added</h3>
     <div class="row">
-		<% Movie.last_four do |movies| %>
+		<% Movie.last_four.each do |movies| %>
 			<div class="col-xs-12 col-sm-6 col-md-3">
 				<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
 					<div class="mainflip">
@@ -27,7 +27,6 @@
 								</div>
 							</div>
 						</div>
-						<%= link_to movie_path(movies.id) do %>
 						<div class="backside">
 							<div class="card">
 								<h4 class="card-title text-center"><%= movies.title %></h4>
@@ -50,10 +49,10 @@
 									<% else %>
 										<p>This movie is not yet reviewed</p>
 									<% end %>
+									<%= button_to "Show me this movie", movie_path(movies.id), :class => "btn btn-primary btn-sm" %>
                 </div>
             	</div>
             </div>
-						<% end %>
           </div>
         </div>
       </div>
@@ -67,7 +66,7 @@
   <div class="container" id="text-coloring">
 	<h3>Last notation</h3>
     <div class="row">
-		<% @movies.each do |movies| %>
+		<% Movie.last_four.each do |movies| %>
 			<% if movies.reviewed_by_admin %>
 				<div class="col-xs-12 col-sm-6 col-md-3">
 					<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
@@ -79,7 +78,6 @@
 									</div>
 								</div>
 							</div>
-							<%= link_to movie_path(movies.id) do %>
 							<div class="backside">
 								<div class="card">
 									<h4 class="card-title text-center"><%= movies.title %></h4>
@@ -102,10 +100,10 @@
 										<% else %>
 											<p>This movie is not yet reviewed</p>
 										<% end %>
+										<%= button_to "Show me this movie", movie_path(movies.id), :class => "btn btn-primary btn-sm" %>
 									</div>
 								</div>
 							</div>
-							<% end %>
 						</div>
 					</div>
 				</div>
@@ -131,7 +129,6 @@
 								</div>
 							</div>
 						</div>
-						<%= link_to movie_path(movies.id) do %>
 						<div class="backside">
 							<div class="card">
 								<h4 class="card-title text-center"><%= movies.title %></h4>
@@ -154,10 +151,10 @@
 									<% else %>
 										<p>This movie is not yet reviewed</p>
 									<% end %>
+									<%= button_to "Show me this movie", movie_path(movies.id), :class => "btn btn-primary btn-sm" %>
                 </div>
             	</div>
             </div>
-						<% end %>
           </div>
         </div>
       </div>
