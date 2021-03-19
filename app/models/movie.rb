@@ -78,4 +78,12 @@ class Movie < ApplicationRecord
 		return reviewed
 	end
 
+	def self.last_four
+		if Movie.all.size >= 4
+			return Movie.all.drop(Movie.all.size - 4)
+		else
+			return Movie.all 
+		end
+	end
+
 end
