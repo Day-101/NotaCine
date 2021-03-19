@@ -11,20 +11,19 @@
           <p class="h4 text-muted">Directed by <%= @movie.director %></p>
           <hr>
           <p class="text-muted"><strong>Plot: </strong><%= @movie.description %></p>
-          <br>
           <% if user_signed_in? %>
             <% unless @movie.already_reviewed(current_user) %>
-              <%= link_to new_movie_notation_path(@movie),class: "btn btn-primary" do %>
+              <%= button_to new_movie_notation_path(@movie), :method => "get",class: "btn btn-primary" do %>
                 Leave a review
                 <i class="fas fa-sliders-h"></i>
               <% end %>
             <% else %>
-              <%= link_to edit_movie_notation_path(@movie,Notation.find_by(movie:@movie, user:current_user)),class: "btn btn-primary" do %>
+              <%= button_to edit_movie_notation_path(@movie,Notation.find_by(movie:@movie, user:current_user)), :method => "get",class: "btn btn-primary" do %>
                 Edit your review
                 <i class="fas fa-sliders-h"></i>
               <% end %>
             <% end %>
-            <%= link_to "Edit", edit_movie_path(@movie), class:"btn btn-warning" if current_user.rank == 0 %>
+            <%= button_to "Edit", edit_movie_path(@movie), :method => "get", class:"btn btn-warning" if current_user.rank == 0 %>
           <% end %>
         </div>
       </div><br>
