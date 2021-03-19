@@ -33,4 +33,19 @@ class Notation < ApplicationRecord
     return notation
   end
 
+  def self.last_four
+    notations = []
+    movies = []
+
+    User.where(rank: 0).each {|user|notations << Notation.where(user: user)}
+    notations = notations.flatten.sort_by {|obj| obj.updated_at}
+    notations.each {|notation| movies << notation.movie}
+    movies.uniq!
+
+    if movies.size >= 4
+			return movies.drop(movies.size - 4)
+		else
+			return movies 
+		end
+  end
 end
