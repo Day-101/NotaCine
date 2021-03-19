@@ -7,7 +7,9 @@
         </div>
         <div class="col-8">
           <p class="h1"><%= @movie.title %><span class="text-muted"> (<%= @movie.year %>)</span></p>
-          <p class="badge badge-secondary badge-pill">category1</p> <p class="badge badge-secondary badge-pill">category2</p>
+          <% @movie.genres.each do |category| %>
+            <p class="badge badge-secondary badge-pill"><%= category.title %></p>
+          <% end %>
           <p class="h4 text-muted">Directed by <%= @movie.director %></p>
           <hr>
           <p class="text-muted"><strong>Plot: </strong><%= @movie.description %></p>

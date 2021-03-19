@@ -34,10 +34,10 @@
               <%=image_tag notation.movie.image_url, :class => 'movie-poster' %>
             </div>
             <div class="col-4">
-              <p><%= notation.movie.title %></p>
+              <%= link_to notation.movie.title, movie_path(notation.movie.id), :class => "h3 text-white" %>
               <p><%= notation.movie.description %></p>
             </div>
-            <div class="col-4 text-right pt-5 user-rate text-center">
+            <div class="col-4 text-right pt-3 user-rate text-center">
               <%= form_with do |f| %>
                 <%= f.label :scenario, "Scenario" %>
                 <%= f.range_field :scenario, :in => 0..100, :step => 1, value:notation.criteria_review("scenario"), :disabled => true  %><br>
