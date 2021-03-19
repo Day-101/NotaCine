@@ -4,18 +4,18 @@
 .pt-100 {
 	padding-top: 100px;
 }
-.section-title {
+.section-team-title {
 	margin-bottom: 110px;
 	position: relative;
 }
-.section-title h3 {
+.section-team-title h3 {
 	text-transform: uppercase;
 	font-weight: 800;
 	font-size: 30px;
     color: #fff;
 }
 
-.section-title:before {
+.section-team-title:before {
 	position: absolute;
 	content: "";
 	width: 110px;
@@ -26,7 +26,7 @@
 	        transform: translate(-50%, -50%) rotate(90deg);
 	top: 50%;
 }
-.section-title:after {
+.section-team-title:after {
 	position: absolute;
 	content: "";
 	width: 80px;
@@ -37,18 +37,18 @@
 	        transform: translateX(-50%);
 	bottom: -20px;
 }
-.section-title h3 span {
+.section-team-title h3 span {
 	display: block;
 	font-size: 15px;
 	text-transform: lowercase;
 	font-weight: 400;
 	margin-bottom: 10px;
 }
-.section-title p {
+.section-team-title p {
 	margin-top: 5px;
     color: #fff;
 }
-.team-hover {
+.team-content {
 	text-align: center;
 	position: absolute;
 	left: 0;
@@ -57,41 +57,36 @@
 	height: 100%;
 	z-index: 2;
 	color: #fff;
-	visibility: hidden;
-	opacity: 0;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	-webkit-transition: .5s;
-	transition: .5s
+	margin-top: 150px;
 }
 
-.single-team img {
-	width: 100%;
-}
-
-.team-hover h4 {
+.team-content h4 {
 	text-transform: capitalize;
 	font-size: 17px;
-	font-weight: 600;
 }
 
-.team-hover h4 span {
+.team-content h4 span {
 	display: block;
 	font-size: 13px;
 	font-weight: 400;
+	background-color: #e84335;
 	margin-top: 5px;
+	margin-left: 35px;
+	margin-right: 35px;
+	border-radius: 40px;
 }
 
-.team-hover ul {
+.team-content ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-.team-hover ul li {
+.team-content ul li {
 	display: inline-block;
 }
 
-.team-hover ul li {
+.team-content ul li {
 	background-color: #e84335;
 	width: 25px;
 	height: 25px;
@@ -100,48 +95,13 @@
 	text-align: center
 }
 
-.team-hover ul li a {
+.team-content ul li a {
 	color: #fff;
 	font-size: 13px;
 	display: block;
 }
-.single-team {
-	position: relative;
-	z-index: 2;
-}
 
-.team-content {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
-}
-
-.team-hover:before {
-	position: absolute;
-	content: "";
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background-color: #e84335;
-	z-index: -1;
-	opacity: .85;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=85)";
-}
-
-.single-team:hover .team-hover {
-	visibility: visible;
-	opacity: 1;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-}
-
-#not-hovered{
-    text-align: center;
-    position: relative;
-    padding: -15px;
-    color: #fff;
-	opacity: 1;
-
+.team-content a {
+  display: inline-block;
+  color: #e84335;
 }
