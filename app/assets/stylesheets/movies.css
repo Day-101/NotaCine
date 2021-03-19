@@ -95,8 +95,8 @@ section .section-title {
 .backside .card {
     font-size: 18px;
     color: #e84335 !important;
-    width: 265px !important;
-    height: 415px !important;
+    width: 270px !important;
+    height: 480px !important;
 }
 
 .frontside .card .card-title,
@@ -106,8 +106,8 @@ section .section-title {
 }
 
 .frontside .card .card-body img {
-    width: 265px !important;
-    height: 369px !important;
+    width: 270px !important;
+    height: 470px !important;
     border: none;
 }
 
