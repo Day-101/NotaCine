@@ -6,6 +6,7 @@ class Movie < ApplicationRecord
   attribute :actors, default: "Unknown"
   attribute :image_url, default: "https://m.media-amazon.com/images/M/MV5BODA4NTk3MTQwN15BMl5BanBnXkFtZTcwNjUwMTMxNA@@._V1_Ratio0.6791_AL_.jpg"
 
+	has_many :comments, dependent: :destroy
   has_many :notations, dependent: :destroy
   has_many :movie_genres, dependent: :destroy
   has_many :genres, through: :movie_genres

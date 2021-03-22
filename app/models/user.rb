@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :rank, presence: true
   validates :username,length:{in:3..16}, uniqueness: true, presence: true
 
+  has_many :comments, dependent: :destroy
   has_many :notations, dependent: :destroy
   has_one_attached :avatar
 
