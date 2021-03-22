@@ -9,15 +9,6 @@ section .section-title {
     text-transform: uppercase;
 }
 
-.image-flip:hover {
-    z-index: 1;
-}
-
-.image-flip:hover .mainflip {
-    width: 175%;
-    transition: 1s;
-}
-
 .image-flip:hover .backside,
 .image-flip.hover .backside {
     -webkit-transform: rotateY(0deg);
@@ -53,7 +44,6 @@ section .section-title {
     position: relative;
     -webkit-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
-    z-index: 2;
     margin-bottom: 0px;
     padding: 0px;
 }
@@ -62,7 +52,7 @@ section .section-title {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 0;
     background:rgb(65, 65, 65);
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
@@ -71,7 +61,8 @@ section .section-title {
     transform: rotateY(-180deg);
 }
 
-.frontside, .backside {
+.frontside,
+.backside {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
@@ -93,7 +84,6 @@ section .section-title {
     text-align: center;
     border: none;
     background:rgb(65, 65, 65);
-
 }
 
 .backside .card {
@@ -109,8 +99,8 @@ section .section-title {
 }
 
 .frontside .card .card-body img {
-    width: 203px !important;
-    height: 300px !important;
+    width: 255px !important;
+    height: 400px !important;
     border: none;
 }
 
@@ -155,12 +145,12 @@ section .section-title {
     font-size: 1.5em;
 }
 
-.card-movies-index d-flex {
+.card-movies-index .d-flex {
     display: -ms-flexbox !important;
     display: flex !important;
 }
 
-.card-movie-logo {
+.card-movies-logo {
     height: 30px;
 }
 
@@ -196,17 +186,14 @@ section .section-title {
     margin: 0 2em;
 }
 
-.card-movies-index btn-outline-primary {
-    width: 80px;
-    height: 21px;
+.margin_movie:hover {
+    z-index: 1;
+    margin-right: 100px;
+    margin-bottom: 130px;
 }
 
-.margin_movie {
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.d-grid {
-    display: grid;
-    grid-gap: 1em;
+.card-movies-index .btn-outline-primary {
+    color: #e84335 !important;
+    border-color: #e84335 !important;
+    background-color: transparent !important;
 }
