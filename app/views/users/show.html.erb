@@ -1,3 +1,4 @@
+<%= javascript_pack_tag 'users' %>
 <div class="container text-white my-4">
   <div class="row">
     <div class="col mx-auto">
@@ -8,8 +9,8 @@
           <% end %>
           <% if current_user == @user %>
             <%= form_tag user_avatars_path(@user), multipart: true do %>
-              <%= file_field_tag :avatar %>
-              <%= submit_tag "Update your photo", class:"btn btn-secondary btn-sm" %>
+                <%= file_field_tag :avatar, class: "clickable-pp" %>
+                <div class="avatar-effect"></div>
             <% end %>
           <% end %>
         </div>
@@ -53,10 +54,10 @@
                 <%= f.range_field :directing, :in => 0..100, :step => 1, value:notation.criteria_review("directing"), :disabled => true %><br>
               <% end %>
             </div>
-          </div><br>
+          </div>
+          <hr>
           <% end %>
         </div>
       </div>
-    </div>
   </div>
 </div>

@@ -6,6 +6,7 @@ class Movie < ApplicationRecord
   attribute :actors, default: "Unknown"
   attribute :image_url, default: "https://m.media-amazon.com/images/M/MV5BODA4NTk3MTQwN15BMl5BanBnXkFtZTcwNjUwMTMxNA@@._V1_Ratio0.6791_AL_.jpg"
 
+	has_many :comments, dependent: :destroy
   has_many :notations, dependent: :destroy
   has_many :movie_genres, dependent: :destroy
   has_many :genres, through: :movie_genres
@@ -69,7 +70,11 @@ class Movie < ApplicationRecord
 			end
 			count +=1
 		end
-		return notation/count
+		if count == 0
+			return 0
+		else
+			return notation/count
+		end
 	end
 
 	def reviewed_by_admin
@@ -86,4 +91,55 @@ class Movie < ApplicationRecord
 		end
 	end
 
+	def self.search(search)
+		return Movie.all if search.empty?
+		if search[:search].nil? || search[:search].empty?
+			@movies = Movie.all
+		else
+			@movies = Movie.regex_search(search[:search])
+		end
+		@movies = Movie.categories_search(@movies, search[:categories]) unless search[:categories].nil?
+		@movies = Movie.criteria_ordering(@movies, search[:criteria]) unless search[:criteria].nil?
+			
+		return @movies
+	end
+
+	def self.regex_search(word_match)
+		results = []
+		regex = Regexp.new( word_match, Regexp::IGNORECASE)
+		Movie.all.each do |movie|
+			if movie.title.match(regex)
+				results << movie
+			end
+		end
+		return results
+	end
+
+	def self.categories_search(movies, cat_array)
+		results = []
+		cat_array.each do |cat_id|
+		 results << movies.select{|movie| MovieGenre.find_by(genre: Genre.find(cat_id), movie: movie)}
+		end
+		return results.flatten
+	end
+
+	def self.criteria_ordering(movies, criteria)
+		 movies = movies.sort_by {|movie| Movie.rating_average(movie, criteria)}.reverse
+		 return movies.select{|movie| Movie.rating_average(movie, criteria) >= 50}
+	end
+
+	def self.rating_average(movie, criteria)
+		rating = 0
+		count = 0
+		criteria.each do |criterion|
+			rating += movie.notacine_reviews(criterion)
+			count += 1
+		end
+		return rating/count
+	end
 end
+
+
+
+
+

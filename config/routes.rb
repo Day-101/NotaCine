@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :movies do
     resources :notations, only: [:new, :create, :edit, :update]
+    resources :comments, except: [:new, :show, :index]
   end
   resources :users, only: [:show] do
   	resources :avatars, only: [:create]
@@ -11,6 +12,9 @@ Rails.application.routes.draw do
   get 'statics/contact'
   get 'statics/privacy'
   get 'statics/how'
+
+  get "/search", to: "searches#new"
+  resources :searches, only: [:create]
 
 
 
