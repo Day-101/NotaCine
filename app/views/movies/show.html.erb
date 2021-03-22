@@ -26,6 +26,8 @@
               <% end %>
             <% end %>
             <%= button_to "Edit", edit_movie_path(@movie), :method => "get", class:"btn btn-warning" if current_user.rank == 0 %>
+          <% else %>
+            <u><%= link_to "Sign in", new_user_registration_path, class: "text-white" %></u> to rate & review
           <% end %>
         </div>
       </div><br>
