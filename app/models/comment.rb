@@ -4,4 +4,9 @@ class Comment < ApplicationRecord
 
   belongs_to :movie
   belongs_to :user
+
+
+  def user_is_author?(user)
+    self.user == user
+  end
 end
