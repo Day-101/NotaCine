@@ -4,7 +4,7 @@ class SearchesController < ApplicationController
 	end
 
 	def create
-		redirect_to new_search_path(search_params)
+		redirect_to search_path(search_params)
 	end
 
 	private 

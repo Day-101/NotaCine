@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   get 'statics/contact'
   get 'statics/privacy'
   get 'statics/how'
-  resources :searches
+
+  get "/search", to: "searches#new"
+  resources :searches, only: [:create]
 
 
 

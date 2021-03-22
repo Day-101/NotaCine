@@ -124,6 +124,7 @@ class Movie < ApplicationRecord
 
 	def self.criteria_ordering(movies, criteria)
 		 movies = movies.sort_by {|movie| Movie.rating_average(movie, criteria)}.reverse
+		 return movies.select{|movie| Movie.rating_average(movie, criteria) >= 50}
 	end
 
 	def self.rating_average(movie, criteria)
