@@ -98,9 +98,7 @@ class Movie < ApplicationRecord
 			@movies = Movie.regex_search(search[:search])
 		end
 		@movies = Movie.categories_search(@movies, search[:categories]) unless search[:categories].nil?
-
-
-		@movies = @movies.sort_by {|movie| movie.notacine_reviews("scenario")}
+		@movies = Movie.criteria_ordering(@movies, search[:criteria]) unless search[:criteria].nil?
 			
 		return @movies
 	end
@@ -124,4 +122,22 @@ class Movie < ApplicationRecord
 		return results.flatten
 	end
 
+	def self.criteria_ordering(movies, criteria)
+		 movies = movies.sort_by {|movie| Movie.rating_average(movie, criteria)}.reverse
+	end
+
+	def self.rating_average(movie, criteria)
+		rating = 0
+		count = 0
+		criteria.each do |criterion|
+			rating += movie.notacine_reviews(criterion)
+			count += 1
+		end
+		return rating/count
+	end
 end
+
+
+
+
+

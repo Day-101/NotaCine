@@ -10,9 +10,32 @@
 
 <%= form_with url: searches_path do |f| %>
 	<%= f.text_field :search %>
-	<% Genre.all.each do |category| %>
-		<p class="text-white"><%= category.title %></p>
-		<%= f.check_box :categories, { multiple: true }, category.id, false %>
-	<% end %>
+
+	<div>
+		<% Genre.all.each do |category| %>
+			<%= f.label category.title, class:"text-white" %>
+			<%= f.check_box :categories, { multiple: true }, category.id, false %>
+		<% end %>
+	</div>
+	<div>
+		<%= f.label "Scénario", class:"text-white" %>
+		<%= f.check_box :criteria, { multiple: true }, "scenario", false %>
+
+		<%= f.label "Image", class:"text-white" %>
+		<%= f.check_box :criteria, { multiple: true }, "image", false %>
+
+		<%= f.label "Editing", class:"text-white" %>
+		<%= f.check_box :criteria, { multiple: true }, "editing", false %>
+
+		<%= f.label "Sound and Soundtrack", class:"text-white" %>
+		<%= f.check_box :criteria, { multiple: true }, "sound", false %>
+
+		<%= f.label "Makeup and hair", class:"text-white" %>
+		<%= f.check_box :criteria, { multiple: true }, "makeup", false %>
+
+		<%= f.label "Directing", class:"text-white" %>
+		<%= f.check_box :criteria, { multiple: true }, "directing", false %>
+	</div>
+
 	<%= f.submit %>
 <% end %>
