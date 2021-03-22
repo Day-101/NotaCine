@@ -2,10 +2,10 @@
   <div class="row">
     <div class="col-12">
       <div class="row">
-        <div class="col-4">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
           <%=image_tag @movie.image_url, :class => 'movie-poster' %>
         </div>
-        <div class="col-8">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-8">
           <p class="h1"><%= @movie.title %><span class="text-muted"> (<%= @movie.year %>)</span></p>
           <% @movie.genres.each do |category| %>
             <p class="badge badge-secondary badge-pill"><%= category.title %></p>
@@ -41,9 +41,9 @@
                 <%= f.range_field :image, :in => 0..100, :step => 1, value:@movie.notacine_reviews("image"), :disabled => true %><br>
                 <%= f.label :editing, "Editing" %><br>
                 <%= f.range_field :editing, :in => 0..100, :step => 1, value:@movie.notacine_reviews("editing"), :disabled => true %><br>
-                <%= f.label :sound, "Sound" %><br>
+                <%= f.label :sound, "Sound and Soundtrack" %><br>
                 <%= f.range_field :sound, :in => 0..100, :step => 1, value:@movie.notacine_reviews("sound"), :disabled => true %><br>
-                <%= f.label :makeup, "Makeup" %><br>
+                <%= f.label :makeup, "Costume Makeup and Hairstyling" %><br>
                 <%= f.range_field :makeup, :in => 0..100, :step => 1, value:@movie.notacine_reviews("makeup"), :disabled => true %><br>
                 <%= f.label :directing, "Directing" %><br>
                 <%= f.range_field :directing, :in => 0..100, :step => 1, value:@movie.notacine_reviews("directing"), :disabled => true %><br>
@@ -80,9 +80,9 @@
       </div>
       <hr>
       <div class="row">
-        <div class="col-10">
+        <div class="col-12">
           <p class="h4">Comments</p>
-          <div class="col-8">
+          <div class="col-12 col-sm-12 col-md-10 col-lg-8">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pharetra tortor lacus, accumsan ornare augue sodales eu. Aliquam ultrices, ex sed egestas accumsan, arcu justo tincidunt lectus, a feugiat velit nulla id nunc. Integer placerat auctor metus, convallis bibendum nisl fermentum vel. Nam vehicula nibh nibh, accumsan porttitor ante luctus eget. Nam ac ex sem. Morbi mollis ultrices massa a molestie. Donec id porttitor justo, vel auctor lacus.</p>
             <p>Integer placerat auctor metus, convallis bibendum nisl fermentum vel. Nam vehicula nibh nibh, accumsan porttitor ante luctus eget. Nam ac ex sem. Morbi mollis ultrices massa a molestie. Donec id porttitor justo, vel auctor lacus. Aenean a quam a est accumsan tincidunt. Donec dignissim sagittis odio fringilla interdum. Maecenas neque ligula, feugiat vel orci ac, dignissim tristique eros. Vestibulum et vehicula quam, in accumsan risus. Aliquam iaculis vitae lectus at hendrerit.</p>
           </div>
