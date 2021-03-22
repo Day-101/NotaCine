@@ -10,5 +10,9 @@
 
 <%= form_with url: searches_path do |f| %>
 	<%= f.text_field :search %>
+	<% Genre.all.each do |category| %>
+		<p class="text-white"><%= category.title %></p>
+		<%= f.check_box :categories, { multiple: true }, category.id, false %>
+	<% end %>
 	<%= f.submit %>
 <% end %>

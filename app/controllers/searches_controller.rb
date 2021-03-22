@@ -9,6 +9,6 @@ class SearchesController < ApplicationController
 
 	private 
 	def search_params
-		params.permit(:search)
+		params.permit(:search, :categories => [])
 	end
 end

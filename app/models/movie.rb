@@ -69,7 +69,11 @@ class Movie < ApplicationRecord
 			end
 			count +=1
 		end
-		return notation/count
+		if count == 0
+			return 0
+		else
+			return notation/count
+		end
 	end
 
 	def reviewed_by_admin
@@ -88,22 +92,36 @@ class Movie < ApplicationRecord
 
 	def self.search(search)
 		return Movie.all if search.empty?
-		@movies = Array.new
-		@movies = Movie.regex_search(search[:search]) #  unless search[:search].empty?
+		if search[:search].empty?
+			@movies = Movie.all
+		else
+			@movies = Movie.regex_search(search[:search])
+		end
+		@movies = Movie.categories_search(@movies, search[:categories]) unless search[:categories].nil?
+
+
+		@movies = @movies.sort_by {|movie| movie.notacine_reviews("scenario")}
 			
 		return @movies
 	end
 
 	def self.regex_search(word_match)
+		results = []
 		regex = Regexp.new( word_match, Regexp::IGNORECASE)
 		Movie.all.each do |movie|
 			if movie.title.match(regex)
-				@movies << movie
+				results << movie
 			end
 		end
-		return @movies
+		return results
 	end
 
-
+	def self.categories_search(movies, cat_array)
+		results = []
+		cat_array.each do |cat_id|
+		 results << movies.select{|movie| MovieGenre.find_by(genre: Genre.find(cat_id), movie: movie)}
+		end
+		return results.flatten
+	end
 
 end
