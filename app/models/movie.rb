@@ -92,7 +92,7 @@ class Movie < ApplicationRecord
 
 	def self.search(search)
 		return Movie.all if search.empty?
-		if search[:search].empty?
+		if search[:search].nil? || search[:search].empty?
 			@movies = Movie.all
 		else
 			@movies = Movie.regex_search(search[:search])
