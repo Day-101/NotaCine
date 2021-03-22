@@ -4,16 +4,18 @@ section {
 }
 
 section .section-title {
-    text-align: center;
-    color: #e84335;
-    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: .5rem;
     text-transform: uppercase;
 }
 
-#last-added .card p, #last-notati .card p, #movies .card p {
-    border: none;
-    padding-left: 0px;
-    padding-top: 100px;
+.image-flip:hover {
+    z-index: 1;
+}
+
+.image-flip:hover .mainflip {
+    width: 175%;
+    transition: 1s;
 }
 
 .image-flip:hover .backside,
@@ -60,7 +62,8 @@ section .section-title {
     position: absolute;
     top: 0;
     left: 0;
-    background:white;
+    z-index: 2;
+    background:rgb(65, 65, 65);
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
     -o-transform: rotateY(-180deg);
@@ -68,8 +71,7 @@ section .section-title {
     transform: rotateY(-180deg);
 }
 
-.frontside,
-.backside {
+.frontside, .backside {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
@@ -90,36 +92,30 @@ section .section-title {
 .backside .card {
     text-align: center;
     border: none;
+    background:rgb(65, 65, 65);
+
 }
 
 .backside .card {
     font-size: 18px;
-    color: #e84335 !important;
-    width: 270px !important;
-    height: 480px !important;
+    width: 305px !important;
+    height: 586px !important;
 }
 
 .frontside .card .card-title,
 .backside .card .card-title {
-    color: #e84335 !important;
-    margin-bottom: 3px;
+    margin-top: 0px;
+    margin-bottom: .5rem;
 }
 
 .frontside .card .card-body img {
-    width: 270px !important;
-    height: 470px !important;
+    width: 203px !important;
+    height: 300px !important;
     border: none;
 }
 
-#poster {
+.card-movies-index .card-body {
     padding: 0px;
-}
-
-#returned-card {
-    font-size: 1.5;
-    line-height: 1;
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 
 #search-bar-index {
@@ -147,11 +143,70 @@ section .section-title {
     padding-top: 10px;
 }
 
-#text-coloring h3 {
+.card-movies-index {
     color: #fff !important;
 }
 
-#text-coloring p {
-    color: #e84335 !important;
+.card-movies-index p {
     padding-left: 16px;
+}
+
+.card-movies-index h2 {
+    font-size: 1.5em;
+}
+
+.card-movies-index d-flex {
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+
+.card-movie-logo {
+    height: 30px;
+}
+
+.fa-users {
+    font-size: 1.75em;
+    display: block;
+    margin-bottom: 1em;
+}
+
+.nota-rate input[type="range"],
+.nota-user input[type="range"] {
+    width: 100%;
+    margin: 5px 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+}
+
+.nota-rate label,
+.nota-user label {
+    font-size: 1em;
+    width: 120px;
+    height: 20px;
+}
+
+.forming {
+    width: 120px;
+    height: 443px;
+}
+
+.card-movies-index .vertical-divider {
+    border-left: 1px solid #202327 !important;
+    height: auto;
+    margin: 0 2em;
+}
+
+.card-movies-index btn-outline-primary {
+    width: 80px;
+    height: 21px;
+}
+
+.margin_movie {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.d-grid {
+    display: grid;
+    grid-gap: 1em;
 }
