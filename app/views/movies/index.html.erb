@@ -64,93 +64,133 @@
 
 <section id="last-notation" class="pb-5">
   <div class="container" id="text-coloring">
-	<h3>Last notations</h3>
+	<h3>Last notation</h3>
     <div class="row">
-		<% Notation.last_four.each do |movie| %>
+		<% Movie.last_four.each do |movies| %>
+			<% if movies.reviewed_by_admin %>
 				<div class="col-xs-12 col-sm-6 col-md-3">
 					<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
 						<div class="mainflip">
 							<div class="frontside">
 								<div class="card">
 									<div class="card-body" id="poster">
-										<%= image_tag movie.image_url, alt: movie.title %>
+										<%= image_tag movies.image_url, alt: movies.title %>
 									</div>
 								</div>
 							</div>
 							<div class="backside">
 								<div class="card">
-									<h4 class="card-title text-center"><%= movie.title %></h4>
+									<h4 class="card-title text-center"><%= movies.title %></h4>
 									<div class="card-body text-center nota-rate" id="returned-card">
-										<% if movie.reviewed_by_admin %>
-											<%= form_with do |f| %>
+										<% if movies.reviewed_by_admin %>
+											<%= form_for movies do |f| %>
 												<%= f.label :scenario, "Scenario" %>
-												<%= f.range_field :scenario, :in => 0..100, :step => 1, value:movie.all_reviews("scenario"), :disabled => true  %>
+												<%= f.range_field :scenario, :in => 0..100, :step => 1, value:movies.all_reviews("scenario"), :disabled => true  %>
 												<%= f.label :image, "Image" %>
-												<%= f.range_field :image, :in => 0..100, :step => 1, value:movie.all_reviews("image"), :disabled => true %>
+												<%= f.range_field :image, :in => 0..100, :step => 1, value:movies.all_reviews("image"), :disabled => true %>
 												<%= f.label :editing, "Editing" %>
-												<%= f.range_field :editing, :in => 0..100, :step => 1, value:movie.all_reviews("editing"), :disabled => true %>
+												<%= f.range_field :editing, :in => 0..100, :step => 1, value:movies.all_reviews("editing"), :disabled => true %>
 												<%= f.label :sound, "Sound" %>
-												<%= f.range_field :sound, :in => 0..100, :step => 1, value:movie.all_reviews("sound"), :disabled => true %>
+												<%= f.range_field :sound, :in => 0..100, :step => 1, value:movies.all_reviews("sound"), :disabled => true %>
 												<%= f.label :makeup, "Makeup" %>
-												<%= f.range_field :makeup, :in => 0..100, :step => 1, value:movie.all_reviews("makeup"), :disabled => true %>
+												<%= f.range_field :makeup, :in => 0..100, :step => 1, value:movies.all_reviews("makeup"), :disabled => true %>
 												<%= f.label :directing, "Directing" %>
-												<%= f.range_field :directing, :in => 0..100, :step => 1, value:movie.all_reviews("directing"), :disabled => true %>
+												<%= f.range_field :directing, :in => 0..100, :step => 1, value:movies.all_reviews("directing"), :disabled => true %>
 											<% end %>
 										<% else %>
 											<p>This movie is not yet reviewed</p>
 										<% end %>
-										<%= link_to "Show me this movie", movie_path(movie), :class => "btn btn-primary btn-sm" %>
+										<%= link_to "Show me this movie", movie_path(movies.id), :class => "btn btn-primary btn-sm" %>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			<% end %>
 		<% end %>
     </div>
   </div>
 </section>
 
 
-<section id="movies" class="pb-5">
-  <div class="container" id="text-coloring">
+<section class="pb-5">
+  <div class="container d-grid card-movies-index">
 	<h3>All movies</h3>
     <div class="row">
 		<% @movies.each do |movies| %>
-			<div class="col-xs-12 col-sm-6 col-md-3">
+			<div class="col-xs-12 col-sm-6 col-md-3 margin_movie">
 				<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
 					<div class="mainflip">
 						<div class="frontside">
 							<div class="card">
-								<div class="card-body" id="poster">
+								<div class="card-body">
 									<%= image_tag movies.image_url, alt: movies.title %>
 								</div>
 							</div>
 						</div>
-						<div class="backside">
+						<div class="backside p-4 text-center">
 							<div class="card">
-								<h4 class="card-title text-center"><%= movies.title %></h4>
-								<div class="card-body text-center nota-rate" id="returned-card">
-									<% if movies.reviewed_by_admin %>
-										<%= form_for movies do |f| %>
-											<%= f.label :scenario, "Scenario" %>
-											<%= f.range_field :scenario, :in => 0..100, :step => 1, value:movies.all_reviews("scenario"), :disabled => true  %>
-											<%= f.label :image, "Image" %>
-											<%= f.range_field :image, :in => 0..100, :step => 1, value:movies.all_reviews("image"), :disabled => true %>
-											<%= f.label :editing, "Editing" %>
-											<%= f.range_field :editing, :in => 0..100, :step => 1, value:movies.all_reviews("editing"), :disabled => true %>
-											<%= f.label :sound, "Sound" %>
-											<%= f.range_field :sound, :in => 0..100, :step => 1, value:movies.all_reviews("sound"), :disabled => true %>
-											<%= f.label :makeup, "Makeup" %>
-											<%= f.range_field :makeup, :in => 0..100, :step => 1, value:movies.all_reviews("makeup"), :disabled => true %>
-											<%= f.label :directing, "Directing" %>
-											<%= f.range_field :directing, :in => 0..100, :step => 1, value:movies.all_reviews("directing"), :disabled => true %>
+								<h2 class="card-title text-center"><%= movies.title %><span class="text-secondary">(<%= movies.year %>)</span></h2>
+								<div class="d-flex justify-content-center mb-4">
+									<h6>
+										<%= link_to "Action", root_path, :class => "badge badge-secondary text-white mx-1" %>
+									</h6>
+									<h6>
+										<%= link_to "Sci-fi", root_path, :class => "badge badge-secondary text-white mx-1" %>
+									</h6>
+									<h6>
+										<%= link_to "Adventure", root_path, :class => "badge badge-secondary text-white mx-1" %>
+									</h6>
+								</div>
+								<div class="d-flex">
+									<div class="nota-rate forming">
+										<% if movies.reviewed_by_admin %>
+										<%= image_tag image_path("notacine-logo-responsive-dark.svg"), alt:"NotaCine", :class => "card-movie-logo mb-4" %>
+											<%= form_for movies do |f| %>
+												<%= f.label :scenario, "Scenario" %>
+												<%= f.range_field :scenario, :in => 0..100, :step => 1, value:movies.all_reviews("scenario"), :disabled => true  %>
+												<%= f.label :image, "Image" %>
+												<%= f.range_field :image, :in => 0..100, :step => 1, value:movies.all_reviews("image"), :disabled => true %>
+												<%= f.label :editing, "Editing" %>
+												<%= f.range_field :editing, :in => 0..100, :step => 1, value:movies.all_reviews("editing"), :disabled => true %>
+												<%= f.label :sound, "Sound" %>
+												<%= f.range_field :sound, :in => 0..100, :step => 1, value:movies.all_reviews("sound"), :disabled => true %>
+												<%= f.label :makeup, "Makeup" %>
+												<%= f.range_field :makeup, :in => 0..100, :step => 1, value:movies.all_reviews("makeup"), :disabled => true %>
+												<%= f.label :directing, "Directing" %>
+												<%= f.range_field :directing, :in => 0..100, :step => 1, value:movies.all_reviews("directing"), :disabled => true %>
+											<% end %>
+										<% else %>
+											<%= image_tag image_path("notacine-logo-responsive-dark.svg"), alt:"NotaCine", :class => "card-movie-logo mb-4" %>
+											<p>This movie is not yet reviewed</p>
 										<% end %>
-									<% else %>
-										<p>This movie is not yet reviewed</p>
-									<% end %>
-									<%= link_to "Show me this movie", movie_path(movies.id), :class => "btn btn-primary btn-sm" %>
-                </div>
+									</div>
+									<hr class="vertical-divider">
+									<div class="nota-user forming">
+										<% unless Notation.find_by(movie:@movie).nil? %>
+											<i class="fas fa-users"></i>
+											<%= form_for movies do |f| %>
+												<%= f.label :scenario, "Scenario" %>
+												<%= f.range_field :scenario, :in => 0..100, :step => 1, value:movies.all_reviews("scenario"), :disabled => true  %>
+												<%= f.label :image, "Image" %>
+												<%= f.range_field :image, :in => 0..100, :step => 1, value:movies.all_reviews("image"), :disabled => true %>
+												<%= f.label :editing, "Editing" %>
+												<%= f.range_field :editing, :in => 0..100, :step => 1, value:movies.all_reviews("editing"), :disabled => true %>
+												<%= f.label :sound, "Sound" %>
+												<%= f.range_field :sound, :in => 0..100, :step => 1, value:movies.all_reviews("sound"), :disabled => true %>
+												<%= f.label :makeup, "Makeup" %>
+												<%= f.range_field :makeup, :in => 0..100, :step => 1, value:movies.all_reviews("makeup"), :disabled => true %>
+												<%= f.label :directing, "Directing" %>
+												<%= f.range_field :directing, :in => 0..100, :step => 1, value:movies.all_reviews("directing"), :disabled => true %>
+											<% end %>
+										<% else %>
+											<i class="fas fa-users"></i>
+											<p>This movie is not yet reviewed</p>
+										<% end %>
+									</div>
+								</div>
+								<%= link_to "View details", movie_path(movies.id), :type => "button", :class => "btn btn-outline-primary btn-sm mt-4" %>
             	</div>
             </div>
           </div>
