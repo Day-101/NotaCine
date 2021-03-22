@@ -1,0 +1,14 @@
+
+
+
+<ul>
+	<% @movies.each do |movie| %>
+		<li class="text-white"><%= movie.title %></li>
+	<% end %>
+</ul>
+
+
+<%= form_with url: searches_path do |f| %>
+	<%= f.text_field :search %>
+	<%= f.submit %>
+<% end %>

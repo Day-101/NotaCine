@@ -86,4 +86,24 @@ class Movie < ApplicationRecord
 		end
 	end
 
+	def self.search(search)
+		return Movie.all if search.empty?
+		@movies = Array.new
+		@movies = Movie.regex_search(search[:search]) #  unless search[:search].empty?
+			
+		return @movies
+	end
+
+	def self.regex_search(word_match)
+		regex = Regexp.new( word_match, Regexp::IGNORECASE)
+		Movie.all.each do |movie|
+			if movie.title.match(regex)
+				@movies << movie
+			end
+		end
+		return @movies
+	end
+
+
+
 end
