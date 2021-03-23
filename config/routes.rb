@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :movies do
-    resources :notations, only: [:new, :create, :edit, :update]
+    resources :notations, except: [:show, :index]
     resources :comments, except: [:new, :show, :index]
   end
   resources :users, only: [:show, :destroy] do
