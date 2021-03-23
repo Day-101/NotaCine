@@ -83,11 +83,11 @@
         </div>
       </div>
       <hr>
-      <div class="row">
+      <div class="row mx-1">
         <p class="h4 my-4"><strong>Comments <i class="fas fa-comments"></i></strong></p>
-        <div class="col-12 comments-card">
+        <div class="col-12 p-3 comments-card">
           <% @movie.comments.each do |comment|%>
-            <div class="col-12 col-sm-12 col-md-10 col-lg-8 pt-4">
+            <div class="col-12 pt-4">
               <%= image_tag comment.user.avatar, alt: "user avatar", class: "comments-avatar" %>
               <strong class="nickename" ><%= comment.user.username %></strong>
               <p class="pl-5 mb-0"> <%= comment.content %> </p>
