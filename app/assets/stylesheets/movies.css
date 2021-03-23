@@ -26,6 +26,23 @@ section {
     transition: 1s;
 }
 
+.flip-movies:nth-of-type(2n) .image-flip:hover .mainflip {
+    width: 175%;
+    transition: 1s;
+    right: 70%;
+}
+
+@media (max-width:576px){
+    .flip-movies .image-flip:hover .mainflip {
+        width: 100% !important;
+        right: 0% !important;
+    }
+}
+
+.flip-movies {
+    padding: .5em !important;
+}
+
 .flip-movies:hover {
     z-index: 1;
 }
@@ -82,11 +99,6 @@ section {
     transform-style: preserve-3d;
 }
 
-.frontside img {
-    width: 100%;
-    border: none;
-}
-
 #search-bar-index {
     text-align: center;
     margin-top: 10px;
@@ -135,20 +147,18 @@ section {
     margin-bottom: 1em;
 }
 
-.nota-rate .input[type="range"],
-.nota-user .input[type="range"] {
+.forming .input[type="range"] {
     width: 100%;
     margin: 5px 0;
     background-color: transparent;
     -webkit-appearance: none;
 }
 
-.nota-rate .label,
-.nota-user .label {
+.forming .label {
     font-size: 1em;
 }
 
-.nota-rate, .nota-user {
+.forming {
     width: -webkit-fill-available;
 }
 
@@ -164,12 +174,17 @@ section {
     background-color: transparent !important;
 }
 
+.card-movies-index .btn-outline-primary:hover {
+    color: #fff !important;
+    background-color: #e84335 !important;
+}
+
 .img-grid {
-    object-fit: cover;
+    object-fit: cover !important;
     width: 100%;
 }
 
 .img-model {
     width: 100%;
-    background: rgb(65, 65, 65) !important;
+    background: rgb(65, 65, 65);
 }
