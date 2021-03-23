@@ -1,0 +1,9 @@
+.btn-search{padding-left: 2px !important;}
+#searchbar input{
+  border-radius: 1em;
+  padding: 0.2em 0.8em;
+  outline: thin dotted;
+  border: none;
+}
+
+nav .fa-search{font-size: 1.2em;}
