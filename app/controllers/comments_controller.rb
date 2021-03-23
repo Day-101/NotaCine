@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :redirect_if_not_author, only: [:edit, :update, :destroy]
+  before_action :redirect_if_not_author, only: [:edit, :update]
+  before_action :redirect_if_not_authorized, only: [:destroy]
 
   def create
 
@@ -49,6 +50,9 @@ class CommentsController < ApplicationController
   def redirect_if_not_author
     redirect_to root_path unless Comment.find(params[:id]).user == current_user
   end
-
+ 
+  def redirect_if_not_authorized
+    redirect_to root_path unless Comment.find(params[:id]).user == current_user || current_user.rank == 0
+  end
 
 end
