@@ -2,6 +2,11 @@
 nav{background:#20232790 ;border-bottom: 1px solid #ffffff50;}
 .navbar-nav{margin-right: auto; }
 .navbar-nav li { text-align: center; }
+.navbar-news{
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+}
 
 .navbar input:first-child{
 	border: none;
@@ -42,3 +47,9 @@ nav{background:#20232790 ;border-bottom: 1px solid #ffffff50;}
 	height:30px;
 	border-radius: 50%;
 }
+
+.dropdown-menu{background-color: #202327 !important;border:1px solid #ffffff50 !important}
+.dropdown-item{ color: #fff !important;}
+.dropdown-item:hover{color: #fff !important;background: #353A40 !important;}
+
+.navbar a:hover{color: #fff !important;text-decoration: underline;}
