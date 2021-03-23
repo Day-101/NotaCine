@@ -117,10 +117,10 @@ class Movie < ApplicationRecord
 
 	def self.categories_search(movies, cat_array)
 		results = []
-		cat_array.each do |cat_id|
-		 results << movies.select{|movie| MovieGenre.find_by(genre: Genre.find(cat_id), movie: movie)}
+		movies.each do |movie|
+			results << movie if cat_array.all?{|cat_id| MovieGenre.find_by(genre: Genre.find(cat_id), movie: movie)}
 		end
-		return results.flatten
+		return results
 	end
 
 	def self.criteria_ordering(movies, criteria)

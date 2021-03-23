@@ -55,3 +55,10 @@
   <%= f.select :rank, [["Admin", 0],["Regular", 1],["Validated", 2]] %>
   <%= f.submit "Change rank" %>
 <% end %>
+
+<%= form_with model: Article.new, multipart: true do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :content %>
+  <%= f.file_field :article_picture %>
+  <%= f.submit "Publish" %>
+<% end %>
