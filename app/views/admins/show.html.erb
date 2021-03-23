@@ -1,0 +1,57 @@
+<div>
+  <h3 class="text-center text-white">Extreme reviews : </h3>
+  <table class="table table-dark table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Movie reviewed</th>
+        <th>User</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Notation.extreme_notations.each do |notation|%>
+        <tr>
+          <td>
+            <%= notation.movie.title %>
+          </td>
+          <td class="text-white" >
+            <%= link_to notation.user.username, user_path(notation.user), class: "text-white" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <h3 class="text-center text-white">Movies not yet reviewed (by admin) : </h3>
+  <table class="table table-dark table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Movie</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Movie.all.select{|movie| movie.reviewed_by_admin == false}.each do |movie|%>
+        <tr>
+          <td class="text-white" >
+            <%= link_to movie.title, movie_path(movie), class: "text-white" %>
+          </td>
+          <td>
+            <%= link_to new_movie_notation_path(movie),class: "btn btn-primary" do %>
+              Leave a review
+              <i class="fas fa-sliders-h"></i>
+            <% end %>
+            <%= link_to "Edit", edit_movie_path(movie), :method => "get", class:"btn btn-warning" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= form_with url: admins_path do |f| %>
+  <%= f.text_field :user_email %>
+  <%= f.select :rank, [["Admin", 0],["Regular", 1],["Validated", 2]] %>
+  <%= f.submit "Change rank" %>
+<% end %>

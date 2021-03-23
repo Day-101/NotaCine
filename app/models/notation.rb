@@ -48,4 +48,13 @@ class Notation < ApplicationRecord
 			return movies 
 		end
   end
+
+  def self.extreme_notations
+		return Notation.all.select{|element| element.average > 80 || element.average < 25}
+	end
+
+  def average
+    return (self.scenario + self.image + self.editing + self.sound + self.makeup + self.directing) / 6
+  end
+
 end
