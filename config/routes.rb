@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :movies do
-    resources :notations, only: [:new, :create, :edit, :update]
+    resources :notations, except: [:show, :index]
     resources :comments, except: [:new, :show, :index]
   end
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :destroy] do
   	resources :avatars, only: [:create]
   end
   root to: 'movies#index'

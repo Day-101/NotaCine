@@ -38,6 +38,12 @@ class NotationsController < ApplicationController
     end
   end
 
+  def destroy
+    notation= Notation.find(params[:id])
+    notation.destroy
+    flash.notice = "Notation sucessfully deleted "
+    redirect_to user_path(notation.user)
+  end
   private
 
   def notation_params
