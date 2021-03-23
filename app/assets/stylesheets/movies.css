@@ -3,12 +3,6 @@ section {
     padding: 60px 0;
 }
 
-section .section-title {
-    margin-top: 0px;
-    margin-bottom: .5rem;
-    text-transform: uppercase;
-}
-
 .image-flip:hover .backside,
 .image-flip.hover .backside {
     -webkit-transform: rotateY(0deg);
@@ -25,6 +19,15 @@ section .section-title {
     -moz-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
+}
+
+.image-flip:hover .mainflip {
+    width: 175%;
+    transition: 1s;
+}
+
+.flip-movies:hover {
+    z-index: 1;
 }
 
 .mainflip {
@@ -79,33 +82,9 @@ section .section-title {
     transform-style: preserve-3d;
 }
 
-.frontside .card,
-.backside .card {
-    text-align: center;
+.frontside img {
+    width: 100%;
     border: none;
-    background:rgb(65, 65, 65);
-}
-
-.backside .card {
-    font-size: 18px;
-    width: 305px !important;
-    height: 586px !important;
-}
-
-.frontside .card .card-title,
-.backside .card .card-title {
-    margin-top: 0px;
-    margin-bottom: .5rem;
-}
-
-.frontside .card .card-body img {
-    width: 255px !important;
-    height: 400px !important;
-    border: none;
-}
-
-.card-movies-index .card-body {
-    padding: 0px;
 }
 
 #search-bar-index {
@@ -137,10 +116,6 @@ section .section-title {
     color: #fff !important;
 }
 
-.card-movies-index p {
-    padding-left: 16px;
-}
-
 .card-movies-index h2 {
     font-size: 1.5em;
 }
@@ -160,24 +135,21 @@ section .section-title {
     margin-bottom: 1em;
 }
 
-.nota-rate input[type="range"],
-.nota-user input[type="range"] {
+.nota-rate .input[type="range"],
+.nota-user .input[type="range"] {
     width: 100%;
     margin: 5px 0;
     background-color: transparent;
     -webkit-appearance: none;
 }
 
-.nota-rate label,
-.nota-user label {
+.nota-rate .label,
+.nota-user .label {
     font-size: 1em;
-    width: 120px;
-    height: 20px;
 }
 
-.forming {
-    width: 120px;
-    height: 443px;
+.nota-rate, .nota-user {
+    width: -webkit-fill-available;
 }
 
 .card-movies-index .vertical-divider {
@@ -186,14 +158,18 @@ section .section-title {
     margin: 0 2em;
 }
 
-.margin_movie:hover {
-    z-index: 1;
-    margin-right: 100px;
-    margin-bottom: 130px;
-}
-
 .card-movies-index .btn-outline-primary {
     color: #e84335 !important;
     border-color: #e84335 !important;
     background-color: transparent !important;
+}
+
+.img-grid {
+    object-fit: cover;
+    width: 100%;
+}
+
+.img-model {
+    width: 100%;
+    background: rgb(65, 65, 65) !important;
 }
