@@ -1,4 +1,11 @@
-<%= form_with model:[@movie, @comment] do |f| %>
-  <%= f.text_area :content %>
-  <%= f.submit %>
-<% end %>
+<div class="container my-4">
+  <div class="row">
+    <div class="col-12 comments-card">
+      <p class="h2" >Comment on <%= @movie.title %></p>
+      <%= form_with model:[@movie, @comment] do |f| %>
+        <%= f.text_area :content, :class => "comments-area" %>
+        <%= f.submit 'Edit', :class => "btn btn-link text-white" %>
+      <% end %>
+    </div>
+  </div>
+</div>
