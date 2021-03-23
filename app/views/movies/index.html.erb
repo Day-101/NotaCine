@@ -6,32 +6,37 @@
 	</div>
 </div>
 
+<section class="section-wrap gd-2-cols gd-gap-30">
+  <div class="gd-col-left">
+    <section id="last-added" class="pb-5">
+      <div class="container card-movies-index">
+      <h3>Last added</h3>
+        <div class="row">
+          <%= render 'last_added_movies' %>
+        </div>
+      </div>
+    </section>
 
-<section id="last-added" class="pb-5">
-  <div class="container card-movies-index">
-	<h3>Last added</h3>
-    <div class="row">
-			<%= render 'last_added_movies' %>
-    </div>
+
+    <section id="last-notation" class="pb-5">
+      <div class="container card-movies-index">
+      <h3>Last notation</h3>
+        <div class="row">
+          <%= render 'last_notation_movies' %>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="all_movies" class="pb-5">
+      <div class="container card-movies-index">
+      <h3>All movies</h3>
+        <div class="row">
+          <%= render 'all_movies' %>
+        </div>
+      </div>
+    </section>
   </div>
-</section>
-
-
-<section id="last-notation" class="pb-5">
-  <div class="container card-movies-index">
-	<h3>Last notation</h3>
-    <div class="row">
-			<%= render 'last_notation_movies' %>
-    </div>
-  </div>
-</section>
-
-
-<section id="all_movies" class="pb-5">
-  <div class="container card-movies-index">
-	<h3>All movies</h3>
-    <div class="row">
-			<%= render 'all_movies' %>
-    </div>
-  </div>
+  <aside id="gd-col-right" class="gd-col-right flex-col">
+  </aside>
 </section>
