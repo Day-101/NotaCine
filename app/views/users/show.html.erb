@@ -19,6 +19,9 @@
           <% if current_user == @user %>
             <p> <%= button_to "Edit profile", edit_user_registration_path, :method => "get", class: "btn btn-secondary btn-sm" %></p>
           <% end %>
+          <% if current_user.rank == 0 %>
+            <p> <%= button_to "Delete profile", user_path(@user), method: :delete, class: "btn btn-danger btn-sm" %></p>
+          <% end %>
         </div>
       </div>
       <div class="row movies-review">
@@ -36,7 +39,11 @@
             </div>
             <div class="col-4">
               <%= link_to notation.movie.title, movie_path(notation.movie.id), :class => "h3 text-white" %>
-              <p><%= notation.movie.description %></p>
+              <p><%= notation.movie.description %>
+                <% if current_user.rank == 0 %>
+                  <%= button_to "Delete notation", movie_notation_path(notation.movie, notation), method: :delete, class: "btn btn-danger btn-sm" %>
+                <% end %>
+              </p>
             </div>
             <div class="col-4 text-right pt-3 user-rate text-center">
               <%= form_with do |f| %>

@@ -83,18 +83,20 @@
         </div>
       </div>
       <hr>
-      <div class="row">
+      <div class="row mx-1">
         <p class="h4 my-4"><strong>Comments <i class="fas fa-comments"></i></strong></p>
-        <div class="col-12 comments-card">
+        <div class="col-12 p-3 comments-card">
           <% @movie.comments.each do |comment|%>
-            <div class="col-12 col-sm-12 col-md-10 col-lg-8 pt-4">
+            <div class="col-12 pt-4">
               <%= image_tag comment.user.avatar, alt: "user avatar", class: "comments-avatar" %>
               <strong class="nickename" ><%= comment.user.username %></strong>
               <p class="pl-5 mb-0"> <%= comment.content %> </p>
               <div class="btn-group pl-5" role="group">
-                <% if user_signed_in? && comment.user_is_author?(current_user) %>
-                <%= link_to "Edit", edit_movie_comment_path(@movie, comment), class: "btn btn-link text-info" %>
-                <%= button_to "Delete", movie_comment_path(@movie, comment), class: "btn btn-link text-danger", method: :delete %>
+                 <% if user_signed_in? && comment.user_is_author?(current_user) %>
+                  <%= link_to "Edit", edit_movie_comment_path(@movie, comment), class: "btn btn-link text-info" %>
+                <% end %>
+                <% if user_signed_in? && comment.user_is_author?(current_user) || current_user.rank == 0 %>
+                  <%= button_to "Delete", movie_comment_path(@movie, comment), class: "btn btn-link text-danger", method: :delete %>
                 <% end %>
               </div>
             </div>
