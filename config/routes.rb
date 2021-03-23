@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get "/admin", to: "admins#show"
   resources :admins #, only: [:update, :edit]
 
+  resources :articles , except: [:new]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

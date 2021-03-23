@@ -1,0 +1,6 @@
+<%= form_with model: @article, multipart: true do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :content %>
+  <%= f.file_field :article_picture %>
+  <%= f.submit "Edit" %>
+<% end %>
