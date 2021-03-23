@@ -52,8 +52,6 @@ class MoviesController < ApplicationController
 		params.require(:movie).permit(:year, :director, :title, :description, :actors, :image_url)
 	end
 
-	def redirect_if_not_admin
-		redirect_to root_path flash.alert="You need to be admin to do that !" unless current_user.rank == 0
-	end
+	
 
 end
