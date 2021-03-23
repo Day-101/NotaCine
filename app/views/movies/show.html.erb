@@ -92,9 +92,11 @@
               <strong class="nickename" ><%= comment.user.username %></strong>
               <p class="pl-5 mb-0"> <%= comment.content %> </p>
               <div class="btn-group pl-5" role="group">
-                <% if user_signed_in? && comment.user_is_author?(current_user) %>
-                <%= link_to "Edit", edit_movie_comment_path(@movie, comment), class: "btn btn-link text-info" %>
-                <%= button_to "Delete", movie_comment_path(@movie, comment), class: "btn btn-link text-danger", method: :delete %>
+                 <% if user_signed_in? && comment.user_is_author?(current_user) %>
+                  <%= link_to "Edit", edit_movie_comment_path(@movie, comment), class: "btn btn-link text-info" %>
+                <% end %>
+                <% if user_signed_in? && comment.user_is_author?(current_user) || current_user.rank == 0 %>
+                  <%= button_to "Delete", movie_comment_path(@movie, comment), class: "btn btn-link text-danger", method: :delete %>
                 <% end %>
               </div>
             </div>
