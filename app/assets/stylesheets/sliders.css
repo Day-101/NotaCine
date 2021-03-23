@@ -1,9 +1,9 @@
 .vertical-divider{
   border: none;
-  border-left: 1px solid hsla(0, 0%, 0%, 0.95);
+  border-left: 1px solid black;
   height: 500px;
   width: 1px;
-  margin: -10px;
+  opacity: 0.5;
 }
 
 .nota-rate input[type=range] {
