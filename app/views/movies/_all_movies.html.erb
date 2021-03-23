@@ -17,7 +17,7 @@
             </h6>
           </div>
           <div class="d-flex">
-            <div class="nota-rate">
+            <div class="nota-rate forming">
               <% if movies.reviewed_by_admin %>
               <%= image_tag image_path("notacine-logo-responsive-dark.svg"), alt:"NotaCine", :class => "card-movies-logo mb-4" %>
                 <%= form_for movies do |f| %>
@@ -40,7 +40,7 @@
               <% end %>
             </div>
             <hr class="vertical-divider">
-            <div class="nota-user">
+            <div class="nota-user forming">
               <% unless Notation.find_by(movie:@movie).nil? %>
                 <i class="fas fa-users"></i>
                 <%= form_for movies do |f| %>
