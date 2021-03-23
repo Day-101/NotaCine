@@ -60,12 +60,7 @@
       </ul>
 
       <div id="searchbar" class="d-flex align-items-center">
-      <%= form_tag(movies_path, :method => "get") do %>
-        <%= text_field_tag :title, params[:title], placeholder: "Search Movies" %>
-        <%= button_tag(type: "submit", class: "btn btn-transparent text-white") do %>
-            <i class="fas fa-search"></i>
-        <% end %>
-      <% end %>
+        <%= render "layouts/search_bar" %>
       </div>
       
     </div>
