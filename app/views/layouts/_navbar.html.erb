@@ -17,9 +17,9 @@
             <%= link_to "Profile", user_path(current_user), class:"dropdown-item" %>
             <%= link_to "Settings", edit_user_registration_path(current_user), class:"dropdown-item" %>
             
-          <% if user_signed_in? %>
+          <% if current_user.rank == 0 %>
             <div class="dropdown-divider"></div>
-            <%= link_to "Dashboard", root_path, class:"dropdown-item dashboard-item" %>
+            <%= link_to "Dashboard", root_path, class:"dropdown-item bg-danger" %>
           <% end %>
             
           <div class="dropdown-divider"></div>
@@ -27,7 +27,7 @@
           </div>
       <% else %>
       <div class="dropdown dropdown-login">
-        <%= link_to "Log in", new_user_session_path, class:"btn btn-info" %>
+        <%= link_to "Log in", new_user_session_path, class:"btn btn-primary" %>
       <% end %>
       </div>
 
