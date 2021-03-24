@@ -14,7 +14,7 @@
             <%= notation.movie.title %>
           </td>
           <td class="text-white" >
-            <%= link_to notation.user.username, user_path(notation.user), class: "text-white" %>
+            <%= link_to notation.user.username, user_path(notation.user, anchor: notation.id ) , class: "text-white" %>
           </td>
         </tr>
       <% end %>

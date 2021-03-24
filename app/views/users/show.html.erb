@@ -16,7 +16,7 @@
         </div>
         <div class="col-10">
           <p class="h2"><strong><%= @user.username %></strong></p>
-          
+
           <% if current_user == @user %>
             <p> <%= button_to "Edit profile", edit_user_registration_path, :method => "get", class: "btn btn-secondary btn-sm" %></p>
           <% end %>
@@ -40,7 +40,7 @@
         <div class="col"><br>
           <p class="h4" >Last reviews:</p>
           <% @notations.each do |notation| %>
-          <div class="row">
+          <div class="row" id=<%= notation.id %>>
             <div class="col-4">
               <%=image_tag notation.movie.image_url, :class => 'movie-poster' %>
             </div>
