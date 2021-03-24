@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col mx-auto">
       <div class="row">
-        <div class="col-2">
+        <div class="col-5 col-sm-4 col-md-3 col-lg-2">
           <% if @user.avatar.attached? %>
             <%= image_tag @user.avatar, alt: "user avatar", class: "image-shape" %>
           <% end %>
@@ -14,11 +14,11 @@
             <% end %>
           <% end %>
         </div>
-        <div class="col-10">
+        <div class="col-7 col-sm-8 col-md-9 col-lg-10">
           <% if @user.rank == 0 || @user.rank == 2 %>
-            <p class="h2"><strong><%= @user.username %> <i class="fas fa-check-circle"></i></strong></p>
+            <p class="h1"><strong><%= @user.username %> <i class="fas fa-check-circle"></i></strong></p>
             <% else %>
-            <p class="h2"><strong><%= @user.username %></strong></p>
+            <p class="h1"><strong><%= @user.username %></strong></p>
           <% end %>
           <% if current_user == @user %>
             <p> <%= button_to "Edit profile", edit_user_registration_path, :method => "get", class: "btn btn-secondary btn-sm" %></p>
@@ -26,8 +26,10 @@
           <% if current_user.rank == 0 %>
             <p> <%= button_to "Delete profile", user_path(@user), method: :delete, class: "btn btn-danger btn-sm" %></p>
             <%= form_with model: @user do |f| %>
-              <%= f.select :rank, [["Admin", 0],["Regular", 1],["Validated", 2]] %>
-              <%= f.submit "Change rank" %>
+              <div class="btn-group">
+                <%= f.select :rank, [["Admin", 0],["Regular", 1],["Validated", 2]], class: "select-rank" %>
+                <%= f.submit "Change rank", class: "btn btn-danger btn-sm" %>
+              </div>
             <%  end %>
           <% end %>
         </div>
