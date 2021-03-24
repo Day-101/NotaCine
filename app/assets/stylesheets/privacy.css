@@ -1,0 +1,8 @@
+.container-privacy{
+  background-color: #F3F3F3;
+  padding: 2em;
+  border-radius: 0.3em;
+}
+
+.container-privacy a{color: #e84335!important;}
+.container-privacy li{margin-bottom: 1em;}
