@@ -25,4 +25,9 @@
 }
 .search-welcome{
   grid-column: 2/span2;
+  display: flex;
+  margin: auto;
+}
+.search-welcome div{
+  align-self: center;
 }
