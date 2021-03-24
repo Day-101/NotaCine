@@ -56,7 +56,7 @@
 
 .btn-outline-primary {
 	color: #fff !important;
-  background-color: #e84335 !important;
+  background-color: none !important;
   border-color: #e84335 !important;
 }
 
@@ -67,7 +67,7 @@
 }
 .btn-outline-success {
 	color: #fff !important;
-  background-color: #34a853 !important;
+  background-color: none !important;
   border-color: #34a853 !important;
 }
 
@@ -78,7 +78,7 @@
 }
 .btn-outline-info {
 	color: #fff !important;
-  background-color: #4285f4 !important;
+  background-color: none !important;
   border-color: #4285f4 !important;
 }
 
@@ -89,7 +89,7 @@
 }
 .btn-outline-warning {
 	color: #000 !important;
-  background-color: #fbbc04 !important;
+  background-color: none !important;
   border-color: #fbbc04 !important;
 }
 
@@ -100,7 +100,7 @@
 }
 .btn-outline-danger {
 	color: #fff !important;
-  background-color: #e84335 !important;
+  background-color: none !important;
   border-color: #e84335 !important;
 }
 
