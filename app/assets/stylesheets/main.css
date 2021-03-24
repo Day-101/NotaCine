@@ -43,3 +43,7 @@ nav li a{
 .display-8 {
 	font-size: 1.5em;
 }
+
+.text-underline {
+	text-decoration: underline;
+}

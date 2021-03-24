@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :comments, except: [:new, :show, :index]
   end
   resources :users, only: [:show, :destroy, :update] do
-  	resources :avatars, only: [:create]
+      resources :avatars, only: [:create]
   end
   root to: 'movies#index'
   get 'statics/team'

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row section-team-title">
       <div class="col-md-6 text-right">
-        <h3><span>who we are?</span> creative team</h3>
+        <p class="display-6"><span>who we are?</span> creative team</p>
       </div>
       <div class="col-md-6">
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry.d </p>
@@ -51,18 +51,21 @@
         <div class="team-content">
           <h4>Benjamin Anezo <span>web developer</span></h4>
           <ul>
-            <li><%= link_to statics_team_path do %>
-              <i class="fa fa-facebook"></i>
-            <% end %></li>
-            <li><%= link_to statics_team_path do %>
-              <i class="fa fa-twitter"></i>
-            <% end %></li>
-            <li><%= link_to statics_team_path do %>
-              <i class="fa fa-linkedin"></i>
-            <% end %></li>
-            <li><%= link_to statics_team_path do %>
-              <i class="fa fa-google-plus"></i>
-            <% end %></li>
+            <li>
+              <%= link_to "https://github.com/Nekall", :target => "_blank" do %>
+              <i class="fab fa-github"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "https://codepen.io/LilNeka", :target => "_blank" do %>
+              <i class="fab fa-codepen"></i>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "https://twitter.com/36Qm7p5CGz", :target => "_blank" do %>
+              <i class="fab fa-twitter"></i>
+              <% end %>
+            </li>
           </ul>
         </div>
       </div>

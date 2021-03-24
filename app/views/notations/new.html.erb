@@ -10,7 +10,7 @@
       <%=image_tag @movie.image_url, :class => 'movie-poster mt-5' %>
     </div>
     <div class="col-12 col-sm-12 col-md-12 col-lg-8 notation-card text-center user-rate">
-      <p class="h4 text-primary my-4">Slide your opinion</p>
+      <p class="display-7 text-underline text-primary my-4">Slide your opinion</p>
       <%= form_with model: [@movie, @notation]  do |f| %>
         <%= f.label :scenario, "Scenario :" %>
         <%= f.range_field :scenario, in:0..100, value:50 %><br>

@@ -1,41 +1,47 @@
+<div class="container my-4 text-center">
+	<div class="row">
+		<div class="col-12">
 
 
 
-<ul>
-	<% @movies.each do |movie| %>
-		<li class="text-white"><%= movie.title %></li>
-	<% end %>
-</ul>
+			<%= form_with url: searches_path do |f| %>
+				<%= f.text_field :search, :class => "search-page" %>
 
+				<div>
+					<% Genre.all.each do |category| %>
+						<%= f.label category.title, class:"text-white" %>
+						<%= f.check_box :categories, { multiple: true }, category.id, false %>
+					<% end %>
+				</div>
 
-<%= form_with url: searches_path do |f| %>
-	<%= f.text_field :search %>
+				<div>
+					<%= f.label "Scénario", class:"text-white" %>
+					<%= f.check_box :criteria, { multiple: true }, "scenario", false %>
 
-	<div>
-		<% Genre.all.each do |category| %>
-			<%= f.label category.title, class:"text-white" %>
-			<%= f.check_box :categories, { multiple: true }, category.id, false %>
-		<% end %>
+					<%= f.label "Image", class:"text-white" %>
+					<%= f.check_box :criteria, { multiple: true }, "image", false %>
+
+					<%= f.label "Editing", class:"text-white" %>
+					<%= f.check_box :criteria, { multiple: true }, "editing", false %>
+
+					<%= f.label "Sound and Soundtrack", class:"text-white" %>
+					<%= f.check_box :criteria, { multiple: true }, "sound", false %>
+
+					<%= f.label "Makeup and hair", class:"text-white" %>
+					<%= f.check_box :criteria, { multiple: true }, "makeup", false %>
+
+					<%= f.label "Directing", class:"text-white" %>
+					<%= f.check_box :criteria, { multiple: true }, "directing", false %>
+				</div>
+
+				<%= f.submit "Search", class: "btn btn-primary" %>
+			<% end %>
+
+			<ul class="mt-4 mb-4">
+				<% @movies.each do |movie| %>
+					<li class="text-white search-result"><%=link_to movie.title, movie_path(movie.id), :class => "text-white" %></li>
+				<% end %>
+			</ul>
+		</div>
 	</div>
-	<div>
-		<%= f.label "Scénario", class:"text-white" %>
-		<%= f.check_box :criteria, { multiple: true }, "scenario", false %>
-
-		<%= f.label "Image", class:"text-white" %>
-		<%= f.check_box :criteria, { multiple: true }, "image", false %>
-
-		<%= f.label "Editing", class:"text-white" %>
-		<%= f.check_box :criteria, { multiple: true }, "editing", false %>
-
-		<%= f.label "Sound and Soundtrack", class:"text-white" %>
-		<%= f.check_box :criteria, { multiple: true }, "sound", false %>
-
-		<%= f.label "Makeup and hair", class:"text-white" %>
-		<%= f.check_box :criteria, { multiple: true }, "makeup", false %>
-
-		<%= f.label "Directing", class:"text-white" %>
-		<%= f.check_box :criteria, { multiple: true }, "directing", false %>
-	</div>
-
-	<%= f.submit %>
-<% end %>
+</div>
