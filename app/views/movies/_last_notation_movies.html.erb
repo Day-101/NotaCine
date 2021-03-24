@@ -7,13 +7,10 @@
         <% end %>   
         <div class="item_content">
           <div class="item_title">
-            <%= movies.title %>
-          </div>
-          <div class="item_year">
-            <%= movies.year %>
+            <h2><%= movies.title %><span class="text-secondary">(<%= movies.year %>)</span></h2>
           </div>
           <div class="item_see_more_wrapper">
-            <%= link_to "View details", movie_path(movies.id), :class => "item_see_more" %>
+            <%= link_to "View details", movie_path(movies.id), :class => "btn btn-sm btn-outline-primary item_see_more" %>
           </div>
         </div>
       </div>
