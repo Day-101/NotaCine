@@ -17,6 +17,7 @@ a:hover{color:#e84335!important;}
 nav li a{
 	font-size: 1.2em;
 }
+
 #hr-gradient{
   background: linear-gradient(to right, #e84335, #fff);
   height: 1px;
@@ -26,3 +27,19 @@ nav li a{
 }
 
 .bg-dark{ background-color:#202327 !important; }
+
+.display-5 {
+	font-size: 3em;
+}
+
+.display-6 {
+	font-size: 2.5em;
+}
+
+.display-7 {
+	font-size: 2em;
+}
+
+.display-8 {
+	font-size: 1.5em;
+}
