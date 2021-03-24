@@ -1,8 +1,19 @@
 .dropdown-login{ order: 1; }
 nav{background:#20232790 ;border-bottom: 1px solid #ffffff50;}
-nav .fa-search{font-size: 1.2em;}
 .navbar-nav{margin-right: auto; }
-.navbar-nav li { text-align: center; }
+.navbar-nav li{
+	text-align: center;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.navbar-nav li:hover{
+	background: #353A40;
+	border-radius: 0.3em;
+}
+.navbar-news{
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+}
 
 .navbar input:first-child{
 	border: none;
@@ -20,17 +31,19 @@ nav .fa-search{font-size: 1.2em;}
 	padding: 0 1em;
 }
 
-@media (max-width: 768px) {
-.dropdown-login {
-	order: 0;
-	justify-content: flex-end;
-	flex-grow: 1;
-	display: flex;}
-
-.collapse, .collapsing{ display: flex; flex-direction: column-reverse; align-items: center; }
-.navbar-nav{ margin-right: 0px;}
-.navbar-brand{flex-grow: 1;}
-.dropdown-signed{flex-grow: 0;}
+@media (max-width: 576px) {
+  .navbar-user span{display: none;}
+}
+@media (max-width: 767px) {
+	.dropdown-login {
+		order: 0;
+		justify-content: flex-end;
+		flex-grow: 1;
+		display: flex;}
+	.collapse, .collapsing{ display: flex; flex-direction: column-reverse; align-items: center; }
+	.navbar-nav{ margin-right: 0px;}
+	.navbar-brand{flex-grow: 1;}
+	.dropdown-signed{flex-grow: 0;}
 }
 
 .brand-img{
@@ -42,4 +55,37 @@ nav .fa-search{font-size: 1.2em;}
 	width:30px;
 	height:30px;
 	border-radius: 50%;
+	object-fit: cover;
+}
+
+.dropdown-menu{background-color: #202327 !important;border:1px solid #ffffff50 !important}
+.dropdown-item{ color: #fff !important;}
+.dropdown-item:hover{color: #fff !important;background: #353A40 !important;}
+
+.navbar a:hover{color: #fff !important;}
+
+.dropdown-signed{
+	padding-left: .5rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.dropdown-signed:hover{
+	background: #353A40;
+	border-radius: 0.3em;
+}
+
+.navbar-user:hover{
+	text-decoration: none;
+}
+
+.navbar-user span{
+	color: #fff;
+	padding-left: .4rem;
+}
+
+.navbar-dark .navbar-toggler{margin-left: 1em;}
+
+.navbar-expand-md .navbar-nav .nav-link {
+	padding-right: .5rem !important;
+	padding-left: .5rem !important;
 }

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :notations, except: [:show, :index]
     resources :comments, except: [:new, :show, :index]
   end
-  resources :users, only: [:show, :destroy] do
+  resources :users, only: [:show, :destroy, :update] do
   	resources :avatars, only: [:create]
   end
   root to: 'movies#index'
@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get "/admin", to: "admins#show"
   resources :admins #, only: [:update, :edit]
 
+  resources :articles , except: [:new]
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

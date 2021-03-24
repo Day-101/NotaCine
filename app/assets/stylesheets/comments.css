@@ -1,6 +1,6 @@
 .comments-card {
   background-color: #353A40;
-  color: white;
+  color: #e4e6eb;
   border-radius: 0.3em;
 }
 
@@ -12,10 +12,14 @@
   height: 150px;
 }
 
-.nickename {
+.nickname {
   color: #e84335;
-  padding: 12px;
+  padding: 12px 1px 12px 12px;
   font-size: 400;
+}
+
+.fa-check-circle {
+  color: #e84335;
 }
 
 .comments-avatar {
