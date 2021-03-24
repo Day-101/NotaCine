@@ -6,11 +6,11 @@
           <%=image_tag @movie.image_url, :class => 'movie-poster' %>
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-8">
-          <p class="h2"><%= @movie.title %><span class="text-muted"> (<%= @movie.year %>)</span></p>
+          <h1 class="display-7"><%= @movie.title %><span class="text-muted"> (<%= @movie.year %>)</span></h1>
           <% @movie.genres.each do |category| %>
             <p class="badge badge-secondary badge-pill"><%= category.title %></p>
           <% end %>
-          <p class="h4 text-muted">Directed by <%= @movie.director %></p>
+          <p class="display-8 text-muted">Directed by <%= @movie.director %></p>
           <hr>
           <p class="text-muted"><strong>Plot: </strong><%= @movie.description %></p>
           <div class="btn-group" role="group">
@@ -36,7 +36,7 @@
       <div class="card bg-dark p-4">
         <div class="row">
           <div class="col-5 text-center nota-rate">
-            <p class="h4 mb-1"><%= image_tag image_path("notacine-logo-responsive-dark.svg"), class:"brand-img-responsive", alt:"NotaCine" %></p><br>
+            <p class="display-8 mb-1"><%= image_tag image_path("notacine-logo-responsive-dark.svg"), class:"brand-img-responsive", alt:"NotaCine" %></p><br>
             <% if @movie.reviewed_by_admin %>
               <%= form_for @movie do |f| %>
                 <%= f.label :scenario, "Scenario" %><br>
@@ -60,7 +60,7 @@
             <hr class="vertical-divider mx-auto">
           </div>
           <div class="col-5 text-center user-rate">
-            <p class="h4"><i class="fas fa-users mb-4 mt-2"></i></p>
+            <p class="display-8"><i class="fas fa-users mb-4 mt-2"></i></p>
             <% unless Notation.find_by(movie:@movie).nil? %>
               <%= form_for @movie do |f| %>
                 <%= f.label :scenario, "Scenario" %><br>
@@ -84,7 +84,7 @@
       </div>
       <hr>
       <div class="row mx-1">
-        <p class="h4 my-4"><strong>Comments <i class="fas fa-comments"></i></strong></p>
+        <h2 class="display-8 my-4"><strong>Comments <i class="fas fa-comments"></i></strong></h2>
         <div class="col-12 p-3 comments-card">
           <% @movie.comments.each do |comment|%>
             <div class="col-12 pt-4">

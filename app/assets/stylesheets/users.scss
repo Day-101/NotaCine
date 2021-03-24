@@ -80,3 +80,17 @@ select {
 select:hover {
    background-color: #cd4236;
 }
+
+.js-notation{
+  display: flex;
+  justify-content: space-around;
+}
+
+.title-js {
+  cursor: pointer;
+}
+
+.title-js:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

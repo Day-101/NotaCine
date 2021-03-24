@@ -9,6 +9,11 @@
           <div class="item_title">
             <h2><%= movies.title %><span class="text-secondary">(<%= movies.year %>)</span></h2>
           </div>
+          <div class="item_badge">
+            <% movies.genres.each do |genre| %>
+              <%= link_to genre.title, search_path({"categories" => [genre.id]}), :class => "badge badge-secondary" %>
+            <% end %>
+          </div>
           <div class="item_see_more_wrapper">
             <%= link_to "View details", movie_path(movies.id), :class => "btn btn-sm btn-outline-primary item_see_more" %>
           </div>
