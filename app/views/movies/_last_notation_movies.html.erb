@@ -12,6 +12,13 @@
           <div class="item_see_more_wrapper">
             <%= link_to "View details", movie_path(movies.id), :class => "btn btn-sm btn-outline-primary item_see_more" %>
           </div>
+          <div class="item_badge">
+            <% movies.genres.each do |genre| %>
+              <%= link_to root_path, :class => "badge badge-secondary" do %>
+                <i><%= genre.title %></i>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
