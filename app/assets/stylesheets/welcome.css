@@ -23,6 +23,7 @@
   padding: 2em;
   background: rgb(161,161,161);
   background: radial-gradient(circle, rgba(161,161,161,1) 0%, rgba(119,63,57,1) 47%, rgba(37,40,45,1) 83%);
+  border-bottom: 1px solid #ffffff50;
 }
 .card-welcome{
   grid-column: 1;
