@@ -55,8 +55,8 @@
 }
 
 .btn-outline-primary {
-	color: #fff !important;
-  background-color: #e84335 !important;
+  color: #e84335 !important;
+  background-color: none !important;
   border-color: #e84335 !important;
 }
 
@@ -66,8 +66,8 @@
   border-color: #cc3b2f !important;
 }
 .btn-outline-success {
-	color: #fff !important;
-  background-color: #34a853 !important;
+  color: #34a853 !important;
+  background-color: none !important;
   border-color: #34a853 !important;
 }
 
@@ -77,8 +77,8 @@
   border-color: #2c8e46 !important;
 }
 .btn-outline-info {
-	color: #fff !important;
-  background-color: #4285f4 !important;
+  color: #4285f4 !important;
+  background-color: none !important;
   border-color: #4285f4 !important;
 }
 
@@ -88,8 +88,8 @@
   border-color: #3b77db !important;
 }
 .btn-outline-warning {
-	color: #000 !important;
-  background-color: #fbbc04 !important;
+  color: #fbbc04 !important;
+  background-color: none !important;
   border-color: #fbbc04 !important;
 }
 
@@ -99,8 +99,8 @@
   border-color: #e1a904 !important;
 }
 .btn-outline-danger {
-	color: #fff !important;
-  background-color: #e84335 !important;
+  color: #e84335 !important;
+  background-color: none !important;
   border-color: #e84335 !important;
 }
 

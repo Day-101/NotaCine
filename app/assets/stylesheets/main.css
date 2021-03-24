@@ -23,6 +23,7 @@ nav li a{
 }
 .rounded-nota {
   border-radius: 1rem!important;
+<<<<<<< HEAD
 }
 
 .bg-dark{ background-color:#202327 !important; }
@@ -42,3 +43,6 @@ nav li a{
 .display-8 {
 	font-size: 1.5em;
 }
+=======
+}
+>>>>>>> development
