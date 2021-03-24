@@ -1,6 +1,12 @@
 <div class="container-welcome">
 	<div class="card-welcome">
-		<h1 class="text-white text-center">Welcome <%=current_user.username%>&nbsp;!</h1>
+		<h1 class="text-white text-center">Welcome
+			<% if user_signed_in? %>
+				<%=current_user.username%>&nbsp;!
+				<% else %>
+			!
+			<% end %>
+		</h1>
 		<%= link_to statics_how_path do%>
 			<h2 class="text-primary text-center">How it works&nbsp;?</h2>
 		<% end %>
