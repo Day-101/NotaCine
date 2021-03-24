@@ -1,0 +1,16 @@
+.container-welcome{
+  border: .3em solid #e84335;
+  border-radius: 0.3em;
+  padding: 1em;
+}
+.container-welcome h1{
+  font-size: 1em;
+}
+
+.container-welcome h2{
+  font-size: 3em;
+}
+
+.container-welcome p{
+  font-size: 1.5em;
+}
