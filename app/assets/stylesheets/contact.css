@@ -1,22 +1,7 @@
-.contact{
-    padding: 4%;
-    height: 400px;
+.container-contact{
+    background-color: #F3F3F3;
+    padding: 2em;
+    border-radius: 0.3em;
 }
-#column-md-3{
-    background: #e84335;
-    padding: 4%;
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
-}
-.contact-info{
-    margin-top:10%;
-}
-.contact-info h2{
-    margin-bottom: 10%;
-}
-#column-md-9{
-    background: #fff;
-    padding: 3%;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-}
+
+.container-contact a{display: block; color: #e84335!important;}

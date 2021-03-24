@@ -59,10 +59,10 @@ nav{background:#20232790 ;border-bottom: 1px solid #ffffff50;}
 }
 
 .dropdown-menu{background-color: #202327 !important;border:1px solid #ffffff50 !important}
-.dropdown-item{ color: #fff !important;}
-.dropdown-item:hover{color: #fff !important;background: #353A40 !important;}
+.dropdown-item{ color: #e4e6eb!important;}
+.dropdown-item:hover{color: #e4e6eb!important;background: #353A40 !important;}
 
-.navbar a:hover{color: #fff !important;}
+.navbar a:hover{color: #e4e6eb!important;}
 
 .dropdown-signed{
 	padding-left: .5rem;
@@ -79,7 +79,7 @@ nav{background:#20232790 ;border-bottom: 1px solid #ffffff50;}
 }
 
 .navbar-user span{
-	color: #fff;
+	color: #e4e6eb;
 	padding-left: .4rem;
 }
 
