@@ -16,9 +16,9 @@
         </div>
         <div class="col-7 col-sm-8 col-md-9 col-lg-10">
           <% if @user.rank == 0 || @user.rank == 2 %>
-            <p class="h1"><strong><%= @user.username %> <i class="fas fa-check-circle"></i></strong></p>
+            <p class="display-7"><strong><%= @user.username %></strong> <i class="fas fa-check-circle fa-sm"></i></p>
             <% else %>
-            <p class="h1"><strong><%= @user.username %></strong></p>
+            <p class="display-7"><strong><%= @user.username %></strong></p>
           <% end %>
           <% if current_user == @user %>
             <p> <%= button_to "Edit profile", edit_user_registration_path, :method => "get", class: "btn btn-secondary btn-sm" %></p>
@@ -41,10 +41,12 @@
       </div>
       <div class="row">
         <div class="col"><br>
-          <p class="h4" >Last reviews:</p>
+          <p class="display-7 text-underline">Last reviews:</p>
           <ul>
           <% @notations.each do |notation| %>
-            <li class="h3"><%= notation.movie.title %></li>
+            <li class="display-8 title-js">
+              <%= notation.movie.title %>
+            </li>
             <div class="text-right pt-3 user-rate text-center js-notation">
               <%=image_tag notation.movie.image_url, :class => 'movie-poster' %>
               <%= form_with do |f| %>

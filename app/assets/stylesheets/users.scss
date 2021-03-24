@@ -85,3 +85,12 @@ select:hover {
   display: flex;
   justify-content: space-around;
 }
+
+.title-js {
+  cursor: pointer;
+}
+
+.title-js:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
