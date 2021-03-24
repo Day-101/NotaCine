@@ -64,3 +64,19 @@
 input:hover + .avatar-effect {
   opacity: 1;
 }
+
+select {
+   background-color: #b03126;
+   border: none;
+   border-radius: 0.2rem;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   padding: 0.25em;
+   color: #e4e6eb;
+   cursor: pointer;
+}
+
+select:hover {
+   background-color: #cd4236;
+}

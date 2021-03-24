@@ -89,8 +89,8 @@
           <% @movie.comments.each do |comment|%>
             <div class="col-12 pt-4">
               <%= image_tag comment.user.avatar, alt: "user avatar", class: "comments-avatar" %>
-              <strong class="nickname"><%= comment.user.username %></strong>
-              <% if comment.user.rank == 0 || comment.user.rank == 2 %>
+              <strong ><%= link_to comment.user.username, user_path(comment.user), class: "nickname" %></strong>
+              <% unless comment.user.rank == 1 %>
                 <i class="fas fa-check-circle"></i>
               <% end %>
               <p class="pl-5 mb-0"> <%= comment.content %> </p>
@@ -105,8 +105,8 @@
             </div>
           <% end %>
           <%= form_with model:[@movie, @movie.comments.build] do |f| %>
-            <%= f.text_area :content, :class => "comments-area", placeholder: "Your comment here" %>
-            <%= f.submit 'Submit', :class => "btn btn-link text-white" %>
+            <%= f.text_area :content, :class => "comments-area form-control", placeholder: "Your comment here" %>
+            <%= f.submit 'Submit', :class => "btn btn-right btn-primary" %>
           <% end %>
         </div>
       </div>
