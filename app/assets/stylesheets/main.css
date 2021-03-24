@@ -17,13 +17,13 @@ a:hover{color:#e84335!important;}
 nav li a{
 	font-size: 1.2em;
 }
+
 #hr-gradient{
   background: linear-gradient(to right, #e84335, #fff);
   height: 1px;
 }
 .rounded-nota {
   border-radius: 1rem!important;
-<<<<<<< HEAD
 }
 
 .bg-dark{ background-color:#202327 !important; }
@@ -43,6 +43,3 @@ nav li a{
 .display-8 {
 	font-size: 1.5em;
 }
-=======
-}
->>>>>>> development
