@@ -16,12 +16,19 @@
         </div>
         <div class="col-10">
           <p class="h2"><strong><%= @user.username %></strong></p>
+          
           <% if current_user == @user %>
             <p> <%= button_to "Edit profile", edit_user_registration_path, :method => "get", class: "btn btn-secondary btn-sm" %></p>
           <% end %>
+
           <% if current_user.rank == 0 %>
             <p> <%= button_to "Delete profile", user_path(@user), method: :delete, class: "btn btn-danger btn-sm" %></p>
+            <%= form_with model: @user do |f| %>
+              <%= f.select :rank, [["Admin", 0],["Regular", 1],["Validated", 2]] %>
+              <%= f.submit "Change rank" %>
+            <%  end %>
           <% end %>
+
         </div>
       </div>
       <div class="row movies-review">
