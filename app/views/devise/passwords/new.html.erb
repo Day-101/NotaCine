@@ -2,7 +2,7 @@
   <div class="row">
     <div class="card mx-auto card-d" id="forgotpass-card">
       <div class="card-body">
-        <h3 class="card-title"><strong>Password assistance</strong></h3>
+        <p class="card-title display-7"><strong>Password assistance</strong></p>
         <p>Enter the email address associated with your NotaCine account.</p>
         <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
@@ -16,8 +16,8 @@
           </div>
         <% end %>
         <hr>
-        <h5>Has your email changed?</h5>
-        <p>If you no longer use the email adress associated with your NotaCine account, you may contact <a rel="stylesheet" href="#">NotaCine's Team</a> for help restoring access to your account.</p>
+        <p class="display-8">Has your email changed?</p>
+        <p>If you no longer use the email adress associated with your NotaCine account, you may contact <%= link_to "NotaCine's Team", statics_contact_path %> for help restoring access to your account.</p>
       </div>
     </div>
   </div>
