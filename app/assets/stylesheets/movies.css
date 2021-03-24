@@ -75,7 +75,7 @@ section {
     }
 
     .item_title h2 {
-        margin-bottom: 30px;
+        margin-bottom: 1.7em;
         font-size: 1.1em;
         font-weight: bold;
 
@@ -91,19 +91,20 @@ section {
         color:  #e4e6eb !important;
     }
 
-    .item_badge i {
-        color:  #e4e6eb;
+    .badge-secondary {
+        color:  #e4e6eb !important;
         text-shadow: none;
+        margin-bottom: 2em;
     }
 
-    .item_badge i:hover {
+    .item_badge:hover {
         color:  #e84335;
     }
 
     .item_3 {
         color:  #e4e6eb;
         overflow: hidden;
-        height: 330px;
+        height: 322px;
     }
 
     .item_3 .item_content {
@@ -163,7 +164,7 @@ section {
     }
 
     .item_3 {
-        height: auto;
+        height: 96%;
     }
 
     .poster-movies {

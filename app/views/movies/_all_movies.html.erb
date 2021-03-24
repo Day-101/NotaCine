@@ -10,9 +10,7 @@
         </div>
         <div class="item_badge">
           <% movies.genres.each do |genre| %>
-            <%= link_to root_path, :class => "badge badge-secondary" do %>
-              <i><%= genre.title %></i>
-            <% end %>
+            <%= link_to genre.title, search_path({"categories" => [genre.id]}), :class => "badge badge-secondary" %>
           <% end %>
         </div>
         <div class="item_see_more_wrapper">
