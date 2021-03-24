@@ -1,9 +1,22 @@
 <% Movie.last_four.each do |movies| %>
   <% if movies.reviewed_by_admin %>
     <div class="col-6 col-sm-6 col-md-3 poster-movies">
-      <%= link_to movie_path(movies.id) do %>
-        <%= image_tag movies.image_url, alt: movies.title, :class => "img-grid frontside" %>
-      <% end %>   
+      <div class="overlay_item item_3">
+        <%= link_to movie_path(movies.id) do %>
+          <%= image_tag movies.image_url, alt: movies.title, :class => "img-grid frontside" %>
+        <% end %>   
+        <div class="item_content">
+          <div class="item_title">
+            <%= movies.title %>
+          </div>
+          <div class="item_year">
+            <%= movies.year %>
+          </div>
+          <div class="item_see_more_wrapper">
+            <%= link_to "View details", movie_path(movies.id), :class => "item_see_more" %>
+          </div>
+        </div>
+      </div>
     </div>
   <% end %>
 <% end %>
