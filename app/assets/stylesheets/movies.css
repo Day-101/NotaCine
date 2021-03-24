@@ -3,16 +3,19 @@ section {
 }
 
 .img-grid {
-    object-fit: cover;
+    max-width: 100%;
+    display:block;
+    height:auto;
+    max-height: 100%;
+    min-height: 247px;
 }
 
 .poster-movies {
     padding: .5em !important;
     max-width: 260px !important;
-    display:block;
-    height:auto;
     max-height: 353px !important;
     min-height: 247px !important;
+    overflow: hidden;
 }
 
 .card-movies-index h3 {
@@ -82,19 +85,11 @@ section {
 }
 
 .item_see_more {
-  color:  #e4e6eb;
+  color:  #e4e6eb !important;
 }
 
 .item_3 {
   color:  #e4e6eb;
-}
-
-.item_3 img {
-    max-width: 100%;
-    display:block;
-    height:auto;
-    max-height: 363px;
-    min-height: 247px;
 }
 
 .item_3 .item_content {
