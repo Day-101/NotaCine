@@ -1,1 +1,17 @@
 body .text-white{color: #e4e6eb !important;}
+
+body .text-primary {
+	color: #e84335 !important;
+}
+body .text-success {
+	color: #34a853 !important;
+}
+body .text-info {
+	color: #4285f4 !important;
+}
+body .text-warning {
+	color: #fbbc04 !important;
+}
+body .text-danger {
+	color: #e84335 !important;
+}
