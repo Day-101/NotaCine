@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 card my-4">
+      <%= form_with model: @article, multipart: true do |f| %><br>
+        <p class="m-0"><strong>Title :</strong></p>
+        <%= f.text_field :title, :class => "edit_title_article" %><br>
+        <p class="m-0 pt-2"><strong>Article :</strong></p>
+        <%= f.text_area :content, :class => "edit_content_article" %><br>
+        <%= f.file_field :article_picture %><br>
+        <%= f.submit "Edit", :class => "btn btn-link" %>
+      <% end %>
+    </div>
+  </div>
+</div>

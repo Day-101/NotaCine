@@ -1,0 +1,19 @@
+<div class="container text-white">
+  <div class="row">
+    <h1>News</h1>
+    <div class="col-12 edit-article my-4">
+      <% @articles.each do |article| %>
+        <%= image_tag article.article_picture, class: "img_article" if article.article_picture.attached? %>
+        <p><%= link_to article.title, article_path(article), :class => "text-white display-7" %></p>
+        <p class="content_article"><%= article.content %></p>
+        <strong><p class="text-right">Written by <%= link_to User.find(article.user_id).username, user_path(article.user_id), :class => "text-white" %></p></strong>
+        <p class="text-right">Posted on <%= article.created_at.strftime('%m/%d/%Y') %></p>
+        <div class="btn-group">
+          <%= link_to "Edit", edit_article_path(article), class: "btn btn-warning" if user_signed_in? && current_user.rank == 0 %>
+          <%= link_to "Delete", article_path(article), method: :delete, class:"btn btn-danger" if user_signed_in? && current_user.rank == 0 %>
+        </div>
+        <hr>
+      <% end %>
+    </div>
+  </div>
+</div>

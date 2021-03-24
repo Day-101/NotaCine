@@ -1,12 +1,17 @@
+.card-d {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding:25px 20px 20px 20px;
+  background-color: #F3F3F3;
+  border-radius: 0.3em;
+}
+
 #login-card {
-  margin-top: 80px;
-  padding:25px 20px 40px 20px;
   width: 370px;
 }
 
-#signup-card {
-  margin-top: 80px;
-  padding:25px 20px 40px 20px;
+#forgotpass-card {
+  width: 420px;
 }
 
 #hr-new {
@@ -26,8 +31,11 @@
     top: -13px;
 }
 
-#forgotpass-card {
-  margin-top: 80px;
-  padding:25px 20px 40px 20px;
-  width: 420px;
+#edit-profil {
+  border: solid 1px;
+  border-radius: 0.3em;
+  border-color: #292c32;
+  margin: 10px;
+  padding: 20px;
+  background-color: #F3F3F3;
 }

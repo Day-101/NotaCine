@@ -1,0 +1,115 @@
+<div class="container text-white my-4">
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+          <%=image_tag @movie.image_url, :class => 'movie-poster' %>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-8">
+          <p class="h2"><%= @movie.title %><span class="text-muted"> (<%= @movie.year %>)</span></p>
+          <% @movie.genres.each do |category| %>
+            <p class="badge badge-secondary badge-pill"><%= category.title %></p>
+          <% end %>
+          <p class="h4 text-muted">Directed by <%= @movie.director %></p>
+          <hr>
+          <p class="text-muted"><strong>Plot: </strong><%= @movie.description %></p>
+          <div class="btn-group" role="group">
+            <% if user_signed_in? %>
+              <% unless @movie.already_reviewed(current_user) %>
+                <%= button_to new_movie_notation_path(@movie), :method => "get",class: "btn btn-primary mx-1" do %>
+                  Leave a review
+                  <i class="fas fa-sliders-h"></i>
+                <% end %>
+              <% else %>
+                <%= button_to edit_movie_notation_path(@movie,Notation.find_by(movie:@movie, user:current_user)), :method => "get",class: "btn btn-primary mx-1" do %>
+                  Edit your review
+                  <i class="fas fa-sliders-h"></i>
+                <% end %>
+              <% end %>
+              <%= button_to "Edit", edit_movie_path(@movie), :method => "get", class:"btn btn-warning mx-1" if current_user.rank == 0 %>
+            <% else %>
+              <u><%= link_to "Sign in", new_user_registration_path, class: "text-white" %></u> to rate & review
+            <% end %>
+          </div>
+        </div>
+      </div><br>
+      <div class="card bg-dark p-4">
+        <div class="row">
+          <div class="col-5 text-center nota-rate">
+            <p class="h4 mb-1"><%= image_tag image_path("notacine-logo-responsive-dark.svg"), class:"brand-img-responsive", alt:"NotaCine" %></p><br>
+            <% if @movie.reviewed_by_admin %>
+              <%= form_for @movie do |f| %>
+                <%= f.label :scenario, "Scenario" %><br>
+                <%= f.range_field :scenario, :in => 0..100, :step => 1, value:@movie.notacine_reviews("scenario"), :disabled => true  %><br>
+                <%= f.label :image, "Image" %><br>
+                <%= f.range_field :image, :in => 0..100, :step => 1, value:@movie.notacine_reviews("image"), :disabled => true %><br>
+                <%= f.label :editing, "Editing" %><br>
+                <%= f.range_field :editing, :in => 0..100, :step => 1, value:@movie.notacine_reviews("editing"), :disabled => true %><br>
+                <%= f.label :sound, "Sound and Soundtrack" %><br>
+                <%= f.range_field :sound, :in => 0..100, :step => 1, value:@movie.notacine_reviews("sound"), :disabled => true %><br>
+                <%= f.label :makeup, "Costume Makeup and Hairstyling" %><br>
+                <%= f.range_field :makeup, :in => 0..100, :step => 1, value:@movie.notacine_reviews("makeup"), :disabled => true %><br>
+                <%= f.label :directing, "Directing" %><br>
+                <%= f.range_field :directing, :in => 0..100, :step => 1, value:@movie.notacine_reviews("directing"), :disabled => true %><br>
+              <% end %>
+            <% else %>
+              <p>This movie is not yet reviewed</p>
+            <% end %>
+          </div>
+          <div class="col">
+            <hr class="vertical-divider mx-auto">
+          </div>
+          <div class="col-5 text-center user-rate">
+            <p class="h4"><i class="fas fa-users mb-4 mt-2"></i></p>
+            <% unless Notation.find_by(movie:@movie).nil? %>
+              <%= form_for @movie do |f| %>
+                <%= f.label :scenario, "Scenario" %><br>
+                <%= f.range_field :scenario, :in => 0..100, :step => 1, value:@movie.all_reviews("scenario"), :disabled => true  %><br>
+                <%= f.label :image, "Image" %><br>
+                <%= f.range_field :image, :in => 0..100, :step => 1, value:@movie.all_reviews("image"), :disabled => true %><br>
+                <%= f.label :editing, "Editing" %><br>
+                <%= f.range_field :editing, :in => 0..100, :step => 1, value:@movie.all_reviews("editing"), :disabled => true %><br>
+                <%= f.label :sound, "Sound and Soundtrack" %><br>
+                <%= f.range_field :sound, :in => 0..100, :step => 1, value:@movie.all_reviews("sound"), :disabled => true %><br>
+                <%= f.label :makeup, "Costume Makeup and Hairstyling" %><br>
+                <%= f.range_field :makeup, :in => 0..100, :step => 1, value:@movie.all_reviews("makeup"), :disabled => true %><br>
+                <%= f.label :directing, "Directing" %><br>
+                <%= f.range_field :directing, :in => 0..100, :step => 1, value:@movie.all_reviews("directing"), :disabled => true %><br>
+              <% end %>
+            <% else %>
+              <p>This movie is not yet reviewed</p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row mx-1">
+        <p class="h4 my-4"><strong>Comments <i class="fas fa-comments"></i></strong></p>
+        <div class="col-12 p-3 comments-card">
+          <% @movie.comments.each do |comment|%>
+            <div class="col-12 pt-4">
+              <%= image_tag comment.user.avatar, alt: "user avatar", class: "comments-avatar" %>
+              <strong ><%= link_to comment.user.username, user_path(comment.user), class: "nickname" %></strong>
+              <% unless comment.user.rank == 1 %>
+                <i class="fas fa-check-circle"></i>
+              <% end %>
+              <p class="pl-5 mb-0"> <%= comment.content %> </p>
+              <div class="btn-group pl-5" role="group">
+                 <% if user_signed_in? && comment.user_is_author?(current_user) %>
+                  <%= link_to "Edit", edit_movie_comment_path(@movie, comment), class: "btn btn-link text-info" %>
+                <% end %>
+                <% if user_signed_in? && comment.user_is_author?(current_user) || current_user.rank == 0 %>
+                  <%= button_to "Delete", movie_comment_path(@movie, comment), class: "btn btn-link text-danger", method: :delete %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+          <%= form_with model:[@movie, @movie.comments.build] do |f| %>
+            <%= f.text_area :content, :class => "comments-area form-control", placeholder: "Your comment here" %>
+            <%= f.submit 'Submit', :class => "btn btn-right btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,32 +1,40 @@
-
-<footer class="grid-container text-white bg-secondary grid-footer p-4 ">
-<div class=" row align-items-start">
+<footer class="grid-container text-white grid-footer p-4 text-white">
+<div class="row container mx-auto">
   <ul class="col">
     <li>
-      <p class="navbar-brand text-white flex-grow-1 rocknroll" href="/">© NotaCine <i class="fas fa-cat"></i></p>
+    <div class="brand-footer">
+      <%= link_to root_path do %>
+        <%= image_tag image_path("notacine-logo-responsive-dark.svg"), class:"brand-img-responsive mb-2", alt:"NotaCine" %>
+      <% end %>
+      <div class="text-secondary">© 2021</div>
+    </div>
     </li>
   </ul>
   <ul class="col">
-    <li class="font-weight-bold">
+    <li>
       Support
     </li>
     <li>
-      <%= link_to "Contact us", class:"text-white" %>
+      <%= link_to "Contact us", statics_contact_path %>
     </li>
     <li>
-      <%= link_to "Privacy policy", class:"text-white" %>
+      <%= link_to "Privacy policy", statics_privacy_path %>
+    </li>
+    <li>
+      <%= link_to "Term of use", statics_term_path %>
     </li>
   </ul>
   <ul class="col">
-    <li class="font-weight-bold">
+    <li>
       About
     </li>
     <li>
-      <%= link_to "How does it works ?", class:"text-white" %>
+      <%= link_to "How does it works ?", statics_how_path %>
     </li>
     <li>
-      <%= link_to "Our team", class:"text-white" %>
+      <%= link_to "Team", statics_team_path %>
     </li>
   </ul>
   </div>
+  <div class="powered">Powered by <%= link_to "Ruby on Rails", "https://rubyonrails.org/" %>, <%= link_to "Bootstrap", "https://getbootstrap.com/" %>, <%= link_to "IMDB", "https://www.imdb.com/" %>, <%= link_to "Font Awesome", "http://fontawesome.com/" %></div>
 </footer>

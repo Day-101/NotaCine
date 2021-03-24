@@ -1,11 +1,23 @@
+html {
+	height: 100%;
+}
 body{
 	font-family: 'Sen',
 	sans-serif;
-	padding-top: 56px;
+	padding-top: 57px;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	background: #202327 !important;
 }
+
+a{color:#212529!important;}
+a:hover{color:#e84335!important;}
+
 nav li a{
 	font-size: 1.2em;
 }
+
 #hr-gradient{
   background: linear-gradient(to right, #e84335, #fff);
   height: 1px;
@@ -13,4 +25,21 @@ nav li a{
 .rounded-nota {
   border-radius: 1rem!important;
 }
+
 .bg-dark{ background-color:#202327 !important; }
+
+.display-5 {
+	font-size: 3em;
+}
+
+.display-6 {
+	font-size: 2.5em;
+}
+
+.display-7 {
+	font-size: 2em;
+}
+
+.display-8 {
+	font-size: 1.5em;
+}

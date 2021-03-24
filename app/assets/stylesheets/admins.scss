@@ -1,0 +1,64 @@
+// Place all the styles related to the Admins controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.container-dashboard{
+	color: #e4e6eb;
+}
+.container-dashboard a{
+  color: #fff !important;
+}
+
+.container-dashboard table{
+  width: 100%;
+  background: #353A40;
+  border-radius: 0.3em;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #6f6f6f;
+  border-collapse: initial;
+}
+.container-dashboard tbody tr{
+  border-top: 1px solid #6f6f6f;
+}
+.container-dashboard th{
+  padding: 0.5em;
+}
+.container-dashboard td{
+  padding: 0.5em;
+}
+.container-dashboard tbody{
+  padding: 5em;
+}
+.card-dashboard h2{
+  font-size: 1.2em;
+}
+
+.card-dashboard-line{
+  border-top: 1px solid #000;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.article-form{
+  padding: 1em;
+  border-radius: 0.3em;
+  display: flex;
+  justify-content: center;
+  background: #353A40;
+}
+
+.article-form form{
+  display: flex;
+  flex-direction: column;
+}
+
+.article-form * {
+  max-width: 500px;
+  width: 100%;
+  align-self: center;
+  margin: 0.3em;
+
+  border-radius: 0.2em;
+  border: none;
+}
