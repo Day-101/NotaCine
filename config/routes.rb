@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :notations, except: [:show, :index]
     resources :comments, except: [:new, :show, :index]
   end
-  resources :users, only: [:show, :destroy] do
+  resources :users, only: [:show, :destroy, :update] do
   	resources :avatars, only: [:create]
   end
   root to: 'movies#index'
