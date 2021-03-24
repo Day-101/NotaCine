@@ -18,8 +18,13 @@ section {
     overflow: hidden;
 }
 
-.card-movies-index h3 {
+.card-movies-row {
+    margin-left: -8px !important;
+}
+
+.card-movies-index h1 {
     color:  #e4e6eb;
+    font-size: 1.5rem;
 }
 
 .search-bar-border {
@@ -47,54 +52,59 @@ section {
 
 @media (min-width: 992px) {
     .overlay_item {
-    position: relative;
+        position: relative;
     }
 
     .overlay_item  > img {
-    display: block;
+        display: block;
     }
 
     .item_content {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-family: Sans-serif;
-    text-align: center;
-    padding-left: 15px;
-    padding-right: 15px;
-    text-shadow: 0 0 5px black;
-    transition: .4s ease all;
-    opacity: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-family: Sans-serif;
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-shadow: 0 0 5px black;
+        transition: .4s ease all;
+        opacity: 0;
     }
 
     .item_content:hover,
     .item_content:focus-within {
-    opacity: 1;
+        opacity: 1;
     }
 
-    .item_title {
-    margin-bottom: 30px;
+    .item_title h2 {
+        margin-bottom: 30px;
+        font-size: 1.5em;
+        font-weight: bold;
+
     }
 
-    .item_year {
-    margin-bottom: 60px;
+    .item_title span {
+        display: block;
+        font-size: .8em;
+        font-weight: normal;
     }
 
     .item_see_more {
-    color:  #e4e6eb !important;
+        color:  #e4e6eb !important;
     }
 
     .item_3 {
-    color:  #e4e6eb;
+        color:  #e4e6eb;
     }
 
     .item_3 .item_content {
-    background: radial-gradient(rgba(0,0,0,.7), black);
+        background: radial-gradient(rgba(0,0,0,.7), black);
     }
 }
 
@@ -102,4 +112,15 @@ section {
     .item_content {
         display: none;
     }
+}
+
+.item_see_more_wrapper .btn-outline-primary {
+    color: #e84335 !important;
+    border-color: #e84335 !important;
+    background-color: transparent !important;
+}
+
+.item_see_more_wrapper .btn-outline-primary:hover {
+    color: #fff !important;
+    background-color: #e84335 !important;
 }
