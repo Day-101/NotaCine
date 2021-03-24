@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'statics/team'
   get 'statics/contact'
   get 'statics/privacy'
+  get 'statics/term'
   get 'statics/how'
 
   get "/search", to: "searches#new"
