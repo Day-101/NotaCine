@@ -55,6 +55,7 @@ nav{background:#20232790 ;border-bottom: 1px solid #ffffff50;}
 	width:30px;
 	height:30px;
 	border-radius: 50%;
+	object-fit: cover;
 }
 
 .dropdown-menu{background-color: #202327 !important;border:1px solid #ffffff50 !important}
