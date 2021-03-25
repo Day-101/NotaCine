@@ -19,27 +19,6 @@ section {
     font-size: 1.5rem;
 }
 
-.search-bar-border {
-    padding-top: 10px;
-}
-
-.search-bar-border input {
-    border-radius: 0.6rem !important;
-    border: none;
-    padding-left: 16px;
-    width: 300px;
-}
-
-.search-bar-index {
-    text-align: center;
-    margin-top: 10px;
-    color: #e84335!important;
-}
-
-.search-bar-index a {
-    color: #e84335!important;
-}
-
 /*=====================================*/
 
 @media (min-width:1200px) {
