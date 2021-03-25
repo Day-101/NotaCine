@@ -109,3 +109,8 @@
   background-color: #cc3b2f !important;
   border-color: #cc3b2f !important;
 }
+
+a.badge-secondary:focus, a.badge-secondary:hover{
+  color: #4285f4 !important;
+  background-color: #202327 !important;
+}
