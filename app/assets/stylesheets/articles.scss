@@ -20,3 +20,22 @@
 .img_article_index {
   margin-bottom: 10px;
 }
+.container-news{
+  background-color: #F3F3F3;
+  max-width: 800px;
+}
+.title_center{
+  text-align: center;
+}
+.article{
+  margin-bottom: 2em;
+  border-radius: 0.3em;
+  display: block;
+}
+.article_btn{
+  border: 1px solid rgba(255,255,255,0);
+}
+.article_btn:hover{
+  opacity: 0.92;
+  border: 1px solid rgba(129, 126, 126, 0.192);
+}
