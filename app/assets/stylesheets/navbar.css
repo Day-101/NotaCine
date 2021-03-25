@@ -15,22 +15,6 @@ nav{background:#202327d6 ;border-bottom: 1px solid #ffffff50;}
 	line-height: 1.5;
 }
 
-.navbar input:first-child{
-	border: none;
-	border-radius: 0.6rem;
-	width: 200px;
-	height: 34px;
-	padding: 0 1em;
-	transition: 0.2s;
-}
-/*.website-search:hover{ border: none; border-radius: 1rem; width: 260px; padding: 0; }*/
-.navbar input:first-child:focus{
-	border: none;
-	border-radius: 0.6rem !important;
-	width: 260px;
-	padding: 0 1em;
-}
-
 @media (max-width: 576px) {
   .navbar-user span{display: none;}
 }
@@ -65,7 +49,7 @@ nav{background:#202327d6 ;border-bottom: 1px solid #ffffff50;}
 .navbar a:hover{color: #e4e6eb!important;}
 
 .dropdown-signed{
-	
+
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 

@@ -13,7 +13,6 @@
 }
 #searchbar input:focus{
 	outline: none;
-  box-shadow: 0 0 1px 2px red;
 }
 
 nav .fa-search{font-size: 1.2em;}
