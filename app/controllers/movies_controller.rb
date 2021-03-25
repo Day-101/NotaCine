@@ -22,7 +22,7 @@ class MoviesController < ApplicationController
 
 	def create
 		ImdbApi.add_from_name(params["movie"]["title"])
-		redirect_to root_path
+		redirect_to admin_path
 	end
 
 	def edit
