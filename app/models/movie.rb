@@ -139,7 +139,7 @@ class Movie < ApplicationRecord
 	end
 
 	def self.last_four_by_notacine
-		movies = Movie.all.select{|movie| movie.user.rank == 0}
+		movies = Movie.all.select{|movie| movie.reviewed_by_admin }
 		if movies.size >= 4
 			return movies.drop(Movie.all.size - 4)
 		else
