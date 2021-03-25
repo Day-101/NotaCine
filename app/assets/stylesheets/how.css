@@ -1,0 +1,16 @@
+.container-how{
+	background: #353A40;
+	border-radius: 0.3em;
+	padding: 2em;
+	color: #e4e6eb!important;
+	max-width: 800px;
+}
+.container-how h1{color: #e84335; text-align: center;}
+.container-how hr{
+	border-top: 1px solid rgb(102, 104, 107) !important;
+}
+
+.container-how a{
+	display: block;
+	color: #e84335 !important;
+}
