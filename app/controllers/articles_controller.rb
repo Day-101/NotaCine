@@ -25,7 +25,7 @@ before_action :redirect_if_not_admin, except: [:index, :show]
     article = Article.find(params[:id])
     article.destroy
     flash.notice = "Article removed"
-    redirect_to root_path
+    redirect_to articles_path
   end
 
   def create
@@ -48,7 +48,7 @@ before_action :redirect_if_not_admin, except: [:index, :show]
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, :article_picture)
+    params.require(:article).permit(:title, :content, :lead, :article_picture)
   end
 
 end

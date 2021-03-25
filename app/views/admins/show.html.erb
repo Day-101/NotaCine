@@ -1,8 +1,9 @@
-<h3 class="text-center text-white">Publish an article : </h3>
+<p class="h3 text-center text-white">Publish an article : </p>
 <div class="container container-dashboard">
   <div class="article-form">
     <%= form_with model: Article.new, multipart: true do |f| %>
       <%= f.text_field :title, class:"form-control" %>
+      <%= f.text_area :lead, class:"form-control" %>
       <%= f.text_area :content, class:"form-control" %>
       <%= f.file_field :article_picture %>
       <%= f.submit "Publish", class:"btn btn-info" %>
@@ -10,7 +11,7 @@
   </div>
 
     <!-- <a href="#" class="btn btn-sm btn-primary">Create a news</a> -->
-    <h3 class="text-center text-white">Extreme reviews : </h3>
+    <p class="h3 text-center text-white">Extreme reviews : </p>
     <table>
       <thead>
           <tr>
@@ -36,7 +37,7 @@
       </tbody>
     </table>
     
-    <h3 class="text-center text-white">Articles : </h3>
+    <p class="h3 text-center text-white">Articles : </p>
     <table>
       <thead>
         <tr>
@@ -68,7 +69,7 @@
     </table>
 
 
-    <h3 class="text-center text-white">Movies to review : </h3>
+    <p class="h3 text-center text-white">Movies to review : </p>
     <table>
       <thead>
           <tr>
@@ -94,7 +95,7 @@
         </tbody>
     </table>
 
-    <h3 class="text-center text-white">Users : </h3>
+    <p class="text-center text-white">Users : </p>
     <table>
       <thead>
           <tr>
