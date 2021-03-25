@@ -10,7 +10,7 @@
       <%=image_tag @movie.image_url, :class => 'movie-poster mt-5' %>
     </div>
     <div class="col-12 col-sm-12 col-md-12 col-lg-8 notation-card text-center user-rate">
-      <p class="h4 text-primary my-4">Slide your opinion</p>
+      <p class="display-7 text-underline text-primary my-4">Slide your opinion</p>
       <%= form_with model: [@movie, @notation]  do |f| %>
         <%= f.label :scenario, "Scenario :" %>
         <%= f.range_field :scenario, in:0..100 %><br>
@@ -25,7 +25,7 @@
         <%= f.label :directing, "Directing :" %>
         <%= f.range_field :directing, in:0..100 %><br>
         <i><small>(If you don't have an opinion for a category, don't touch the concerned slide.)</small></i><br>
-        <%= f.submit class:"btn btn-success text-center my-2" %>
+        <%= f.submit class:"btn btn-primary text-center my-2" %>
       <% end %>
     </div>
   </div>
