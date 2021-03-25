@@ -8,7 +8,7 @@
         <div class="btn-group dropdown-login dropdown-signed d-flex align-items-center">
           <%= link_to user_path(current_user), class:"navbar-user" do %>
             <%= image_tag current_user.avatar, class:"nav-avatar", alt: "user avatar" if current_user.avatar.attached? %>
-             <span><%=current_user.username%></span>
+             <span class="pr-2"><%=current_user.username%></span>
           <% end %>
           <%= button_tag type: 'button', class: 'btn btn-transparent text-white dropdown-toggle dropdown-toggle-split', id: "dropdownMenuReference", data:{toggle: 'dropdown', reference: 'parent'}, aria: {haspopup: 'true', expanded: 'false'} do %>
             <span class="sr-only"></span>
