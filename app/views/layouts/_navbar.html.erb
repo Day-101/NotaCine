@@ -3,31 +3,6 @@
     <%= link_to root_path, class:"navbar-brand brand" do %>
       <%= image_tag image_path("notacine-logo-dark.svg"), class:"d-inline-block align-top d-block brand-img", alt:"NotaCine" %>
     <% end %>
-  
-      <% if user_signed_in? %>
-        <div class="btn-group dropdown-login dropdown-signed d-flex align-items-center">
-          <%= button_tag type: 'button', class: 'btn btn-transparent text-white dropdown-toggle dropdown-toggle-split', id: "dropdownMenuReference", data:{toggle: 'dropdown', reference: 'parent'}, aria: {haspopup: 'true', expanded: 'false'} do %>
-            <%= image_tag current_user.avatar, class:"nav-avatar", alt: "user avatar" if current_user.avatar.attached? %>
-             <span><%=current_user.username%></span>
-            <span class="sr-only"></span>
-          <% end %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuReference">
-            <%= link_to "Profile", user_path(current_user), class:"dropdown-item" %>
-            <%= link_to "Settings", edit_user_registration_path(current_user), class:"dropdown-item" %>
-            
-          <% if current_user.rank == 0 %>
-            <div class="dropdown-divider"></div>
-            <%= link_to "Dashboard", "/admin", class:"dropdown-item bg-danger" %>
-          <% end %>
-            
-          <div class="dropdown-divider"></div>
-            <%= link_to "Log out", destroy_user_session_path, class:"dropdown-item", method: :delete %>
-          </div>
-      <% else %>
-      <div class="dropdown dropdown-login">
-        <%= link_to "Log in", new_user_session_path, class:"btn btn-primary" %>
-      <% end %>
-      </div>
 
     <%= button_tag type: 'button', class: 'navbar-toggler collapsed', data:{toggle: 'collapse', target: '#navbarCollapse'}, aria: {controls: 'navbarCollapse', expanded: 'false', label: 'Toggle navigation'} do %>
       <span class="navbar-toggler-icon"></span>
@@ -55,7 +30,39 @@
       <div id="searchbar" class="d-flex align-items-center">
         <%= render "layouts/search_bar" %>
       </div>
-      
+
+      <% if user_signed_in? %>
+        <div class="d-flex align-items-right">
+          <%= link_to user_path(current_user), class:"navbar-user" do %>
+            <%= image_tag current_user.avatar, class:"nav-avatar", alt: "user avatar" if current_user.avatar.attached? %>
+             <span><%=current_user.username%></span>
+          <% end %>
+        </div>
+
+        <div class="btn-group dropdown-login dropdown-signed d-flex align-items-center">
+     
+          <%= button_tag type: 'button', class: 'btn btn-transparent text-white dropdown-toggle dropdown-toggle-split', id: "dropdownMenuReference", data:{toggle: 'dropdown', reference: 'parent'}, aria: {haspopup: 'true', expanded: 'false'} do %>
+          
+            <span class="sr-only"></span>
+          <% end %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuReference">
+            <%= link_to "Profile", user_path(current_user), class:"dropdown-item" %>
+            <%= link_to "Settings", edit_user_registration_path(current_user), class:"dropdown-item" %>
+            
+          <% if current_user.rank == 0 %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Dashboard", "/admin", class:"dropdown-item bg-danger" %>
+          <% end %>
+            
+          <div class="dropdown-divider"></div>
+            <%= link_to "Log out", destroy_user_session_path, class:"dropdown-item", method: :delete %>
+          </div>
+          
+      <% else %>
+      <div class="dropdown dropdown-login">
+        <%= link_to "Log in", new_user_session_path, class:"btn btn-primary" %>
+      </div>
+      <% end %>
     </div>
   </nav>
 </header>
