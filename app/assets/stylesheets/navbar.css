@@ -69,9 +69,17 @@ nav{background:#202327d6 ;border-bottom: 1px solid #ffffff50;}
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.dropdown-signed:hover{
+.dropdown-signed .navbar-user:hover{
 	background: #353A40;
 	border-radius: 0.3em;
+}
+.dropdown-signed .btn{
+	font-size: 1.5rem !important;
+	height: 38px;
+}
+.dropdown-signed .btn:hover{
+	background: #353A40;
+	border-radius: 0.3em !important;
 }
 
 .navbar-user{
