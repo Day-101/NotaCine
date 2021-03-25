@@ -21,7 +21,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1em;
   padding: 2em;
-  background: radial-gradient(circle, rgba(161,161,161,1) 0%, rgb(57 88 119) 47%, rgba(37,40,45,1) 83%);
+  background: radial-gradient(circle, rgba(161,161,161,1) 0%, rgb(57, 88, 119) 47%, rgba(37,40,45,1) 83%);
   border-bottom: 1px solid #ffffff50;
 }
 .card-welcome{

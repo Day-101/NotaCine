@@ -4,7 +4,7 @@
 	padding: 2em;
 	color: #e4e6eb!important;
 }
-.container-team hr{border-top: 1px solid rgb(102 104 107) !important;}
+.container-team hr{border-top: 1px solid rgb(102, 104, 107) !important;}
 .container-team .fa-github, .fa-codepen{color: #e84335; font-size: 1.5em;padding: 0.3em;}
 .container-team a:hover{color: #cc3b2f;}
 .container-team h1{

@@ -8,7 +8,7 @@
         <div class="col-12 col-sm-12 col-md-6 col-lg-8">
           <h1 class="display-7"><%= @movie.title %><span class="text-muted"> (<%= @movie.year %>)</span></h1>
           <% @movie.genres.each do |category| %>
-            <p class="badge badge-secondary badge-pill"><%= category.title %></p>
+            <%= link_to category.title, search_path({"categories" => [category.id]}), :class => "badge badge-secondary badge-pill" %>
           <% end %>
           <p class="display-8 text-muted">Directed by <%= @movie.director %></p>
           <hr>
