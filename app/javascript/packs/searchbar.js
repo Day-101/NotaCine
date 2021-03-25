@@ -1,4 +1,4 @@
-const endpoint = console.log(document.URL + "movies.json");
+const endpoint = document.URL + "movies.json";
 
 movies = [];
 
