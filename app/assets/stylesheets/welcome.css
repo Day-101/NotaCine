@@ -88,6 +88,7 @@
 .search-welcome .btn-search:hover{
   color: #e84335 !important;
   text-shadow: #ffffff24 0 0 4px;
+  background: none;
 }
 
 @media (max-width:576px){
@@ -102,3 +103,8 @@
 
 .search-welcome .btn-search{margin: 0;padding: 5px 0 5px 8px !important;}
 .search-welcome form{display: flex;}
+
+.search-welcome input:focus{
+	outline: none;
+  box-shadow: 0 0 1px 2px red;
+}
