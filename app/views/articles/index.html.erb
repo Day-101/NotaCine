@@ -1,23 +1,21 @@
-<div class="container text-white">
+<div class="container container-news">
+  <p class="text-center news display-5">News</p>
   <div class="row">
-    <h1>News</h1>
     <div class="col-12 edit-article my-4">
       <% @articles.each do |article| %>
-        <div class="row align-items-center">
+        <div class="row align-items-center article">
           <div class="col-12 col-sm-12 col-md-6 col-lg-6 ">
             <%= image_tag article.article_picture, class: "img-fluid rounded img_article_index" if article.article_picture.attached? %>
           </div>
           <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-            <p><%= link_to article.title, article_path(article), :class => "text-white display-7" %></p>
-            <strong><p class="text-right">Written by <%= link_to User.find(article.user_id).username, user_path(article.user_id), :class => "text-white" %></p></strong>
-            <p class="text-right">Posted on <%= article.created_at.strftime('%m/%d/%Y') %></p>
+            <p class="text-center">Posted on <%= article.created_at.strftime('%m/%d/%Y') %> Written by <%= link_to User.find(article.user_id).username, user_path(article.user_id) %></p>
+            <p class="title_center"><%= link_to article.title, article_path(article), :class => "display-7" %></p>
             <div class="btn-group">
               <%= link_to "Edit", edit_article_path(article), class: "btn btn-warning" if user_signed_in? && current_user.rank == 0 %>
               <%= link_to "Delete", article_path(article), method: :delete, class:"btn btn-danger" if user_signed_in? && current_user.rank == 0 %>
             </div>
           </div>
         </div>
-        <hr class="border border-white">
       <% end %>
     </div>
   </div>
