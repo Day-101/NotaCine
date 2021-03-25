@@ -42,29 +42,32 @@
       <div class="row">
         <div class="col"><br>
           <p class="display-7 text-underline">Last reviews:</p>
-          <ul>
+          <ul class="p-0">
           <% @notations.each do |notation| %>
-            <li class="display-8 title-js">
+            <li class="display-8 title-js m-2">
               <%= notation.movie.title %>
             </li>
-            <div class="text-right pt-3 user-rate text-center js-notation">
-              <%=image_tag notation.movie.image_url, :class => 'movie-poster' %>
-              <%= form_with do |f| %>
-                <%= f.label :scenario, "Scenario" %>
-                <%= f.range_field :scenario, :in => 0..100, :step => 1, value:notation.criteria_review("scenario"), :disabled => true  %><br>
-                <%= f.label :image, "Image" %>
-                <%= f.range_field :image, :in => 0..100, :step => 1, value:notation.criteria_review("image"), :disabled => true %><br>
-                <%= f.label :editing, "Editing" %>
-                <%= f.range_field :editing, :in => 0..100, :step => 1, value:notation.criteria_review("editing"), :disabled => true %><br>
-                <%= f.label :sound, "Sound" %>
-                <%= f.range_field :sound, :in => 0..100, :step => 1, value:notation.criteria_review("sound"), :disabled => true %><br>
-                <%= f.label :makeup, "Makeup" %>
-                <%= f.range_field :makeup, :in => 0..100, :step => 1, value:notation.criteria_review("makeup"), :disabled => true %><br>
-                <%= f.label :directing, "Directing" %>
-                <%= f.range_field :directing, :in => 0..100, :step => 1, value:notation.criteria_review("directing"), :disabled => true %><br>
-              <% end %>
+            <div class="row text-right pt-3 user-rate text-center js-notation">
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-4">
+                <%=image_tag notation.movie.image_url, :class => 'movie-poster' %>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-4">
+                <%= form_with do |f| %>
+                  <%= f.label :scenario, "Scenario" %>
+                  <%= f.range_field :scenario, :in => 0..100, :step => 1, value:notation.criteria_review("scenario"), :disabled => true  %><br>
+                  <%= f.label :image, "Image" %>
+                  <%= f.range_field :image, :in => 0..100, :step => 1, value:notation.criteria_review("image"), :disabled => true %><br>
+                  <%= f.label :editing, "Editing" %>
+                  <%= f.range_field :editing, :in => 0..100, :step => 1, value:notation.criteria_review("editing"), :disabled => true %><br>
+                  <%= f.label :sound, "Sound" %>
+                  <%= f.range_field :sound, :in => 0..100, :step => 1, value:notation.criteria_review("sound"), :disabled => true %><br>
+                  <%= f.label :makeup, "Makeup" %>
+                  <%= f.range_field :makeup, :in => 0..100, :step => 1, value:notation.criteria_review("makeup"), :disabled => true %><br>
+                  <%= f.label :directing, "Directing" %>
+                  <%= f.range_field :directing, :in => 0..100, :step => 1, value:notation.criteria_review("directing"), :disabled => true %><br>
+                <% end %>
+              </div>
             </div>
-          <hr>
           <% end %>
         </ul>
         </div>
