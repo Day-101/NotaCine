@@ -42,6 +42,12 @@ section {
 
 /*=====================================*/
 
+@media (min-width:1200px) {
+    .item_3 {
+        height: 345px !important;
+    }
+}
+
 @media (min-width: 992px) {
     .overlay_item {
         position: relative;
