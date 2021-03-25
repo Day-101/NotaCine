@@ -4,6 +4,8 @@
       <%= form_with model: @article, multipart: true do |f| %><br>
         <p class="m-0"><strong>Title :</strong></p>
         <%= f.text_field :title, :class => "edit_title_article" %><br>
+        <p class="m-0 pt-2"><strong>Lead text :</strong></p>
+        <%= f.text_area :lead, :class => "form-control" %>
         <p class="m-0 pt-2"><strong>Article :</strong></p>
         <%= f.text_area :content, :class => "edit_content_article" %><br>
         <%= f.file_field :article_picture %><br>

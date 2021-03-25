@@ -9,6 +9,7 @@
           </div>
           <div class="col-12 col-sm-12 col-md-6 col-lg-6">
             <p><%= link_to article.title, article_path(article), :class => "text-white display-7" %></p>
+            <p><%= article.shorten_lead %></p>
             <strong><p class="text-right">Written by <%= link_to User.find(article.user_id).username, user_path(article.user_id), :class => "text-white" %></p></strong>
             <p class="text-right">Posted on <%= article.created_at.strftime('%m/%d/%Y') %></p>
             <div class="btn-group">
