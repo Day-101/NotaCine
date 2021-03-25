@@ -65,7 +65,7 @@ nav{background:#202327d6 ;border-bottom: 1px solid #ffffff50;}
 .navbar a:hover{color: #e4e6eb!important;}
 
 .dropdown-signed{
-	padding-left: .5rem;
+	
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
