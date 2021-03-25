@@ -28,7 +28,7 @@
               <% end %>
               <%= button_to "Edit", edit_movie_path(@movie), :method => "get", class:"btn btn-warning mx-1" if current_user.rank == 0 %>
             <% else %>
-              <u><%= link_to "Sign in", new_user_registration_path, class: "text-white" %></u> to rate & review
+              <p><%= link_to "Sign in", new_user_registration_path, class: "text-white text-underline" %> to rate & review</p>
             <% end %>
           </div>
         </div>
@@ -98,7 +98,7 @@
                  <% if user_signed_in? && comment.user_is_author?(current_user) %>
                   <%= link_to "Edit", edit_movie_comment_path(@movie, comment), class: "btn btn-link text-info" %>
                 <% end %>
-                <% if user_signed_in? && comment.user_is_author?(current_user) || current_user.rank == 0 %>
+                <% if user_signed_in? && (comment.user_is_author?(current_user) || current_user.rank == 0) %>
                   <%= button_to "Delete", movie_comment_path(@movie, comment), class: "btn btn-link text-danger", method: :delete %>
                 <% end %>
               </div>
