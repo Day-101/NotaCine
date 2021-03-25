@@ -6,7 +6,9 @@ class MoviesController < ApplicationController
 		@movies = Movie.all
 		respond_to do |format|
 			format.html {}
-			format.json { render json: @movies }
+			format.json { 
+				response.set_header("Access-Control-Allow-Origin", "*")
+				render json: @movies }
 		end
 	end
 
