@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :movies do
+  resources :movies, except: [:new] do
     resources :notations, except: [:show, :index]
     resources :comments, except: [:new, :show, :index]
   end
@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   resources :searches, only: [:create]
 
   get "/admin", to: "admins#show"
-  resources :admins #, only: [:update, :edit]
 
   resources :articles , except: [:new]
 

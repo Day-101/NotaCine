@@ -3,11 +3,11 @@
 		<h1 class="text-white text-center">Welcome
 			<% if user_signed_in? %>
 				<%=current_user.username%>&nbsp;!
-				<% else %>
+			<% else %>
 			!
 			<% end %>
 		</h1>
-		<%= link_to statics_how_path do%>
+		<%= link_to statics_how_path do %>
 			<h2 class="text-primary text-center">How it works&nbsp;?</h2>
 		<% end %>
 		<p class="text-white">Each cursor indicates according to its position if the film offers a work in the average of the films released in recent years.</p>
