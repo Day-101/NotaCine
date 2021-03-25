@@ -1,0 +1,20 @@
+<div class="col-6 col-sm-6 col-md-3 poster-movies">
+  <div class="overlay_item item_3">
+    <%= link_to movie_path(movie.id) do %>
+      <%= image_tag movie.image_url, alt: movie.title, :class => "img-grid frontside" %>
+    <% end %>   
+    <div class="item_content">
+      <div class="item_title">
+        <h2><%= movie.title %><span class="text-secondary">(<%= movie.year %>)</span></h2>
+      </div>
+      <div class="item_badge">
+        <% movie.genres.each do |genre| %>
+          <%= link_to genre.title, search_path({"categories" => [genre.id]}), :class => "badge badge-secondary" %>
+        <% end %>
+      </div>
+      <div class="item_see_more_wrapper">
+        <%= link_to "View details", movie_path(movie.id), :class => "btn btn-sm btn-outline-primary item_see_more" %>
+      </div>
+    </div>
+  </div>
+</div>

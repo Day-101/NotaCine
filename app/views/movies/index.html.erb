@@ -4,27 +4,31 @@
   <div class="container card-movies-index">
   <h1>Last added</h1>
     <div class="row card-movies-row ">
-      <%= render 'last_added_movies' %>
+      <% Movie.last_four.each do |movie| %>
+        <%= render 'movies_list', movie: movie %>
+      <% end %>
     </div>
   </div>
 </section>
-
 
 <section id="last-notation" class="pb-5">
   <div class="container card-movies-index">
   <h1>Last notation</h1>
     <div class="row card-movies-row">
-      <%= render 'last_notation_movies' %>
+      <% Movie.last_four_by_notacine.each do |movie| %>
+        <%= render 'movies_list', movie: movie %>
+      <% end %>
     </div>
   </div>
 </section>
-
 
 <section id="all_movies" class="pb-5">
   <div class="container card-movies-index">
   <h1>All movies</h1>
     <div class="row card-movies-row">
-      <%= render 'all_movies' %>
+      <% @movies.each do |movie| %>
+        <%= render 'movies_list', movie: movie %>
+      <% end %>
     </div>
   </div>
 </section>
