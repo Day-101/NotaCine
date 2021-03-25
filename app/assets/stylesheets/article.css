@@ -1,0 +1,34 @@
+.article-show h1{
+  text-align: center;
+}
+.article-show h2{
+  margin: 1em;
+  font-weight: 600 !important;
+}
+.article-show span{
+  margin: auto;
+  width: max-content;
+  display: block;
+}
+.article-show .img_article{
+  margin: 2em 0 0 0;
+}
+body .article-show p{
+  color: #212529 !important;
+  margin-bottom: 1rem !important;
+  padding: 0 2em;
+}
+.article-show .article-author{
+  font-size: 1em;
+  margin-right: 3em;
+}
+.article-show .article-author a{
+  color: #212529!important;
+}
+
+@media (max-width:576px){
+  .article-show h1{font-size: 2em !important;}
+  .article-show h2{font-size: 1.5em !important; margin: 1em 0;  }
+  .article-show p{padding:0 !important;}
+
+}

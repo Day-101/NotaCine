@@ -9,6 +9,9 @@
   border-left: 1px solid #67686b42;
   border-radius: 0;
 }
+.container-news .img_article_index{
+  margin: 0 !important;
+}
 .container-news h1{
   color: #212529;
   font-weight: 600;
@@ -19,6 +22,7 @@
 }
 .container-news p{
   color: #5a5a5a;
+  margin-bottom: 0 !important;
 }
 .container-news span{
   font-size: .7em;
