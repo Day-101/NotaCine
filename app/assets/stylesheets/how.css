@@ -6,11 +6,18 @@
 	max-width: 800px;
 }
 .container-how h1{color: #e84335; text-align: center;}
+.container-how h3{text-align: center; font-size: 1.3em;margin-top: 2em;}
 .container-how hr{
 	border-top: 1px solid rgb(102, 104, 107) !important;
 }
 
 .container-how a{
-	display: block;
+  display: block;
 	color: #e84335 !important;
+}
+
+.range-example{
+  max-width: 300px !important;
+  margin: 1em auto 1.5em auto !important;
+  display: block !important;
 }
