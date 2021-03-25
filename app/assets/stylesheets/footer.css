@@ -23,3 +23,9 @@ footer a:hover{color:#cc3b2f!important;}
 
 .powered a{color: #6c757d!important}
 .powered{width: fit-content; margin: auto;color: #6c757d!important}
+
+@media (max-width: 576px) {
+   footer{text-align: center;}
+   footer .container{display: flex;flex-direction: column;}
+   .brand-footer{margin: auto;}
+  }

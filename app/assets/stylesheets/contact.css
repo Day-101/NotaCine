@@ -1,7 +1,9 @@
 .container-contact{
-    background-color: #F3F3F3;
-    padding: 2em;
-    border-radius: 0.3em;
+	background: #353A40;
+	border-radius: 0.3em;
+	padding: 2em;
+	color: #e4e6eb!important;
+	max-width: 800px;
 }
-
+.container-contact hr{border-top: 1px solid rgb(102 104 107) !important;}
 .container-contact a{display: block; color: #e84335!important;}
