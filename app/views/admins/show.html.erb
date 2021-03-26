@@ -1,15 +1,22 @@
-<p class="h3 text-center text-white">Publish an article : </p>
+<p class="display-8 bold mt-4 mb-0 text-center text-white">Publish an article : </p>
 <div class="container container-dashboard">
-  <div class="article-form">
+  <div class="border-dash article-form">
     <%= form_with model: Article.new, multipart: true do |f| %>
-    <%= f.text_field :title, class:"form-control" %>
-    <%= f.text_area :lead, class:"form-control" %>
-    <%= f.text_area :content, class:"form-control" %>
+    <%= f.text_field :title, class:"form-control", placeholder: "Title" %>
+    <%= f.text_area :lead, class:"form-control", placeholder: "Lead" %>
+    <%= f.text_area :content, class:"form-control", placeholder: "Content" %>
     <%= f.file_field :article_picture %>
     <%= f.submit "Publish", class:"btn btn-info" %>
     <% end %>
   </div>
-  <p class="h3 text-center text-white">Extreme reviews : </p>
+  <p class="display-8 bold mt-4 mb-0 text-center text-white">Add a movie :</p>
+  <div class="border-dash article-form mb-4">
+    <%= form_with(model: Movie.new) do |f| %>
+    <%= f.text_field :title %>
+    <%= f.submit "Add", :class => "btn btn-info" %>
+    <% end %>
+  </div>
+  <p class="display-8 bold mb-0 text-center text-white">Extreme reviews : </p>
   <table>
     <thead>
       <tr>
@@ -34,7 +41,7 @@
       <% end %>
     </tbody>
   </table>
-  <p class="h3 text-center text-white">Articles : </p>
+  <p class="display-8 bold mb-0 text-center text-white">Articles : </p>
   <table>
     <thead>
       <tr>
@@ -64,7 +71,7 @@
       <% end %>
     </tbody>
   </table>
-  <p class="h3 text-center text-white">Movies to review : </p>
+  <p class="display-8 bold mb-0 text-center text-white">Movies to review : </p>
   <table>
     <thead>
       <tr>
@@ -89,7 +96,7 @@
       <% end %>
     </tbody>
   </table>
-  <p class="text-center text-white">Users : </p>
+  <p class="display-8 bold mb-0 text-center text-white">Users : </p>
   <table>
     <thead>
       <tr>
@@ -115,8 +122,4 @@
       <% end %>
     </tbody>
   </table>
-  <%= form_with(model: Movie.new) do |f| %>
-  <%= f.text_field :title %>
-  <%= f.submit %>
-  <% end %>
 </div>

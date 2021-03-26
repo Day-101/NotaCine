@@ -1,7 +1,3 @@
-// Place all the styles related to the Admins controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
 .container-dashboard{
 	color: #e4e6eb;
 }
@@ -61,4 +57,8 @@
 
   border-radius: 0.2em;
   border: none;
+}
+
+.border-dash {
+	border: 1px solid #6f6f6f;
 }
