@@ -1,67 +1,68 @@
 <div class="container container-search text-white">
-		<div class="">
-		<h1>Search</h1>
-			<%= form_with url: searches_path do |f| %>
+  <div class="">
+    <h1>Search</h1>
+		<hr>
+    <%= form_with url: searches_path do |f| %>
 
-			<h2>Select criteria:</h2>
-			<div class="control-group text-white">
-				<%= f.label :criteria_scenario, class:"control control-checkbox" do %>
-					Scenario
-					<%= f.check_box :criteria, { multiple: true }, "scenario", false %>
-					<div class="control_indicator"></div>
-				<% end %>
-				<%= f.label :criteria_image, class:"control control-checkbox" do %>
-					Image
-					<%= f.check_box :criteria, { multiple: true }, "image", false %>
-					<div class="control_indicator"></div>
-				<% end %>
-				<%= f.label :criteria_editing, class:"control control-checkbox" do %>
-					Editing
-					<%= f.check_box :criteria, { multiple: true }, "editing", false %>
-					<div class="control_indicator"></div>
-				<% end %>
-				<%= f.label :criteria_sound, class:"control control-checkbox" do %>
-					Sound and soundtrack
-					<%= f.check_box :criteria, { multiple: true }, "sound", false %>
-					<div class="control_indicator"></div>
-				<% end %>
-				<%= f.label :criteria_makeup, class:"control control-checkbox" do %>
-					Costumes, makeup and hair
-					<%= f.check_box :criteria, { multiple: true }, "makeup", false %>
-					<div class="control_indicator"></div>
-				<% end %>
-				<%= f.label :criteria_directing, class:"control control-checkbox" do %>
-					Directing
-					<%= f.check_box :criteria, { multiple: true }, "directing", false %>
-					<div class="control_indicator"></div>
-				<% end %>
-			</div>
-				<%= f.submit "Filter", class: "btn btn-primary"%>
-		<% end %>
+    <h2>Select criteria:</h2>
 
+    <div class="control-group text-white">
+      <%= f.label :criteria_scenario, class:"control control-checkbox" do %>
+      Scenario
+      <%= f.check_box :criteria, { multiple: true }, "scenario", false %>
+      <div class="control_indicator"></div>
+      <% end %>
+      <%= f.label :criteria_image, class:"control control-checkbox" do %>
+      Image
+      <%= f.check_box :criteria, { multiple: true }, "image", false %>
+      <div class="control_indicator"></div>
+      <% end %>
+      <%= f.label :criteria_editing, class:"control control-checkbox" do %>
+      Editing
+      <%= f.check_box :criteria, { multiple: true }, "editing", false %>
+      <div class="control_indicator"></div>
+      <% end %>
+      <%= f.label :criteria_sound, class:"control control-checkbox" do %>
+      Sound and soundtrack
+      <%= f.check_box :criteria, { multiple: true }, "sound", false %>
+      <div class="control_indicator"></div>
+      <% end %>
+      <%= f.label :criteria_makeup, class:"control control-checkbox" do %>
+      Costumes, makeup and hair
+      <%= f.check_box :criteria, { multiple: true }, "makeup", false %>
+      <div class="control_indicator"></div>
+      <% end %>
+      <%= f.label :criteria_directing, class:"control control-checkbox" do %>
+      Directing
+      <%= f.check_box :criteria, { multiple: true }, "directing", false %>
+      <div class="control_indicator"></div>
+      <% end %>
+    </div>
 
+		<h2>Select categories:</h2>
+    <div class="control-group text-white">
 
+      <% Genre.all.each do |category| %>
 
-			<%= form_with url: searches_path do |f| %>
-			<div class="control-group text-white">
+      <%= f.label "categories_#{category.id}", class:"control control-checkbox" do %>
+      <%= category.title %>
+      <%= f.check_box :categories, { multiple: true }, category.id, false %>
+      <div class="control_indicator"></div>
+      <% end %>
+      <% end %>
 
-					<% Genre.all.each do |category| %>
+    </div>
 
-						<%= f.check_box :categories, { multiple: true }, category.id, false %>
-						<%= f.label "categories_#{category.id}", category.title, class:"text-white" %>
+    <%= f.submit "Filter", class: "btn btn-primary" %>
+    <% end %>
 
-					<% end %>
-
-			</div>
-
-				<%= f.submit "Search", class: "btn btn-primary" %>
-			<% end %>
-
-			<ul class="mt-4 mb-4">
-				<% @movies.each do |movie| %>
-					<li class="text-white search-result"><%=link_to movie.title, movie_path(movie.id), :class => "text-white" %></li>
-				<% end %>
-			</ul>
+		<div>
+		<h1>Result</h1>
+    <ul class="mt-4 mb-4">
+      <% @movies.each do |movie| %>
+      <li class="text-white search-result"><%=link_to movie.title, movie_path(movie.id), :class => "text-white" %></li>
+      <% end %>
+    </ul>
 		</div>
-	</div>
+  </div>
 </div>
