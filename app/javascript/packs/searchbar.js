@@ -1,4 +1,4 @@
-const domain = "https://notacine-dvpt.herokuapp.com"
+const domain = "https://notacine.herokuapp.com"
 const endpoint = domain + "/movies.json"
 
 movies = [];
