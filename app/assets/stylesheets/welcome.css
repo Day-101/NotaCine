@@ -27,42 +27,67 @@
 .card-welcome{
   grid-column: 1;
 }
+
+
+
+
+
 .search-welcome{
   grid-column: 2/span2;
-  display: flex;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 .search-welcome h1{
-  margin-bottom: -5px;
   text-shadow: #000000ad 0 0 8px;
-}
-.search-welcome a{
-  width: 100%;
-  text-align: right;
-  display: block;
-  color: #e84335 !important;
-  font-weight: bold;
-  text-shadow: #000 0 0 20px;
   margin-bottom: .5em;
 }
-.search-welcome div{
-  align-self: center;
-  width: 100%;
+.search-welcome h2{
+  color: #e4e6eb;
+  font-size: 1em;
+  text-shadow: #0000007a 0 0 3px;
+  text-decoration: underline;
+}
+.search-welcome a{
+  text-align: center;
+  color: #e4e6eb !important;
+  font-size: .85em;
+}
+.search-welcome a:hover{
+  color: #e4e6eb !important;
 }
 
 .search-welcome form{
   margin: auto;
   width: 100%;
 }
-.search-welcome input{
+.search-welcome .btn-primary{
   border-radius: 1em;
-  padding: 0.2em 0.8em;
-  border: none;
-  font-size: 1.3em;
-  flex-grow: 1;
+  padding: 0.2em 1em;
+  border: 1px solid #e4e6eb40 !important;
+  font-size: 1.2em;
+  display: block;
+  margin: 0 auto .8em auto;
 }
 .search-welcome .fa-search{
   font-size: 1.7em;
+}
+
+.search-welcome .btn-search{
+  margin: 0;
+  padding: 5px 0 5px 8px !important;
+}
+
+.search-welcome .btn-search:hover{
+  color: #e84335 !important;
+  text-shadow: #ffffff24 0 0 4px;
+  background: none;
+}
+
+
+
+@media (max-width:576px){
+
 }
 
 @media (max-width:768px){
@@ -81,28 +106,13 @@
   .search-welcome h1{text-align: center;}
 }
 
-.search-welcome .btn-search{
-  padding: 0;
-}
-.search-welcome .btn-search:hover{
-  color: #e84335 !important;
-  text-shadow: #ffffff24 0 0 4px;
-  background: none;
-}
 
-@media (max-width:576px){
-  .container-welcome{padding: 1em;}
-  .search-welcome h1{
-  }
-  .search-welcome a{
-    text-align: center;
-  }
-  .search-welcome input{width: 100%;}
-}
 
-.search-welcome .btn-search{margin: 0;padding: 5px 0 5px 8px !important;}
 
-.search-welcome input:focus{
-	outline: none;
-  box-shadow: 0 0 1px 2px red;
+.control-group{
+  margin-bottom: 1em;
+  font-weight: 600;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: .5em 2em;
 }
