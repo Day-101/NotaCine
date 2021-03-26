@@ -2,7 +2,7 @@
 
 <section id="last-added" class="pb-5">
   <div class="container card-movies-index">
-  <h1>Last added</h1>
+  <p class="h1">Last added</p>
     <div class="row card-movies-row ">
       <% Movie.last_four.each do |movie| %>
         <%= render 'movies_list', movie: movie %>
@@ -13,7 +13,7 @@
 
 <section id="last-notation" class="pb-5">
   <div class="container card-movies-index">
-  <h1>Last notation</h1>
+  <p class="h1">Last notation</p>
     <div class="row card-movies-row">
       <% Movie.last_four_by_notacine.each do |movie| %>
         <%= render 'movies_list', movie: movie %>
@@ -24,7 +24,7 @@
 
 <section id="all_movies" class="pb-5">
   <div class="container card-movies-index">
-  <h1>All movies</h1>
+  <p class="h1">All movies</p>
     <div class="row card-movies-row">
       <% @movies.each do |movie| %>
         <%= render 'movies_list', movie: movie %>
