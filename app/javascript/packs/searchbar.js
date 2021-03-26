@@ -1,4 +1,5 @@
-const endpoint = "https://notacine-dvpt.herokuapp.com/movies.json"
+const domain = "https://notacine-dvpt.herokuapp.com"
+const endpoint = domain + "/movies.json"
 
 movies = [];
 
@@ -18,8 +19,7 @@ function displayMatches(){
   matchArray = findMatches(this.value, movies);
   html = matchArray.map(movie => {
     regex = new RegExp(this.value, "gi");
-    title = movie.title.replace(regex, `<span class="hl">${this.value}</span>`)
-    return `<li><span class="autocomplete">${title}</span></li>`
+    return `<li><a href="${domain}/movies/${movie.id}" class="">${movie.title}</a></li>`
   }).slice(0,5).join("");
   document.getElementById("search-results").classList.toggle("show-search", !!html.length)
   suggestions.innerHTML = html;
