@@ -10,6 +10,7 @@
   border-radius: 1em;
   padding: 0.2em 0.8em;
   border: none;
+  margin-right: 5px;
 }
 #searchbar input:focus{
 	outline: none;
