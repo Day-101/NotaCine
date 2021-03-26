@@ -1,9 +1,29 @@
 .container-search{
   max-width: 850px;
   background: #353A40;
-  padding: 2em !important;
+  padding: 1em 2em 2em 2em !important;
   color: #e4e6eb!important;
   margin-bottom: 2em;  
+}
+.container-search .control{
+  display: block;
+  position: relative;
+  padding: 0 0 0 30px;
+  cursor: pointer;
+  font-size: 16px;
+  height: fit-content;
+  text-shadow: #0000007a 0 0 3px;
+  margin: 0;
+}
+.container-search .control_indicator{
+  position: absolute;
+  top: 5px;
+  left: 9px;
+  height: 15px;
+  width: 15px;
+  background: #e4e6eb;
+  border: 1px solid #6d757d;
+  border-radius: 50%;
 }
 .container-search ul{
   font-weight: 600;
@@ -43,11 +63,11 @@
 
 .container-search .control-group{
   margin-bottom: 1em;
-  font-weight: 600;
+  font-weight: normal;
   display: grid;
-  grid-gap: .5em 2em;
+  grid-gap: 0 1em;
   border: 1px solid #66686b;
-  padding: 1em;
+  padding: .5em;
 }
 
 @media (max-width:390px){
