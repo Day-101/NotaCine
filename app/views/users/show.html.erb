@@ -49,7 +49,9 @@
             </li>
             <div class="row text-right pt-3 user-rate text-center js-notation">
               <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-4">
-                <%=image_tag notation.movie.image_url, :class => 'movie-poster' %>
+                <%= link_to movie_path(notation.movie) do %>
+                  <%=image_tag notation.movie.image_url, :class => 'movie-poster', :alt => "movie poster" %>
+                <% end %>
               </div>
               <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-4">
                 <%= form_with do |f| %>
