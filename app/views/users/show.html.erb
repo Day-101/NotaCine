@@ -66,6 +66,9 @@
                   <%= f.label :directing, "Directing" %>
                   <%= f.range_field :directing, :in => 0..100, :step => 1, value:notation.criteria_review("directing"), :disabled => true %><br>
                 <% end %>
+                <% if user_signed_in? && current_user.rank == 0 %>
+                 <%= link_to "Delete", movie_notation_path(notation.movie, notation), method: :delete, class:"btn btn-danger btn-sm" %>
+                <% end %>
               </div>
             </div>
           <% end %>
