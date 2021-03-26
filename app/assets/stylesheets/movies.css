@@ -82,10 +82,6 @@ section {
         margin-bottom: 2em;
     }
 
-    .item_badge:hover {
-        color:  #e84335;
-    }
-
     .item_3 {
         color:  #e4e6eb;
         overflow: hidden;
