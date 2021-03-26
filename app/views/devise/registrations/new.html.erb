@@ -5,31 +5,28 @@
         <p class="card-title display-7"><strong>Sign up</strong></p>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
-          <div class="field">
+          <div class="field mt-4">
             <%= f.label :username %><br />
             <%= f.text_field :username %>
           </div>
-          <br />
-          <div class="field">
+          <div class="field mt-4">
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
           </div>
-          <br />
-          <div class="field">
+          <div class="field mt-4">
             <%= f.label :password %><br />
             <%= f.password_field :password, autocomplete: "new-password" %>
             <% if @minimum_password_length %><br />
             <small><em><i class="fas fa-info-circle"></i> <%= @minimum_password_length %> characters minimum</em></small>
             <% end %>
           </div>
-          <br />
-          <div class="field">
+          <div class="field mt-4">
             <%= f.label :password_confirmation %><br />
             <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
           </div>
           <hr>
           <div class="actions">
-            <%= f.submit "Sign up", :class => 'btn btn-primary btn-block' %>
+            <%= f.submit "Sign up", :class => 'btn btn-primary btn-block my-4' %>
           </div>
           <div class="text-muted">
             By creating an account, you agree to NotaCine's <br>
