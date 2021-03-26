@@ -2,40 +2,38 @@
 <div class="container container-dashboard">
   <div class="article-form">
     <%= form_with model: Article.new, multipart: true do |f| %>
-      <%= f.text_field :title, class:"form-control" %>
-      <%= f.text_area :lead, class:"form-control" %>
-      <%= f.text_area :content, class:"form-control" %>
-      <%= f.file_field :article_picture %>
-      <%= f.submit "Publish", class:"btn btn-info" %>
+    <%= f.text_field :title, class:"form-control" %>
+    <%= f.text_area :lead, class:"form-control" %>
+    <%= f.text_area :content, class:"form-control" %>
+    <%= f.file_field :article_picture %>
+    <%= f.submit "Publish", class:"btn btn-info" %>
     <% end %>
   </div>
-
   <p class="h3 text-center text-white">Extreme reviews : </p>
   <table>
     <thead>
-        <tr>
-          <th>Movie reviewed</th>
-          <th>User</th>
-          <th>Notation</th>
-        </tr>
+      <tr>
+        <th>Movie reviewed</th>
+        <th>User</th>
+        <th>Notation</th>
+      </tr>
     </thead>
     <tbody>
       <% @extrems_notations.each do |notation|%>
-        <tr>
-          <td>
-            <%= notation.movie.title %>
-          </td>
-          <td>
-            <%= notation.user.username %>
-          </td>
-          <td>
-            <%= link_to 'See notation', user_path(notation.user, anchor: notation.id ) , class: "btn btn-info btn-sm" %>
-          </td>
-        </tr>
+      <tr>
+        <td>
+          <%= notation.movie.title %>
+        </td>
+        <td>
+          <%= notation.user.username %>
+        </td>
+        <td>
+          <%= link_to 'See notation', user_path(notation.user, anchor: notation.id ) , class: "btn btn-info btn-sm" %>
+        </td>
+      </tr>
       <% end %>
     </tbody>
   </table>
-  
   <p class="h3 text-center text-white">Articles : </p>
   <table>
     <thead>
@@ -48,80 +46,77 @@
     </thead>
     <tbody>
       <% @articles.each do |article|%>
-        <tr>
-          <td>
-            N° <%= article.id %>
-          </td>
-          <td>
-            <%= article.created_at.strftime("%d/%m/%Y") %>
-          </td>
-          <td>
-            <%= article.title %>
-          </td>
-          <td>
-            <%= link_to "Edit", edit_article_path(article), class:"btn btn-info btn-sm" %>
-            <%= link_to "Delete", article_path(article), method: :delete, class:"btn btn-danger btn-sm" %>
-          </td>
-        </tr>
+      <tr>
+        <td>
+          N° <%= article.id %>
+        </td>
+        <td>
+          <%= article.created_at.strftime("%d/%m/%Y") %>
+        </td>
+        <td>
+          <%= article.title %>
+        </td>
+        <td>
+          <%= link_to "Edit", edit_article_path(article), class:"btn btn-info btn-sm" %>
+          <%= link_to "Delete", article_path(article), method: :delete, class:"btn btn-danger btn-sm" %>
+        </td>
+      </tr>
       <% end %>
     </tbody>
   </table>
-
-
   <p class="h3 text-center text-white">Movies to review : </p>
   <table>
     <thead>
-        <tr>
-            <th>Movie title</th>
-            <th>Options</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @movies.select{|movie| movie.reviewed_by_admin == false}.each do |movie|%>
-          <tr>
-            <td class="text-white" >
-              <%= link_to movie.title, movie_path(movie), class: "text-white" %>
-            </td>
-            <td>
-              <%= link_to new_movie_notation_path(movie),class: "btn btn-primary" do %>
-                Leave a review
-                <i class="fas fa-sliders-h"></i>
-              <% end %>
-              <%= link_to "Edit", edit_movie_path(movie), :method => "get", class:"btn btn-warning" %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
+      <tr>
+        <th>Movie title</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @movies.select{|movie| movie.reviewed_by_admin == false}.each do |movie|%>
+      <tr>
+        <td class="text-white">
+          <%= link_to movie.title, movie_path(movie), class: "text-white" %>
+        </td>
+        <td>
+          <%= link_to new_movie_notation_path(movie),class: "btn btn-primary" do %>
+          Leave a review
+          <i class="fas fa-sliders-h"></i>
+          <% end %>
+          <%= link_to "Edit", edit_movie_path(movie), :method => "get", class:"btn btn-warning" %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
   </table>
-
   <p class="text-center text-white">Users : </p>
   <table>
     <thead>
-        <tr>
-            <th>User id</th>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Rank</th>
-            <th>Options</th>
-        </tr>
+      <tr>
+        <th>User id</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Rank</th>
+        <th>Options</th>
+      </tr>
     </thead>
     <tbody>
       <% @users.each do |user| %>
-        <tr>
-          <td><%= user.id %></td>
-          <td><%= user.username %></td>
-          <td><%= user.email %></td>
-          <td><%= user.rank %></td>
-          <td>
-            <%= link_to "See profile", user_path(user), class:"btn btn-info btn-small" %>
-            <%= link_to "Delete", user_path(user), method: :delete, class:"btn btn-danger btn-small" %>
-          </td>
-        </tr>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.username %></td>
+        <td><%= user.email %></td>
+        <td><%= user.rank %></td>
+        <td>
+          <%= link_to "See profile", user_path(user), class:"btn btn-info btn-small" %>
+          <%= link_to "Delete", user_path(user), method: :delete, class:"btn btn-danger btn-small" %>
+        </td>
+      </tr>
       <% end %>
     </tbody>
   </table>
   <%= form_with(model: Movie.new) do |f| %>
-    <%= f.text_field :title %>
-    <%= f.submit %>
+  <%= f.text_field :title %>
+  <%= f.submit %>
   <% end %>
 </div>
