@@ -1,38 +1,58 @@
-<div class="container my-4 text-center">
-	<div class="row">
-		<div class="col-12">
+<div class="container container-search text-white">
+		<div class="">
+		<h1>Search</h1>
+			<%= form_with url: searches_path do |f| %>
+
+			<h2>Select criteria:</h2>
+			<div class="control-group text-white">
+				<%= f.label :criteria_scenario, class:"control control-checkbox" do %>
+					Scenario
+					<%= f.check_box :criteria, { multiple: true }, "scenario", false %>
+					<div class="control_indicator"></div>
+				<% end %>
+				<%= f.label :criteria_image, class:"control control-checkbox" do %>
+					Image
+					<%= f.check_box :criteria, { multiple: true }, "image", false %>
+					<div class="control_indicator"></div>
+				<% end %>
+				<%= f.label :criteria_editing, class:"control control-checkbox" do %>
+					Editing
+					<%= f.check_box :criteria, { multiple: true }, "editing", false %>
+					<div class="control_indicator"></div>
+				<% end %>
+				<%= f.label :criteria_sound, class:"control control-checkbox" do %>
+					Sound and soundtrack
+					<%= f.check_box :criteria, { multiple: true }, "sound", false %>
+					<div class="control_indicator"></div>
+				<% end %>
+				<%= f.label :criteria_makeup, class:"control control-checkbox" do %>
+					Costumes, makeup and hair
+					<%= f.check_box :criteria, { multiple: true }, "makeup", false %>
+					<div class="control_indicator"></div>
+				<% end %>
+				<%= f.label :criteria_directing, class:"control control-checkbox" do %>
+					Directing
+					<%= f.check_box :criteria, { multiple: true }, "directing", false %>
+					<div class="control_indicator"></div>
+				<% end %>
+			</div>
+				<%= f.submit "Filter", class: "btn btn-primary"%>
+		<% end %>
+
 
 
 
 			<%= form_with url: searches_path do |f| %>
-				<%= f.text_field :search, :class => "search-page" %>
+			<div class="control-group text-white">
 
-				<div>
 					<% Genre.all.each do |category| %>
+
 						<%= f.check_box :categories, { multiple: true }, category.id, false %>
 						<%= f.label "categories_#{category.id}", category.title, class:"text-white" %>
-					<% end %>
-				</div>
 
-				<div>
-					<%= f.check_box :criteria, { multiple: true }, "scenario", false %>
-					<%= f.label :criteria_scenario, "Scenario", class:"text-white" %>
-					
-					<%= f.check_box :criteria, { multiple: true }, "image", false %>
-					<%= f.label :criteria_image, "Image", class:"text-white" %>
-					
-					<%= f.check_box :criteria, { multiple: true }, "editing", false %>
-					<%= f.label :criteria_editing, "Editing", class:"text-white" %>
-					
-					<%= f.check_box :criteria, { multiple: true }, "sound", false %>
-					<%= f.label :criteria_sound, "Sound and Soundtrack", class:"text-white" %>
-					
-					<%= f.check_box :criteria, { multiple: true }, "makeup", false %>
-					<%= f.label :criteria_makeup, "Makeup and hair", class:"text-white" %>
-					
-					<%= f.check_box :criteria, { multiple: true }, "directing", false %>
-					<%= f.label :criteria_directing, "Directing", class:"text-white" %>
-				</div>
+					<% end %>
+
+			</div>
 
 				<%= f.submit "Search", class: "btn btn-primary" %>
 			<% end %>
