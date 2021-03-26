@@ -10,10 +10,14 @@
   border-radius: 1em;
   padding: 0.2em 0.8em;
   border: none;
-  margin-right: 5px;
 }
 #searchbar input:focus{
 	outline: none;
 }
 
 nav .fa-search{font-size: 1.2em;}
+
+#searchbar ul li a:hover {
+	opacity: 0.70;
+	color: black !important;
+}
