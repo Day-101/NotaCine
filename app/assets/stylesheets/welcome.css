@@ -41,6 +41,7 @@
 .search-welcome h1{
   text-shadow: #000000ad 0 0 8px;
   margin-bottom: .5em;
+  text-align: center;
 }
 .search-welcome h2{
   color: #e4e6eb;
@@ -87,6 +88,9 @@
 
 
 @media (max-width:576px){
+  .search-welcome h1{
+    font-size: 1.9em;
+  }
 
 }
 
