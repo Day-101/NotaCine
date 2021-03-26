@@ -1,102 +1,44 @@
-# NotaCine
+[![The NotaCine Logo](https://i.imgur.com/FTCAyFV.jpg)](https://notacine.herokuapp.com)
 
-Site web qui aide en un coup d'œil , ses utilisateurs à mieux choisir de manière visuelle et intuitive des films à regarder.
+> [Access the website here !](https://notacine.herokuapp.com)
+# > Welcome to **NotaCine**, a new way to rate movies
 
+ >When reviewing movies, ratings are something that you should take pretty seriously. However, we think that the regular way of using a number to rate a movie is biased. That is why we came up with **NotaCine**, a website that is unlike the hundreds of other services reviewing movies. 
+ ***
+ ### > The Idea
+ 
+ The idea is simple: Rather than giving arbitrary notations, the reviewer will compare six points with the industry standards:
+ * **Scenario:** the quality of the story.
+ * **Image:** the visuals, including special effects.
+ * **Editing:** the quality of the cuts and the sequencing of the scenes.
+ * **Sound and Soundtrack:** sound in general: effects, mastering and soundtrack
+ * **Costumes, Makeup and Hair:** actor's makeup, hair styling and every costume that is not a visual effet
+ * **Directing:** how the actors have been directed in that movie
 
-# 1. Présentation
-
-
-## Fini de *scroller* à l'infini sur Netflix !
-
-**NotaCine** souhaite _révolutionner_ le système obsolète de notation à nombre d'étoiles ou de note sur 10 sans aucune mise en contexte. Ce projet veut offrir à ses utilisateurs une **notation de films à échelle relative** à l’aide de quelques curseurs **visuels et intuitifs**. Un guide rapide, simple et sans *spoiler* qui simplifie la prise de décision.
-
-Les utilisateurs les plus passionnés pourront également publier leurs propres notations à échelle relative et consulter celles des autres.
-
-## 2. Parcours utilisateur
-
-Un utilisateur peut consulter les notations de films suggérés par la rédaction de NotaCine en **page d'accueil** et en consulter d'autres via les **catégories** ou plus directement grâce à la **barre de recherche**.
-
-Chaque film possède sa page dédiée affichant sa catégorie et sous-catégorie de genre ainsi que ses fameuses 6 petites barres avec **curseurs indicatifs** basés sur 6 critères généraux (Scénario, Image, Montage, Direction d'acteur, Son, Maquillage-Coiffure).
-
-Il peut également **partager** ses propres notations sur son **profil**, consulter les **moyennes générales** des autres utilisateurs et tenir une **check-list** de films déjà vu ou à regarder prochainement.
-
-## 3. Concrètement et techniquement
-
-### 3.1. Base de données
-
-Elle est prévu en **PostgreSQL** et comportera au minimum :
-
-1. Un model ***User***
-
-2. Un model ***Movie***
-
-3. Un model ***Rating***
-
-Nous devrons faire en sorte qu'un film puisse posséder plusieurs notations de plusieurs utilisateurs et qu'il puisse faire partie de leurs *check-lists*. Des méthodes permettront de faire les moyennes des notations des utilisateurs et ainsi juger de la pertinence de celles de la rédaction NotaCine.
-
-### 3.2. Front
-
-Nous prévoyons de partir sur une base CSS avec **Bootstrap** avec une **surcouche** maison mais sans doute avec un système de **grid-css et flexbox** en manuel.
-
-L'affichage et les **animations** seront soignées avec du **JavaScript** et le système de barre avec curseur est encore à l'étude.
-
-### 3.3. Backend
-
-Le site sera réalisé en **Ruby** avec son framework **Ruby On Rails**, le tout arboré de quelques **gem**'s indispensables pour être dans les temps comme **Devise** entre autres.
-
-Nous pensions initialement travailler avec l'**API** de IMDB mais **TMDB** pourrait sembler plus prometteuse.
-
-### 3.4. Mes besoins techniques
-
-Infographiste de métier, plus à l'aise en front qu'en **back**. Notre équipe est actuellement assez équilibré en compétence mais nous cherchons éventuellement un profil capable de d'implémenter une **partie admin** avec une certaine aisance en **JavaScript**.
-
-## 4. MVP
-
-Notre produit est notre fonctionnalité principale, la notation. Nous prévoyons donc de miser nos efforts sur la création d'une base de données propre, solide et sécurisée, l'accès à l'inscription des utilisateurs et la notation viable et sans accroc. Le design sera sans doute plus fonctionnel qu'esthétique en fin de première semaine.
-
-Durant la première semaine, nous prévoyons de rendre opérationnels :
-
-- la base de données
-
-- la création de comptes administrateurs et utilisateurs
-
-- la notation avec des curseurs (sliders)
-
-- l'accès aux pages dédiées des films en base et à leurs notations
-
-- un web-design fonctionnel
-
-- et plus, si le temps nous le permet...
+To find out more about the way you'll be reviewing movies, visit our [how to](http://notacine.herokuapp.com/statics/how) page
 
 
-## 5. La version présentée aux jury
+# >The whole concept
+### > How to find a good movie?
 
-Nous souhaitons présenter aux jury un site avec la meilleure ***User Experience*** possible en ajoutant des fonctionnalités spécifiquement destinées aux utilisateurs.
+Before seeing a film, part of the audience will rely on its popularity, criticism or rating.
 
-Pour le rendu final, nous espérons proposer :
+### > Should movies be rated?
 
-- une base de données de films enrichie grâçe à une API
+Or rather what should the rate look like? Current rating systems are not suitable for movies anymore, here's why:
 
-- l'envoi d'emails automatisé
+Cinema and VOD services are industry products. Are the most watched movies the best? Overall, the mass distribution mechanisms will influence the choice of the viewers. This choice goes beyond artistic analysis and this is what keeps the film industry alive. Whether we like it or not.
 
-- une barre de recherche opérationnelle
+### > The choice problem
 
-- l'accès aux catégories de films
+A fast choice between two movies, based on neutral criterias without any spoils of their qualities should be possible. And that's why reviews are essentials for the spectators. Our system of notation is compatible with the 'traditional' reviews, and we think that a good, thorough review can (and should) be enjoyed when a movie has already been seen.
 
-- l'accès à la notation moyenne des utilisateurs par critère et par film
+Even if they often are great, thorough movie reviews aren't really a great way to discover films. The main reasons are that they often are pretty lengthy and also that theses reviews may remove that "discovering" part of a movie.
+### > The relative notation is a solution
 
-- des pages profils utilisateurs avec leurs notations et critiques associées
+Our way of rating movies might be the solution to the current notation system. Because the qualitative analysis is often too extensive to tell if a movie is good or not, and even the idea of a good or a bad movie is really abstract. Because all viewers have different feelings about a movie and globally unique tastes. Because of that, we made NotaCine. A new, different way to rate movies.
 
-- un système de check-list de films à voir, déjà vu et en recommandation
+*The Revenant* with Leonardo Dicaprio has an underdeveloped storyline (when comparing it with the norm) but actually provides better visuals. *The Departed* by Martin Scorsese has a complex and elaborate script but its imagery does not stand out from the norm. We do not judge the quality but the care taken on a criterion **relative** to recent films. Therefore, you will no longer choose a movie because it's good, but because some particular care has been taken on some points. Expressing a negative judgment on a work might deter a viewer who would have liked it, and we don't want that.
 
-- la rédaction facultative d'une critique sous une notation
-
-- une section commentaire et sous-commentaire sous chaque notation
-
-- une système de badges honorifiques et disctintifs pour les utilisateurs, relatifs à leurs nombres de notation ou à leurs notoriétés dans le milieu de la critique ciné
-
-Nous espérons également pouvoir développer à temps un **moteur de recherche** de film via le système des curseurs afin de faciliter les choix de films à regarder.
-
-## 6. Le mentor
-
-Nous sommes actuellement en recherche mais espérons en convaincre un qui saura nous accompagner dans ce défi qui pour l'instant, nous dépasse mais pour lequel nous allons nous surpasser.
+##### Go ahead and search for your next favorite movie!
+***
