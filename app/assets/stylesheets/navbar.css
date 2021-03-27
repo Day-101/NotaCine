@@ -92,6 +92,14 @@ nav{background:#202327d6 ;border-bottom: 1px solid #ffffff50;}
 }
 .navbar .search-input{margin-right: 0;}
 
-.btn-search{
-	
+#search-results li a{
+	display: block;
+	padding: 3px;
+	width: 100%;
+	font-size: 1em;
+	text-decoration: none;
+}
+.navbar #search-results li a:hover{
+	background: grey;
+	color: #e4e6eb !important;
 }
