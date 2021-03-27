@@ -75,3 +75,5 @@ gem "json"
 
 gem "mini_magick"
 
+gem "will_paginate"
+

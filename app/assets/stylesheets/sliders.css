@@ -1,14 +1,12 @@
 .vertical-divider{
-  border: none;
-  border-left: 1px solid black;
-  height: 450px;
+  background: #66686b;
+  display: block;
   width: 1px;
-  opacity: 0.5;
 }
 
 .nota-rate input[type=range] {
   width: 100%;
-  margin: 5px 0;
+  margin: 0 0 .8em 0;
   background-color: transparent;
   -webkit-appearance: none;
 }
@@ -94,7 +92,7 @@ input[type=range]::-ms-fill-upper {
 
 .user-rate input[type=range] {
   width: 100%;
-  margin: 5px 0;
+  margin: 0 0 .8em 0;
   background-color: transparent;
   -webkit-appearance: none;
 }
@@ -181,4 +179,23 @@ how to remove the virtical space around the range input in IE*/
     margin: 0;
     /*Edge starts the margin from the thumb, not the track as other browsers do*/
   }
+}
+
+
+.reviews-by{
+  font-size: 0.8em;
+  margin: 1em 0 1.5em 0;
+  display: block;
+}
+
+.nota-rate .brand-img-responsive{
+  height: 40px;
+}
+.user-rate .fa-users{
+  font-size: 2.5em;
+}
+
+.movie-card-show label{
+  margin-bottom: 0 !important;
+  font-size: .9em;
 }

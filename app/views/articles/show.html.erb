@@ -6,7 +6,7 @@
         <h1><%= @article.title %></h1>
         <span>Posted on <%= @article.created_at.strftime('%m/%d/%Y') %> Written by <%= link_to User.find(@article.user_id).username, user_path(@article.user_id) %></span>
         <%= image_tag @article.article_picture, class: "img_article" if @article.article_picture.attached? %>
-        <h2><%= @article.shorten_lead %></h2>
+        <h2><%= @article.lead %></h2>
         <p class="content_article"><%= @article.content %></p>
         <span class="article-author"><%= link_to User.find(@article.user_id).username, user_path(@article.user_id) %></span>
         <div class="btn-group">

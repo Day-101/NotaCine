@@ -1,27 +1,27 @@
 <%= render 'welcome' %>
-
-<section id="last-added" class="pb-5">
-  <div class="container card-movies-index">
-  <p class="h1">Last added</p>
-    <div class="row card-movies-row ">
-      <% Movie.last_four.each do |movie| %>
-        <%= render 'movies_list', movie: movie %>
-      <% end %>
+<% unless params[:page] %>
+  <section id="last-added" class="pb-5">
+    <div class="container card-movies-index">
+    <p class="h1">Last added</p>
+      <div class="row card-movies-row ">
+        <% Movie.last_four.each do |movie| %>
+          <%= render 'movies_list', movie: movie %>
+        <% end %>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="last-notation" class="pb-5">
-  <div class="container card-movies-index">
-  <p class="h1">Last notation</p>
-    <div class="row card-movies-row">
-      <% Movie.last_four_by_notacine.each do |movie| %>
-        <%= render 'movies_list', movie: movie %>
-      <% end %>
+  <section id="last-notation" class="pb-5">
+    <div class="container card-movies-index">
+    <p class="h1">Last notacine reviews</p>
+      <div class="row card-movies-row">
+        <% Notation.last_notacine_notations.each do |movie| %>
+          <%= render 'movies_list', movie: movie %>
+        <% end %>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
+<% end %>
 <section id="all_movies" class="pb-5">
   <div class="container card-movies-index">
   <p class="h1">All movies</p>
@@ -32,3 +32,7 @@
     </div>
   </div>
 </section>
+
+<div class="digg_pagination">
+  <%= will_paginate(@movies) %>
+</div>
