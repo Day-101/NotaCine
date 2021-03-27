@@ -138,14 +138,6 @@ class Movie < ApplicationRecord
 		return rating/count
 	end
 
-	def self.last_four_by_notacine
-		movies = Movie.all.select{|movie| movie.reviewed_by_admin }
-		if movies.size >= 4
-			return movies.drop(movies.size - 4)
-		else
-			return movies
-		end
-	end
 end
 
 
