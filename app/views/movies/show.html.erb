@@ -33,10 +33,11 @@
           </div>
         </div>
       </div><br>
-      <div class="card bg-dark p-4">
+      <div class="card bg-dark p-4 movie-card-show">
         <div class="row">
           <div class="col-5 text-center nota-rate">
-            <p class="display-8 mb-1"><%= image_tag image_path("notacine-logo-responsive-dark.svg"), class:"brand-img-responsive", alt:"NotaCine" %></p><br>
+            <p class="display-8 mb-0"><%= image_tag image_path("notacine-logo-responsive-dark.svg"), class:"brand-img-responsive", alt:"NotaCine reviews" %></p>
+            <span class="reviews-by">Notacine reviews</span>
             <% if @movie.reviewed_by_admin %>
               <%= form_for @movie do |f| %>
                 <%= f.label :scenario, "Scenario" %><br>
@@ -56,11 +57,12 @@
               <p>This movie is not yet reviewed</p>
             <% end %>
           </div>
-          <div class="col">
-            <hr class="vertical-divider mx-auto">
+          <div class="col p-0 d-flex justify-content-center">
+            <span class="vertical-divider"></span>
           </div>
           <div class="col-5 text-center user-rate">
-            <p class="display-8"><i class="fas fa-users mb-4 mt-2"></i></p>
+            <i class="fas fa-users" alt="Audience reviews"></i>
+            <span class="reviews-by">Audience reviews</span>
             <% unless Notation.find_by(movie:@movie).nil? %>
               <%= form_for @movie do |f| %>
                 <%= f.label :scenario, "Scenario" %><br>
