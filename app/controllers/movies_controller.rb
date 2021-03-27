@@ -3,12 +3,12 @@ class MoviesController < ApplicationController
 	before_action :redirect_if_not_admin, only:[:edit, :update, :delete, :new, :create]
 
 	def index
-		@movies = Movie.all
+		@movies = Movie.paginate(page: params[:page])
 		respond_to do |format|
 			format.html {}
 			format.json { 
 				response.set_header("Access-Control-Allow-Origin", "*")
-				render json: @movies }
+				render json: Movie.all }
 		end
 	end
 

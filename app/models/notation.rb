@@ -60,9 +60,9 @@ class Notation < ApplicationRecord
   def self.last_notacine_notations
     movies = Notation.all.select{|notation| notation.user.rank ==0}.sort_by{|notation| notation.created_at }.map{|notation| notation.movie}.uniq
     if movies.size >= 4
-      return movies.drop(movies.size - 4)
+      return movies.drop(movies.size - 4).reverse
     else
-      return movies
+      return movies.reverse
     end
   end
   

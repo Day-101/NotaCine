@@ -44,7 +44,7 @@
           <p class="display-7 text-underline">Last reviews:</p>
           <ul class="p-0">
           <% @notations.each do |notation| %>
-            <li class="display-8 title-js m-2">
+            <li class="display-8 title-js m-2" id=<%= notation.id %>>
               <%= notation.movie.title %>
             </li>
             <div class="row text-right pt-3 user-rate text-center js-notation">

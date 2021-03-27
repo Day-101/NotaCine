@@ -11,6 +11,8 @@ class Movie < ApplicationRecord
   has_many :movie_genres, dependent: :destroy
   has_many :genres, through: :movie_genres
 
+  self.per_page = 16
+
 
 	def self.save_movie(result)		
 		new_movie = Movie.new
@@ -85,9 +87,9 @@ class Movie < ApplicationRecord
 
 	def self.last_four
 		if Movie.all.size >= 4
-			return Movie.all.drop(Movie.all.size - 4)
+			return Movie.all.drop(Movie.all.size - 4).reverse
 		else
-			return Movie.all 
+			return Movie.all.reverse
 		end
 	end
 
